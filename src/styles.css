@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@config "../tailwind.config.js";
+
+:root {
+  --primary: #c2813d;
+  --secondary: #3d3d3d;
+}
+
+body {
+  @apply font-sans text-secondary-900 bg-white;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-serif;
+}
+
+/* Custom animations for v4 */
+@theme {
+  --animate-pulse-slow: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes pulse-slow {
+    0%, 100% {
+      transform: scale(1.05);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+}

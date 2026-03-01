@@ -1,0 +1,70 @@
+<div class="pt-20 bg-gray-50 min-h-screen">
+  <!-- Gallery Hero -->
+  <section class="bg-primary-50 py-16 md:py-20 border-b border-primary-100">
+    <div class="container mx-auto px-4 lg:px-8 text-center">
+      <h1 class="text-4xl font-serif font-bold text-secondary-900 mb-4 tracking-tight">Галерея</h1>
+      <p class="text-secondary-600 max-w-xl mx-auto font-light text-sm md:text-base">
+        Перегляньте атмосферу нашого готелю: затишні номери, вишукані страви та зони для активного відпочинку.
+      </p>
+    </div>
+  </section>
+
+  <!-- Filter Controls -->
+  <div class="container mx-auto px-4 lg:px-8 py-10 flex flex-wrap justify-center gap-4">
+    <button 
+      (click)="setFilter('all')"
+      [ngClass]="activeFilter === 'all' ? 'bg-primary-600 text-white shadow-lg' : 'bg-white text-secondary-600 hover:bg-primary-50'"
+      class="px-6 py-2 rounded-full text-sm font-bold transition-all border border-transparent shadow-sm"
+    >
+      Всі фото
+    </button>
+    <button 
+      (click)="setFilter('exterior')"
+      [ngClass]="activeFilter === 'exterior' ? 'bg-primary-600 text-white shadow-lg' : 'bg-white text-secondary-600 hover:bg-primary-50'"
+      class="px-6 py-2 rounded-full text-sm font-bold transition-all border border-transparent shadow-sm"
+    >
+      Територія
+    </button>
+    <button 
+      (click)="setFilter('rooms')"
+      [ngClass]="activeFilter === 'rooms' ? 'bg-primary-600 text-white shadow-lg' : 'bg-white text-secondary-600 hover:bg-primary-50'"
+      class="px-6 py-2 rounded-full text-sm font-bold transition-all border border-transparent shadow-sm"
+    >
+      Номери
+    </button>
+    <button 
+      (click)="setFilter('restaurant')"
+      [ngClass]="activeFilter === 'restaurant' ? 'bg-primary-600 text-white shadow-lg' : 'bg-white text-secondary-600 hover:bg-primary-50'"
+      class="px-6 py-2 rounded-full text-sm font-bold transition-all border border-transparent shadow-sm"
+    >
+      Ресторан
+    </button>
+    <button 
+      (click)="setFilter('leisure')"
+      [ngClass]="activeFilter === 'leisure' ? 'bg-primary-600 text-white shadow-lg' : 'bg-white text-secondary-600 hover:bg-primary-50'"
+      class="px-6 py-2 rounded-full text-sm font-bold transition-all border border-transparent shadow-sm"
+    >
+      Відпочинок
+    </button>
+  </div>
+
+  <!-- Gallery Grid -->
+  <section class="container mx-auto px-4 lg:px-8 pb-20">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      @for (image of filteredImages; track image.url) {
+        <div class="group relative aspect-square overflow-hidden rounded-2xl shadow-md cursor-pointer animate-in fade-in zoom-in duration-500">
+          <img 
+            [src]="image.url" 
+            [alt]="image.title"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          >
+          <!-- Hover Overlay -->
+          <div class="absolute inset-0 bg-secondary-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+            <span class="text-[10px] uppercase tracking-[0.2em] text-primary-400 font-bold mb-1">{{ image.category }}</span>
+            <h3 class="text-white font-serif font-bold text-lg leading-tight">{{ image.title }}</h3>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+</div>

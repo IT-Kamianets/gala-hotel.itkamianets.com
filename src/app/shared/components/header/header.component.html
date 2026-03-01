@@ -1,0 +1,60 @@
+<header class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-sm border-b border-primary-100 shadow-sm">
+  <div class="container mx-auto px-4 lg:px-8 h-20 flex items-center">
+    
+    <!-- Logo (Left) -->
+    <div class="w-1/4 flex justify-start">
+      <a routerLink="/" class="flex flex-col items-start group">
+        <span class="text-2xl font-serif font-bold text-primary-600 tracking-wider group-hover:text-primary-700 transition-colors">
+          GALA-HOTEL
+        </span>
+        <span class="text-[10px] uppercase tracking-[0.3em] text-secondary-500 font-medium">Kamianets-Podilskyi</span>
+      </a>
+    </div>
+
+    <!-- Desktop Nav (Center) -->
+    <nav class="hidden md:flex flex-1 justify-center items-center space-x-10">
+      @for (link of navLinks; track link.path) {
+        <a 
+          [routerLink]="link.path" 
+          routerLinkActive="text-primary-600 font-semibold border-b-2 border-primary-600" 
+          [routerLinkActiveOptions]="{exact: true}"
+          class="text-sm font-medium text-secondary-700 hover:text-primary-600 transition-colors py-2"
+        >
+          {{ link.label }}
+        </a>
+      }
+    </nav>
+
+    <!-- Right Side (Mobile Button or Placeholder for Balance) -->
+    <div class="w-1/4 flex justify-end">
+      <!-- Mobile Menu Button -->
+      <button (click)="toggleMenu()" class="md:hidden p-2 text-secondary-800 hover:text-primary-600 focus:outline-none">
+        <svg *ngIf="!isMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg *ngIf="isMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      
+      <!-- Desktop Placeholder to keep nav centered -->
+      <div class="hidden md:block w-8"></div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Sidebar -->
+  <div *ngIf="isMenuOpen" 
+    class="md:hidden bg-white border-t border-primary-100 py-6 px-4 space-y-4 animate-in fade-in slide-in-from-top-4 duration-300">
+    <nav class="flex flex-col space-y-4">
+      @for (link of navLinks; track link.path) {
+        <a 
+          [routerLink]="link.path" 
+          (click)="isMenuOpen = false"
+          class="text-lg font-medium text-secondary-800 hover:text-primary-600 px-2 py-2 border-l-2 border-transparent hover:border-primary-600 transition-all"
+        >
+          {{ link.label }}
+        </a>
+      }
+    </nav>
+  </div>
+</header>
