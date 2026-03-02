@@ -12,6 +12,7 @@ import { BellagioConferenceComponent } from './features/bellagio-conference/bell
 import { FamilyEventsComponent } from './features/family-events/family-events.component';
 import { CorporateEventsComponent } from './features/corporate-events/corporate-events.component';
 import { ConcertsComponent } from './features/concerts/concerts.component';
+import { ConferenceServiceComponent } from './features/conference-service/conference-service.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -24,6 +25,7 @@ export const routes: Routes = [
   { path: 'family-events', component: FamilyEventsComponent },
   { path: 'corporate-events', component: CorporateEventsComponent },
   { path: 'concerts', component: ConcertsComponent },
+  { path: 'conference-service', component: ConferenceServiceComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'gallery', component: GalleryComponent },
   { path: 'contacts', component: ContactsComponent },
