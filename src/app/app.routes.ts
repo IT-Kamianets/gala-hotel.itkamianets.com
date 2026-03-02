@@ -9,6 +9,9 @@ import { RestaurantComponent } from './features/restaurant/restaurant.component'
 import { RestaurantBellagioComponent } from './features/restaurant-bellagio/restaurant-bellagio.component';
 import { BellagioWeddingComponent } from './features/bellagio-wedding/bellagio-wedding.component';
 import { BellagioConferenceComponent } from './features/bellagio-conference/bellagio-conference.component';
+import { FamilyEventsComponent } from './features/family-events/family-events.component';
+import { CorporateEventsComponent } from './features/corporate-events/corporate-events.component';
+import { ConcertsComponent } from './features/concerts/concerts.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,6 +21,9 @@ export const routes: Routes = [
   { path: 'restaurant-bellagio', component: RestaurantBellagioComponent },
   { path: 'bellagio-wedding', component: BellagioWeddingComponent },
   { path: 'bellagio-conference', component: BellagioConferenceComponent },
+  { path: 'family-events', component: FamilyEventsComponent },
+  { path: 'corporate-events', component: CorporateEventsComponent },
+  { path: 'concerts', component: ConcertsComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'gallery', component: GalleryComponent },
   { path: 'contacts', component: ContactsComponent },

@@ -11,8 +11,11 @@
         @for (card of highlightCards; track card.title) {
           <div 
             [routerLink]="card.title === 'ВЕСІЛЛЯ' ? '/bellagio-wedding' : 
-                         card.title === 'КОНФЕРЕНЦІЇ' ? '/bellagio-conference' : null"
-            [class.cursor-pointer]="card.title === 'ВЕСІЛЛЯ' || card.title === 'КОНФЕРЕНЦІЇ'"
+                         card.title === 'КОНФЕРЕНЦІЇ' ? '/bellagio-conference' : 
+                         card.title === 'СІМЕЙНІ СВЯТА' ? '/family-events' : 
+                         card.title === 'КОРПОРАТИВИ' ? '/corporate-events' : 
+                         card.title === 'КОНЦЕРТИ' ? '/concerts' : null"
+            [class.cursor-pointer]="card.title === 'ВЕСІЛЛЯ' || card.title === 'КОНФЕРЕНЦІЇ' || card.title === 'СІМЕЙНІ СВЯТА' || card.title === 'КОРПОРАТИВИ' || card.title === 'КОНЦЕРТИ'"
             class="group bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col h-full"
           >
             <div class="relative h-64 overflow-hidden">
