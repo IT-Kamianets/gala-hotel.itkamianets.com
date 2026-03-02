@@ -1,0 +1,150 @@
+<div class="pt-20">
+  <app-page-hero 
+    title="Ресторан-клуб «Bellagio»" 
+    description="Універсальний двоярусний зал у стилі венеціанського карнавалу для масштабних подій та незабутнього відпочинку.">
+  </app-page-hero>
+
+  <!-- About Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="flex flex-col lg:flex-row items-center gap-16">
+        <div class="lg:w-1/2 space-y-8">
+          <div class="inline-block px-4 py-1.5 bg-primary-100 rounded-lg text-primary-700 text-xs font-bold uppercase tracking-widest">
+            Гармонія смаку та комфорту
+          </div>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 leading-tight">
+            Простір для ваших особливих моментів
+          </h2>
+          <p class="text-lg text-secondary-600 leading-relaxed font-light">
+            Bellagio — це не просто ресторан, а багатофункціональний комплекс, створений для проведення великих бенкетів, концертів та корпоративних заходів. Інтер'єр, натхненний венеціанським карнавалом та класичним театром, створює атмосферу свята та вишуканості.
+          </p>
+          <div class="grid grid-cols-2 gap-6 pt-4">
+            <div class="p-6 bg-gray-50 rounded-2xl border border-gray-100">
+              <span class="block text-3xl font-serif font-bold text-primary-600 mb-1">250</span>
+              <span class="text-xs text-secondary-500 uppercase font-bold tracking-wider">Загальна місткість</span>
+            </div>
+            <div class="p-6 bg-gray-50 rounded-2xl border border-gray-100">
+              <span class="block text-3xl font-serif font-bold text-primary-600 mb-1">2</span>
+              <span class="text-xs text-secondary-500 uppercase font-bold tracking-wider">Яруси залу</span>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/2 relative">
+          <div class="absolute -inset-4 bg-primary-50 rounded-[3rem] -rotate-3 -z-10"></div>
+          <img 
+            src="https://images.unsplash.com/photo-1574096079513-d8259312b785?auto=format&fit=crop&q=80&w=1000" 
+            alt="Bellagio Restaurant Interior" 
+            class="w-full rounded-[2.5rem] shadow-2xl"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 mb-4">Переваги Bellagio</h2>
+        <div class="w-20 h-1 bg-primary-500 mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        @for (feature of features; track feature.title) {
+          <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex items-start space-x-6 hover:shadow-lg transition-shadow">
+            <div class="flex-shrink-0 w-14 h-14 bg-primary-50 rounded-2xl flex items-center justify-center text-primary-600">
+              <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="feature.icon" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-serif font-bold text-secondary-900 mb-2">{{ feature.title }}</h3>
+              <p class="text-secondary-600 font-light text-sm leading-relaxed">
+                {{ feature.description }}
+              </p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Events Section -->
+  <section class="py-24 bg-primary-900 text-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-primary-600/10 rounded-full"></div>
+    <div class="container mx-auto px-4 lg:px-8 relative z-10 text-center">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6 italic">Організація заходів</h2>
+      <p class="text-primary-100 text-lg mb-12 max-w-2xl mx-auto font-light">
+        Ми пропонуємо повний спектр послуг для вашого свята: від вишуканого меню до шоу-програми та тематичного оформлення.
+      </p>
+      
+      <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+        @for (event of events; track event) {
+          <div class="px-6 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl text-sm font-medium">
+            {{ event }}
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Cuisine Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="flex flex-col lg:flex-row-reverse items-center gap-16">
+        <div class="lg:w-1/2 space-y-6">
+          <h2 class="text-3xl font-serif font-bold text-secondary-900">Гастрономічні шедеври</h2>
+          <p class="text-lg text-secondary-600 leading-relaxed font-light">
+            Меню ресторану включає найкращі страви європейської, середземноморської та української кухонь. Ми використовуємо тільки свіжі та якісні інгредієнти, щоб кожне замовлення перетворювалося на справжнє задоволення.
+          </p>
+          <ul class="space-y-4 pt-4">
+            <li class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-primary-500 rounded-full"></div>
+              <span class="text-secondary-700 font-medium">Вишукані холодні та гарячі закуски</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-primary-500 rounded-full"></div>
+              <span class="text-secondary-700 font-medium">Спеціалізоване бенкетне меню</span>
+            </li>
+            <li class="flex items-center space-x-3">
+              <div class="w-2 h-2 bg-primary-500 rounded-full"></div>
+              <span class="text-secondary-700 font-medium">Широка барна карта</span>
+            </li>
+          </ul>
+        </div>
+        <div class="lg:w-1/2">
+          <div class="grid grid-cols-2 gap-4">
+            <img 
+              src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&q=80&w=600" 
+              class="w-full h-64 object-cover rounded-3xl"
+            >
+            <img 
+              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&q=80&w=600" 
+              class="w-full h-64 object-cover rounded-3xl mt-12"
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 lg:px-8 text-center">
+      <div class="max-w-2xl mx-auto bg-white p-12 rounded-[3rem] shadow-xl border border-primary-50">
+        <h2 class="text-3xl font-serif font-bold text-secondary-900 mb-6 italic">Чекаємо на вас у Bellagio</h2>
+        <p class="text-secondary-600 mb-10 font-light">
+          Зв'яжіться з нами для бронювання столика або обговорення вашого майбутнього заходу.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a routerLink="/contacts" class="bg-secondary-900 text-white px-10 py-4 rounded-xl font-bold hover:bg-primary-600 transition-all shadow-lg active:scale-95">
+            Зв'язатися з нами
+          </a>
+          <a href="tel:+380673812221" class="bg-primary-50 text-primary-700 px-10 py-4 rounded-xl font-bold hover:bg-primary-100 transition-all active:scale-95 flex items-center justify-center">
+            Зателефонувати
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

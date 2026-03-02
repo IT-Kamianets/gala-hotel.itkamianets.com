@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PageHeroComponent } from '../../shared/components/page-hero/page-hero.component';
 
 interface GalleryItem {
   url: string;
@@ -10,7 +11,7 @@ interface GalleryItem {
 @Component({
   selector: 'app-gallery',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, PageHeroComponent],
   templateUrl: './gallery.component.html',
 })
 export class GalleryComponent {

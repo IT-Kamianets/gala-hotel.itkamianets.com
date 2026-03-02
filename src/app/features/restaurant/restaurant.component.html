@@ -1,0 +1,143 @@
+<div class="pt-20">
+  <app-page-hero 
+    title="Ресторан «Пуаро»" 
+    description="Вишукане поєднання європейської та української кухні у самому серці нашого готельного комплексу.">
+  </app-page-hero>
+
+  <!-- Introduction -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl font-serif font-bold text-secondary-900 mb-6">Смак, що запам'ятовується</h2>
+        <p class="text-lg text-secondary-600 leading-relaxed font-light">
+          Ресторан «Пуаро» запрошує вас поринути у світ гастрономічного задоволення. Ми майстерно поєднуємо традиції української гостинності з витонченістю європейської та середземноморської кухні. Кожна страва — це витвір мистецтва, створений з любов'ю нашими кухарями.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery (Carousel) -->
+  <section class="pb-20 overflow-hidden">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="flex space-x-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 lg:mx-0 lg:px-0">
+        @for (image of galleryImages; track image.url) {
+          <div class="flex-shrink-0 w-[300px] md:w-[450px] aspect-[4/3] rounded-3xl overflow-hidden snap-start shadow-md hover:shadow-xl transition-shadow duration-500">
+            <img [src]="image.url" [alt]="image.alt" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+          </div>
+        }
+      </div>
+      <!-- Hint to scroll -->
+      <div class="flex items-center justify-center space-x-2 text-secondary-400 text-xs font-medium animate-pulse">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+        <span>Прокрутіть, щоб переглянути більше фото</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Halls -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 mb-4">Наші зали</h2>
+        <div class="w-20 h-1 bg-primary-500 mx-auto rounded-full"></div>
+        <p class="mt-6 text-secondary-500 max-w-xl mx-auto font-light">
+          Оберіть ідеальний простір для вашої події. Кожен зал має свою унікальну атмосферу та можливості для святкування.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        @for (hall of halls; track hall.name) {
+          <div class="bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 flex flex-col group">
+            <div class="w-16 h-16 bg-primary-50 rounded-2xl flex items-center justify-center text-primary-600 mb-8 group-hover:scale-110 transition-transform duration-500">
+              <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="hall.icon" />
+              </svg>
+            </div>
+            
+            <div class="flex-grow">
+              <div class="flex flex-col mb-6">
+                <h3 class="text-2xl font-serif font-bold text-secondary-900 mb-2">{{ hall.name }}</h3>
+                <span class="inline-block self-start bg-primary-50 text-primary-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+                  {{ hall.capacity }}
+                </span>
+              </div>
+              
+              <p class="text-secondary-600 font-light leading-relaxed mb-8">
+                {{ hall.description }}
+              </p>
+              
+              @if (hall.features) {
+                <div class="pt-6 border-t border-gray-50">
+                  <ul class="space-y-3">
+                    @for (feature of hall.features; track feature) {
+                      <li class="flex items-center text-xs text-secondary-500 font-medium">
+                        <div class="w-1.5 h-1.5 bg-primary-400 rounded-full mr-3"></div>
+                        {{ feature }}
+                      </li>
+                    }
+                  </ul>
+                </div>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Summer Areas -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-primary-600 text-xs font-bold uppercase tracking-[0.3em] block mb-2">Літній сезон</span>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 mb-4">Літня тераса та альтанка</h2>
+        <div class="w-20 h-1 bg-primary-500 mx-auto rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        @for (area of summerAreas; track area.name) {
+          <div class="group relative bg-white rounded-[2.5rem] overflow-hidden shadow-lg border border-gray-100">
+            <div class="h-[400px] overflow-hidden">
+              <img [src]="area.image" [alt]="area.name" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-secondary-900 via-secondary-900/40 to-transparent opacity-90"></div>
+            <div class="absolute bottom-0 left-0 p-10 text-white">
+              <div class="inline-block px-4 py-1.5 bg-primary-600 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4">
+                {{ area.capacity }}
+              </div>
+              <h3 class="text-3xl font-serif font-bold mb-4">{{ area.name }}</h3>
+              <p class="text-primary-50 text-sm font-light leading-relaxed max-w-md">
+                {{ area.description }}
+              </p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 lg:px-8 text-center">
+      <div class="max-w-2xl mx-auto bg-white p-12 rounded-[3rem] shadow-xl border border-primary-50">
+        <h2 class="text-3xl font-serif font-bold text-secondary-900 mb-6 italic">Плануєте подію?</h2>
+        <p class="text-secondary-600 mb-10 font-light">
+          Зв'яжіться з нашим адміністратором, щоб обговорити деталі вашого свята та забронювати найкращий зал.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a routerLink="/contacts" class="bg-secondary-900 text-white px-10 py-4 rounded-xl font-bold hover:bg-primary-600 transition-all shadow-lg active:scale-95">
+            Зв'язатися з нами
+          </a>
+          <a href="tel:+380673812221" class="bg-primary-50 text-primary-700 px-10 py-4 rounded-xl font-bold hover:bg-primary-100 transition-all active:scale-95 flex items-center justify-center">
+            <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            Зателефонувати
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

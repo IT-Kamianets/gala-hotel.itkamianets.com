@@ -1,13 +1,15 @@
 <header class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-sm border-b border-primary-100 shadow-sm">
-  <div class="container mx-auto px-4 lg:px-8 h-20 flex items-center">
+  <div class="container mx-auto px-4 lg:px-8 h-20 flex items-center justify-between md:justify-start">
     
     <!-- Logo (Left) -->
-    <div class="w-1/4 flex justify-start">
+    <div class="flex-shrink-0 md:w-1/4 flex justify-start">
       <a routerLink="/" class="flex flex-col items-start group">
-        <span class="text-2xl font-serif font-bold text-primary-600 tracking-wider group-hover:text-primary-700 transition-colors">
+        <span class="text-xl md:text-2xl font-serif font-bold text-primary-600 tracking-wider group-hover:text-primary-700 transition-colors whitespace-nowrap">
           GALA-HOTEL
         </span>
-        <span class="text-[10px] uppercase tracking-[0.3em] text-secondary-500 font-medium">Kamianets-Podilskyi</span>
+        <span class="text-[8px] md:text-[10px] uppercase tracking-[0.1em] md:tracking-[0.3em] text-secondary-500 font-medium whitespace-nowrap">
+          Kamianets-Podilskyi
+        </span>
       </a>
     </div>
 
@@ -26,7 +28,7 @@
     </nav>
 
     <!-- Right Side (Mobile Button or Placeholder for Balance) -->
-    <div class="w-1/4 flex justify-end">
+    <div class="md:w-1/4 flex justify-end">
       <!-- Mobile Menu Button -->
       <button (click)="toggleMenu()" class="md:hidden p-2 text-secondary-800 hover:text-primary-600 focus:outline-none">
         <svg *ngIf="!isMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">

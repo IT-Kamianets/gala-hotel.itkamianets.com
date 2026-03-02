@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PageHeroComponent } from '../../shared/components/page-hero/page-hero.component';
+import { RouterLink } from '@angular/router';
 
 interface ServiceItem {
   id: string;
@@ -13,7 +15,7 @@ interface ServiceItem {
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, PageHeroComponent, RouterLink],
   templateUrl: './services.component.html',
 })
 export class ServicesComponent {
@@ -23,16 +25,24 @@ export class ServicesComponent {
       title: 'Ресторан «Пуаро»',
       description: 'Європейська, середземноморська та українська кухні у вишуканій атмосфері.',
       longDescription: 'Наш головний ресторан пропонує широкий вибір страв, що задовольнять найвибагливіших гурманів. Ви можете обрати затишний зал, літню терасу або окремі альтанки у нашому парку для приватних зустрічей.',
-      image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=1974',
+      image: 'puaro/services_puaro.jpg',
       features: ['Авторське меню', 'Літня тераса та альтанки', 'Доставка страв', 'Винна карта']
     },
     {
       id: 'leisure-center',
       title: 'Боулінг та розваги',
       description: 'Активний відпочинок у боулінг-клубі «Galactica».',
-      longDescription: 'Гості можуть насолодитися грою в боулінг, відвідати тенісний корт, спробувати себе у тирі або відпочити у ресторан-клубі «Bellagio». Для дітей облаштований майданчик з атракціонами та літній басейн.',
+      longDescription: 'Гості можуть насолодитися грою в боулінг, відвідати тенісний корт або спробувати себе у тирі. Для дітей облаштований майданчик з атракціонами та літній басейн.',
       image: 'https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&q=80&w=2070',
       features: ['Боулінг «Galactica»', 'Тенісний корт', 'Дитячий майданчик', 'Тир']
+    },
+    {
+      id: 'restaurant-bellagio',
+      title: 'Ресторан-клуб «Bellagio»',
+      description: 'Вишуканий відпочинок та розваги у затишній атмосфері.',
+      longDescription: 'Ресторан-клуб «Bellagio» — це ідеальне місце для тих, хто цінує якісний відпочинок, смачну кухню та приємну атмосферу. Тут ви можете провести незабутній вечір, насолоджуючись вишуканими напоями та стравами.',
+      image: 'https://images.unsplash.com/photo-1574096079513-d8259312b785?auto=format&fit=crop&q=80&w=1000',
+      features: ['Вишукане меню', 'Барна карта', 'Затишна атмосфера', 'Музичний супровід']
     },
     {
       id: 'health-wellbeing',
