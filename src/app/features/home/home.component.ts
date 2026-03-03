@@ -2,15 +2,16 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeroComponent } from './components/hero/hero.component';
 import { GalleryPreviewComponent } from './components/gallery-preview/gallery-preview.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HeroComponent, GalleryPreviewComponent],
+  imports: [CommonModule, HeroComponent, GalleryPreviewComponent, RouterLink],
   template: `
     <app-hero></app-hero>
     
-    <!-- About Us Section -->
+    <!-- About Us Preview Section -->
     <section class="py-24 bg-white overflow-hidden">
       <div class="container mx-auto px-4 lg:px-8">
         <div class="flex flex-col lg:flex-row items-center gap-16">
@@ -19,61 +20,63 @@ import { GalleryPreviewComponent } from './components/gallery-preview/gallery-pr
               Наша історія з 2002 року
             </div>
             <h2 class="text-3xl md:text-5xl font-serif font-bold text-secondary-900 leading-tight italic">
-              Один з 100 найкращих готелів України
+              Про «Гала Готель»
             </h2>
             <p class="text-lg text-secondary-600 leading-relaxed font-light">
-              «Гала Готель» — це не просто місце для ночівлі, а повноцінний готельно-туристичний комплекс. Ми пишаємося тим, що у 2011 році увійшли до списку 100 найкращих готелів України. 
+              Готельно-туристичний комплекс «Гала-Готель» розпочав свою роботу в 2002 році. За цей час ми пройшли шлях від відкриття основного корпусу до створення масштабної інфраструктури з ресторанами, боулінг-клубом та професійними кортами.
             </p>
             <p class="text-lg text-secondary-600 leading-relaxed font-light">
-              Комплекс складається з трьох корпусів (68 номерів), включаючи сучасний «ЕКО» корпус, відкритий у 2019 році. Ми знаходимося у затишному парку, лише за 15 хвилин від середньовічної фортеці.
+              У 2011 році наш готель увійшов до списку 100 кращих готелів України, що підтверджує високий рівень обслуговування та вагомий внесок у розвиток міста.
             </p>
-            <div class="grid grid-cols-2 gap-8 pt-4">
-              <div class="border-l-4 border-primary-500 pl-6">
-                <div class="text-3xl font-serif font-bold text-secondary-900">68</div>
-                <div class="text-sm text-secondary-500 uppercase tracking-wider">Затишних номерів</div>
-              </div>
-              <div class="border-l-4 border-primary-500 pl-6">
-                <div class="text-3xl font-serif font-bold text-secondary-900">3</div>
-                <div class="text-sm text-secondary-500 uppercase tracking-wider">Житлових корпуси</div>
+            
+            <div class="pt-4 flex flex-col sm:flex-row items-start gap-6">
+              <button routerLink="/about" class="bg-secondary-900 text-white px-10 py-4 rounded-xl font-bold hover:bg-primary-600 transition-all shadow-xl active:scale-95">
+                Дізнатися більше
+              </button>
+              <div class="flex items-center gap-4 py-2">
+                <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center text-primary-600">
+                  <span class="font-serif font-bold text-xl">3*</span>
+                </div>
+                <span class="text-xs font-bold text-secondary-500 uppercase tracking-widest">Сертифікований тризірковий готель</span>
               </div>
             </div>
           </div>
           <div class="lg:w-1/2 relative">
             <div class="absolute -top-10 -right-10 w-64 h-64 bg-primary-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70"></div>
-            <div class="relative rounded-[3rem] overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
-              <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=2070" alt="Gala Hotel Exterior" class="w-full h-[500px] object-cover">
+            <div class="relative rounded-[3rem] overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500 border-8 border-white">
+              <img src="gallery/1.png" alt="Gala Hotel Exterior" class="w-full h-[500px] object-cover">
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Infrastructure Highlights -->
+    <!-- Infrastructure Highlights (Updated) -->
     <section class="py-24 bg-gray-50">
       <div class="container mx-auto px-4 lg:px-8 text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 mb-4 tracking-tight italic">Більше ніж готель</h2>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 mb-4 tracking-tight italic">Ваш ідеальний відпочинок</h2>
         <div class="w-24 h-1 bg-primary-500 mx-auto rounded-full"></div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 container mx-auto px-4 lg:px-8">
-        <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-shadow border border-gray-100 text-center space-y-4">
-          <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center text-primary-600 mx-auto mb-6 text-2xl">🍽️</div>
-          <h3 class="text-xl font-bold text-secondary-900 font-serif italic">Ресторан «Пуаро»</h3>
-          <p class="text-secondary-600 text-sm font-light leading-relaxed">Європейська та українська кухня, літня тераса та альтанки у парку.</p>
+        <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-gray-100 text-center space-y-4 group">
+          <div class="w-16 h-16 bg-primary-50 rounded-2xl flex items-center justify-center text-primary-600 mx-auto mb-6 text-2xl group-hover:bg-primary-600 group-hover:text-white transition-colors">🛎️</div>
+          <h3 class="text-xl font-bold text-secondary-900 font-serif italic">68 Номерів</h3>
+          <p class="text-secondary-600 text-sm font-light leading-relaxed">Комфортні номери від «Економ» до «Апартаментів» для будь-якого бюджету.</p>
         </div>
-        <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-shadow border border-gray-100 text-center space-y-4">
-          <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center text-primary-600 mx-auto mb-6 text-2xl">🎳</div>
-          <h3 class="text-xl font-bold text-secondary-900 font-serif italic">Боулінг «Galactica»</h3>
-          <p class="text-secondary-600 text-sm font-light leading-relaxed">Активний відпочинок для всієї родини на професійних доріжках.</p>
+        <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-gray-100 text-center space-y-4 group">
+          <div class="w-16 h-16 bg-primary-50 rounded-2xl flex items-center justify-center text-primary-600 mx-auto mb-6 text-2xl group-hover:bg-primary-600 group-hover:text-white transition-colors">🎳</div>
+          <h3 class="text-xl font-bold text-secondary-900 font-serif italic">Активний драйв</h3>
+          <p class="text-secondary-600 text-sm font-light leading-relaxed">Власний боулінг-клуб, тенісний корт та спортивні розваги.</p>
         </div>
-        <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-shadow border border-gray-100 text-center space-y-4">
-          <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center text-primary-600 mx-auto mb-6 text-2xl">💧</div>
-          <h3 class="text-xl font-bold text-secondary-900 font-serif italic">Бювет «Нафтуся»</h3>
-          <p class="text-secondary-600 text-sm font-light leading-relaxed">Власний бювет з цілющою мінеральною водою для вашого здоров'я.</p>
+        <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-gray-100 text-center space-y-4 group">
+          <div class="w-16 h-16 bg-primary-50 rounded-2xl flex items-center justify-center text-primary-600 mx-auto mb-6 text-2xl group-hover:bg-primary-600 group-hover:text-white transition-colors">🌿</div>
+          <h3 class="text-xl font-bold text-secondary-900 font-serif italic">Парк 1.2 га</h3>
+          <p class="text-secondary-600 text-sm font-light leading-relaxed">Величезна паркова зона для прогулянок, автокемпінгу та відпочинку.</p>
         </div>
-        <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-shadow border border-gray-100 text-center space-y-4">
-          <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center text-primary-600 mx-auto mb-6 text-2xl">🛡️</div>
-          <h3 class="text-xl font-bold text-secondary-900 font-serif italic font-bold">Безпечне Укриття</h3>
-          <p class="text-secondary-600 text-sm font-light leading-relaxed">На території облаштоване надійне укриття для повної безпеки гостей.</p>
+        <div class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-gray-100 text-center space-y-4 group">
+          <div class="w-16 h-16 bg-primary-50 rounded-2xl flex items-center justify-center text-primary-600 mx-auto mb-6 text-2xl group-hover:bg-primary-600 group-hover:text-white transition-colors">🍽️</div>
+          <h3 class="text-xl font-bold text-secondary-900 font-serif italic">Вишукана кухня</h3>
+          <p class="text-secondary-600 text-sm font-light leading-relaxed">Два ресторани («Пуаро» та «Bellagio») з різноманітним меню.</p>
         </div>
       </div>
     </section>

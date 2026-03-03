@@ -1,0 +1,132 @@
+<div class="pt-20">
+  <app-page-hero 
+    title="Правила проживання" 
+    description="Важлива інформація для гостей ГТК «Гала Готель» про порядок перебування, послуги та розваги.">
+  </app-page-hero>
+
+  <!-- Key Times -->
+  <section class="py-12 bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        @for (item of generalRules; track item.title) {
+          <div class="bg-gray-50 p-8 rounded-[2rem] border border-gray-100 text-center shadow-sm">
+            <span class="block text-xs uppercase tracking-widest text-secondary-400 font-bold mb-2">{{ item.title }}</span>
+            <span class="text-3xl font-serif font-bold text-primary-600">{{ item.value }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Rules List -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="max-w-4xl mx-auto flex flex-col md:flex-row gap-16">
+        <div class="md:w-1/2 space-y-8">
+          <h2 class="text-3xl font-serif font-bold text-secondary-900 italic leading-tight">Порядок перебування у готелі</h2>
+          <ul class="space-y-4">
+            @for (rule of stayRules; track rule) {
+              <li class="flex items-start gap-4">
+                <div class="mt-1 flex-shrink-0 w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center text-primary-600">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span class="text-secondary-600 font-light text-sm leading-relaxed">{{ rule }}</span>
+              </li>
+            }
+          </ul>
+        </div>
+        <div class="md:w-1/2">
+          <div class="rounded-[3rem] overflow-hidden shadow-2xl rotate-1 border-8 border-gray-50">
+            <img src="gallery/12.png" alt="Gala Hotel Room Service" class="w-full h-80 object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Sections -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Free Services -->
+        <div class="bg-white p-10 rounded-[3rem] shadow-xl border border-gray-100 space-y-8">
+          <h3 class="text-2xl font-serif font-bold text-secondary-900 border-b border-primary-100 pb-4">Безкоштовно для гостей</h3>
+          <ul class="space-y-4">
+            @for (service of freeServices; track service) {
+              <li class="flex items-center gap-4 text-secondary-700 font-medium">
+                <div class="w-8 h-8 bg-green-50 rounded-lg flex items-center justify-center text-green-600 shadow-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
+                  </svg>
+                </div>
+                {{ service }}
+              </li>
+            }
+          </ul>
+        </div>
+
+        <!-- Paid Services -->
+        <div class="bg-primary-900 p-10 rounded-[3rem] shadow-xl text-white space-y-8 relative overflow-hidden">
+          <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 20px 20px;"></div>
+          <div class="relative z-10">
+            <h3 class="text-2xl font-serif font-bold text-primary-400 border-b border-white/10 pb-4 mb-8">Додаткові послуги</h3>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              @for (service of paidServices; track service) {
+                <li class="flex items-center gap-3 text-primary-100 text-sm font-light">
+                  <div class="w-2 h-2 bg-primary-500 rounded-full"></div>
+                  {{ service }}
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Attractions Pricing -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16 space-y-4">
+          <h2 class="text-3xl font-serif font-bold text-secondary-900 italic">Активні розваги та атракціони</h2>
+          <p class="text-secondary-500 font-light italic text-sm">Зробіть свій відпочинок незабутнім!</p>
+          <div class="w-24 h-1 bg-primary-500 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          @for (item of attractions; track item.name) {
+            <div class="flex justify-between items-center p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-lg hover:border-primary-200 transition-all group">
+              <div class="space-y-1">
+                <h4 class="font-serif font-bold text-secondary-900 group-hover:text-primary-600 transition-colors">{{ item.name }}</h4>
+                <p class="text-[10px] text-secondary-400 uppercase tracking-widest">{{ item.details }}</p>
+              </div>
+              <div class="text-xl font-serif font-bold text-primary-600">{{ item.price }}</div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-primary-50">
+    <div class="container mx-auto px-4 lg:px-8 text-center max-w-3xl space-y-10">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 italic leading-tight">Маєте додаткові запитання?</h2>
+      <p class="text-secondary-600 text-lg font-light leading-relaxed">
+        Наш персонал працює цілодобово, щоб забезпечити Ваш комфорт. Звертайтеся на рецепцію у будь-який час.
+      </p>
+      
+      <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+        <a href="tel:+380673811969" class="bg-secondary-900 text-white px-10 py-4 rounded-xl font-bold hover:bg-primary-600 transition-all shadow-xl active:scale-95">
+          Зателефонувати на рецепцію
+        </a>
+        <button routerLink="/about" class="text-primary-600 font-bold uppercase tracking-widest text-xs hover:text-primary-700 transition-colors">
+          Більше про готель
+        </button>
+      </div>
+    </div>
+  </section>
+</div>

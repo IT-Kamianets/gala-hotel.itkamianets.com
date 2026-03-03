@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PageHeroComponent } from '../../shared/components/page-hero/page-hero.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-contacts',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, PageHeroComponent],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, PageHeroComponent, RouterLink],
   templateUrl: './contacts.component.html',
 })
 export class ContactsComponent {

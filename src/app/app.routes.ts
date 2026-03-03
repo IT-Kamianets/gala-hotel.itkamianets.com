@@ -17,9 +17,17 @@ import { BowlingEntertainmentComponent } from './features/bowling-entertainment/
 import { BowlingComponent } from './features/bowling/bowling.component';
 import { TennisCourtComponent } from './features/tennis-court/tennis-court.component';
 import { ChildrenAttractionsComponent } from './features/children-attractions/children-attractions.component';
+import { CampingComponent } from './features/camping/camping.component';
+import { SaunaComponent } from './features/sauna/sauna.component';
+import { MineralWaterComponent } from './features/mineral-water/mineral-water.component';
+import { SportExtremeComponent } from './features/sport-extreme/sport-extreme.component';
+import { AboutComponent } from './features/about/about.component';
+import { RulesComponent } from './features/rules/rules.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'rules', component: RulesComponent },
   { path: 'rooms', component: RoomsComponent },
   { path: 'rooms/:id', component: RoomDetailComponent },
   { path: 'restaurant', component: RestaurantComponent },
@@ -34,6 +42,10 @@ export const routes: Routes = [
   { path: 'bowling', component: BowlingComponent },
   { path: 'tennis-court', component: TennisCourtComponent },
   { path: 'children-attractions', component: ChildrenAttractionsComponent },
+  { path: 'camping', component: CampingComponent },
+  { path: 'sauna', component: SaunaComponent },
+  { path: 'mineral-water', component: MineralWaterComponent },
+  { path: 'sport-extreme', component: SportExtremeComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'gallery', component: GalleryComponent },
   { path: 'contacts', component: ContactsComponent },

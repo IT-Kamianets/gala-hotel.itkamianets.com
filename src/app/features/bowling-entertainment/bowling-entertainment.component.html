@@ -1,7 +1,7 @@
 <div class="pt-20">
   <app-page-hero 
-    title="Боулінг та розваги" 
-    description="Активний відпочинок та яскраві емоції для всієї родини у боулінг-клубі «Galactica» та на території нашого готелю.">
+    title="Відпочинок та розваги" 
+    description="Різноманіття можливостей для активного дозвілля, релаксу та незабутніх емоцій на території ГТК «Гала Готель».">
   </app-page-hero>
 
   <!-- Highlight Cards Grid -->
@@ -12,8 +12,12 @@
           <div 
             [routerLink]="card.title === 'БОУЛІНГ' ? '/bowling' : 
                          card.title === 'ТЕНІСНИЙ КОРТ' ? '/tennis-court' : 
-                         card.title === 'ДИЯЧИЙ МАЙДАНЧИК' ? '/children-attractions' : null"
-            [class.cursor-pointer]="card.title === 'БОУЛІНГ' || card.title === 'ТЕНІСНИЙ КОРТ' || card.title === 'ДИЯЧИЙ МАЙДАНЧИК'"
+                         card.title === 'ДИЯЧИЙ МАЙДАНЧИК' ? '/children-attractions' : 
+                         card.title === 'АВТОКЕМПІНГ' ? '/camping' : 
+                         card.title === 'САУНА' ? '/sauna' : 
+                         card.title === 'БЮВЕТ' ? '/mineral-water' : 
+                         card.title === 'СПОРТ І ЕКСТРИМ' ? '/sport-extreme' : null"
+            [class.cursor-pointer]="card.title === 'БОУЛІНГ' || card.title === 'ТЕНІСНИЙ КОРТ' || card.title === 'ДИЯЧИЙ МАЙДАНЧИК' || card.title === 'АВТОКЕМПІНГ' || card.title === 'САУНА' || card.title === 'БЮВЕТ' || card.title === 'СПОРТ І ЕКСТРИМ'"
             class="group bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col h-full"
           >
             <div class="relative h-64 overflow-hidden">
@@ -45,17 +49,17 @@
     <div class="container mx-auto px-4 lg:px-8">
       <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12">
         <div class="md:w-1/2 space-y-6">
-          <h2 class="text-3xl font-serif font-bold text-secondary-900 leading-tight">Дозвілля та Драйв</h2>
+          <h2 class="text-3xl font-serif font-bold text-secondary-900 leading-tight italic">Ваше Дозвілля у «Gala Hotel»</h2>
           <p class="text-secondary-600 leading-relaxed font-light">
-            Розважальний центр «Galactica» — це ідеальне місце для тих, хто полюбляє активне проведення часу. Ми поєднали сучасні технології боулінгу з затишною атмосферою відпочинку.
+            Ми пропонуємо нашим гостям не просто проживання, а цілий світ розваг. Від драйву боулінг-клубу «Galactica» до спокійного оздоровлення біля бювету з мінеральною водою.
           </p>
           <p class="text-secondary-600 leading-relaxed font-light">
-            Окрім боулінгу, на території комплексу доступні професійний тенісний корт та тир, що робить наш готель чудовим вибором для спортивного дозвілля у Кам’янці-Подільському.
+            Незалежно від того, чи Ви подорожуєте з сім'єю, чи приїхали на спортивні змагання, на нашій території площею 1.2 га знайдеться ідеальне місце для Вашого відпочинку.
           </p>
         </div>
         <div class="md:w-1/2">
           <div class="rounded-[2rem] overflow-hidden shadow-2xl rotate-2">
-            <img src="bowling/bowl2.png" alt="Bowling Galactica" class="w-full">
+            <img src="bowling/bowl2.png" alt="Відпочинок у Gala Hotel" class="w-full">
           </div>
         </div>
       </div>
@@ -67,7 +71,7 @@
     <div class="container mx-auto px-4 lg:px-8">
       <div class="max-w-3xl mx-auto">
         <div class="text-center mb-12">
-          <h2 class="text-3xl font-serif font-bold text-secondary-900 mb-4">Наші розваги пропонують:</h2>
+          <h2 class="text-3xl font-serif font-bold text-secondary-900 mb-4 italic">Ми пропонуємо для Вас:</h2>
           <div class="w-20 h-1 bg-primary-500 mx-auto rounded-full"></div>
         </div>
         
@@ -93,28 +97,28 @@
     <div class="container mx-auto px-4 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         <div class="space-y-8">
-          <h2 class="text-3xl md:text-4xl font-serif font-bold italic">Боулінг-клуб «Galactica»</h2>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold italic leading-tight">Розважальний центр «Galactica»</h2>
           <p class="text-primary-100 leading-relaxed font-light">
             Проведіть незабутній час з друзями або родиною. Ми пропонуємо гнучкі тарифи на гру в боулінг та оренду спортивних майданчиків. Наш бар забезпечить вас напоями та закусками під час гри.
           </p>
           <div class="space-y-4">
             <div class="flex items-baseline gap-4">
-              <span class="text-4xl font-serif font-bold text-primary-400">від 400 грн</span>
-              <span class="text-primary-200 text-sm uppercase tracking-widest font-medium">Вартість 1 години гри (залежно від часу)</span>
+              <span class="text-4xl font-serif font-bold text-primary-400">від 470 грн</span>
+              <span class="text-primary-200 text-sm uppercase tracking-widest font-medium">Боулінг (за 1 годину)</span>
             </div>
             <div class="flex items-baseline gap-4">
-              <span class="text-2xl font-serif font-bold text-primary-400">від 200 грн</span>
-              <span class="text-primary-200 text-sm uppercase tracking-widest font-medium">Оренда тенісного корту (1 година)</span>
+              <span class="text-2xl font-serif font-bold text-primary-400">300 грн</span>
+              <span class="text-primary-200 text-sm uppercase tracking-widest font-medium">Тенісний корт (1 година)</span>
             </div>
           </div>
         </div>
         <div class="bg-white/10 backdrop-blur-md p-10 rounded-[3rem] border border-white/20">
-          <h3 class="text-2xl font-serif font-bold mb-6 text-primary-400">Корпоративні турніри</h3>
+          <h3 class="text-2xl font-serif font-bold mb-6 text-primary-400 italic">Спеціальні події</h3>
           <p class="text-primary-50 font-light leading-relaxed mb-8">
-            Бажаєте організувати командні змагання? Ми допоможемо провести турнір з боулінгу для вашої компанії з призами та святковим фуршетом.
+            Бажаєте організувати командні змагання або дитяче свято? Ми допоможемо провести будь-який захід з професійним супроводом та святковою атмосферою.
           </p>
           <div class="w-full h-48 rounded-2xl overflow-hidden shadow-inner">
-            <img src="bowling/bowl2.png" alt="Корпоративний боулінг" class="w-full h-full object-cover">
+            <img src="bowling/bowl2.png" alt="Свята у Gala Hotel" class="w-full h-full object-cover">
           </div>
         </div>
       </div>
@@ -126,8 +130,8 @@
     <div class="container mx-auto px-4 lg:px-8">
       <div class="max-w-3xl mx-auto bg-primary-50 rounded-[2.5rem] p-8 md:p-12 text-center border border-primary-100 shadow-sm relative overflow-hidden">
         <div class="relative z-10">
-          <span class="text-primary-600 font-bold uppercase tracking-[0.2em] text-[10px] block mb-3">Бронювання доріжок та кортів</span>
-          <h2 class="text-2xl md:text-3xl font-serif font-bold text-secondary-900 mb-8">Адміністратор комплексу</h2>
+          <span class="text-primary-600 font-bold uppercase tracking-[0.2em] text-[10px] block mb-3">Бронювання та довідка</span>
+          <h2 class="text-2xl md:text-3xl font-serif font-bold text-secondary-900 mb-8 italic">Адміністратор комплексу</h2>
           
           <div class="flex flex-col items-center space-y-6">
             <a href="tel:+380673804355" class="flex items-center gap-4 group">

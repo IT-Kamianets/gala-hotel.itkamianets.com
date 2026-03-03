@@ -1,0 +1,145 @@
+<div class="pt-20">
+  <app-page-hero 
+    title="Бювет мінеральної води" 
+    description="Лікувально-столова вода «Стара Фортеця» типу «Нафтуся» безпосередньо з власної свердловини на території готелю.">
+  </app-page-hero>
+
+  <!-- Intro Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="max-w-4xl mx-auto space-y-12">
+        <div class="text-center space-y-6">
+          <div class="inline-block px-4 py-1 bg-primary-100 rounded-full text-primary-600 text-[10px] font-bold uppercase tracking-[0.2em]">А Ви знали?…</div>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 italic">Свердловина №30</h2>
+          <p class="text-lg text-secondary-600 leading-relaxed font-light">
+            Свердловина №30, пробурена в 1988 році, знаходиться безпосередньо на території готельного комплексу «ГАЛА-ГОТЕЛЬ». У 2004 році мінеральній воді було присвоєно назву <span class="font-bold text-primary-600">«Стара Фортеця»</span>. За своїми властивостями вона є лікувально-столовою водою типу «Нафтуся Збруча».
+          </p>
+          <div class="w-24 h-1 bg-primary-500 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div class="rounded-3xl overflow-hidden shadow-2xl rotate-1">
+            <img src="water/water1.png" alt="Бювет Gala Hotel" class="w-full">
+          </div>
+          <div class="space-y-6">
+            <h3 class="text-2xl font-serif font-bold text-secondary-900 italic">Основні характеристики</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <div class="mt-1 flex-shrink-0 w-5 h-5 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 font-bold text-[10px]">1</div>
+                <p class="text-secondary-700 text-sm font-light">Сульфатно-гідрокарбонатна магнієво-кальцієва малої мінералізації (1,3 - 2,2 г/дм³).</p>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="mt-1 flex-shrink-0 w-5 h-5 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 font-bold text-[10px]">2</div>
+                <p class="text-secondary-700 text-sm font-light">Холодна нейтрально-слаболужна — температура 11,5 °С.</p>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="mt-1 flex-shrink-0 w-5 h-5 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 font-bold text-[10px]">3</div>
+                <p class="text-secondary-700 text-sm font-light">Без запаху, безбарвна, прісна на смак, без супутніх газів.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chemical & Therapeutic Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Chemical Composition -->
+        <div class="bg-white p-8 md:p-12 rounded-[3rem] shadow-xl border border-gray-100">
+          <h3 class="text-2xl font-serif font-bold text-secondary-900 mb-8 border-b border-primary-100 pb-4">Хімічний склад</h3>
+          <div class="space-y-4">
+            @for (item of chemicalComposition; track item.name) {
+              <div class="flex justify-between items-center group">
+                <span class="text-secondary-500 font-light group-hover:text-primary-600 transition-colors">{{ item.name }}</span>
+                <span class="font-serif font-bold text-secondary-900">{{ item.value }}</span>
+              </div>
+              <div class="h-px bg-gray-50 w-full"></div>
+            }
+          </div>
+          <div class="mt-8 p-4 bg-primary-50 rounded-2xl">
+            <p class="text-[10px] text-primary-600 font-bold uppercase tracking-widest mb-2">Біологічно активні компоненти</p>
+            <p class="text-xs text-secondary-500 font-light">Залізо, Бром, Йод, Миш’як, Ортоборна та Метакремнієва кислоти, органічні речовини.</p>
+          </div>
+        </div>
+
+        <!-- Therapeutic Effects -->
+        <div class="space-y-8">
+          <h3 class="text-3xl font-serif font-bold text-secondary-900 italic">Лікувальні властивості</h3>
+          <p class="text-secondary-600 font-light leading-relaxed">
+            Багаторічні спостереження провідних фахівців медицини довели, що прийом води «Стара Фортеця» дозволяє закріпити ефект медикаментозної терапії та значно продовжити період ремісії.
+          </p>
+          <ul class="space-y-4">
+            @for (effect of therapeuticEffects; track effect) {
+              <li class="flex items-center gap-4 text-secondary-700">
+                <div class="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center text-white flex-shrink-0 shadow-lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4" />
+                  </svg>
+                </div>
+                <span class="text-sm font-medium leading-tight">{{ effect }}</span>
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doctors Opinions -->
+  <section class="py-20 bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 lg:px-8 text-center max-w-4xl space-y-8">
+      <h3 class="text-2xl font-serif font-bold text-secondary-900 italic">Висновки фахівців</h3>
+      <p class="text-secondary-500 font-light italic leading-relaxed">
+        «Прийом мінеральної води дозволяє проводити терапію з використанням меншої кількості лікарських препаратів та робить ремісію захворювання тривалішою.»
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 text-[10px] uppercase tracking-widest font-bold text-primary-600">
+        <span>Гордійчук А.А.</span>
+        <span class="text-gray-300">|</span>
+        <span>Семко А.М.</span>
+        <span class="text-gray-300">|</span>
+        <span>Арсенюк В.В.</span>
+        <span class="text-gray-300">|</span>
+        <span>Васюра Г.Й.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-primary-900 relative overflow-hidden text-white">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 30px 30px;"></div>
+    <div class="container mx-auto px-4 lg:px-8 relative z-10 text-center">
+      <div class="max-w-3xl mx-auto space-y-10">
+        <h2 class="text-3xl md:text-5xl font-serif font-bold italic leading-tight">Відчуйте цілющу силу природи</h2>
+        <p class="text-primary-100 text-lg font-light leading-relaxed">
+          Наш бювет відкритий для усіх гостей готелю. Дізнайтеся більше про курс оздоровлення у нашого адміністратора.
+        </p>
+        
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+          <a href="tel:+380673811969" class="inline-flex items-center gap-4 bg-white/10 backdrop-blur-md px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/20 transition-all group">
+            <div class="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center text-white shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+            </div>
+            <span class="text-2xl font-serif font-bold text-white tracking-tight">+38 (067) 381 19 69</span>
+          </a>
+          <button routerLink="/contacts" class="bg-primary-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-primary-500 transition-all shadow-xl active:scale-95">
+            Контакти готелю
+          </button>
+        </div>
+        
+        <div class="pt-10">
+          <button routerLink="/bowling-entertainment" class="text-primary-300 hover:text-white flex items-center gap-2 mx-auto transition-colors text-sm font-medium uppercase tracking-widest">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Назад до розваг
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
