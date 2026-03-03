@@ -1,0 +1,137 @@
+<div class="pt-20">
+  <app-page-hero 
+    title="Тенісний корт «Гала Тенис»" 
+    description="Школа великого тенісу для дітей та дорослих на території ГТК «Гала Готель» у Кам’янці-Подільському.">
+  </app-page-hero>
+
+  <!-- Intro Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="max-w-4xl mx-auto space-y-12">
+        <div class="text-center space-y-6">
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 italic">Запрошуємо в школу великого тенісу «ГАЛА ТЕНІС»</h2>
+          <p class="text-lg text-secondary-600 leading-relaxed font-light">
+            Школа великого тенісу для дорослих та дітей в готельному комплексі «Гала Готель» у Кам’янці-Подільському — це ідеальне місце для активного дозвілля та спортивного розвитку. Пограйте у своє задоволення, навчіться або потренуйтесь для змагань на нашому професійному корті.
+          </p>
+          <div class="w-24 h-1 bg-primary-500 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div class="rounded-3xl overflow-hidden shadow-2xl -rotate-1">
+            <img src="tenis/tenis1.png" alt="Tennis Court" class="w-full">
+          </div>
+          <div class="space-y-6">
+            <h3 class="text-2xl font-serif font-bold text-secondary-900 italic">Важливо знати</h3>
+            <div class="bg-primary-50 p-6 rounded-2xl border-l-4 border-primary-500">
+              <p class="text-secondary-900 font-bold uppercase tracking-widest text-xs mb-2">Правила корту</p>
+              <p class="text-secondary-700 font-light leading-relaxed">
+                На корт допускаються гравці тільки у <span class="font-bold text-primary-600">спеціальному взутті</span>. Це забезпечує збереження покриття та безпеку гравців під час гри.
+              </p>
+            </div>
+            <ul class="space-y-4 pt-4">
+              <li class="flex items-center gap-4 text-secondary-700">
+                <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <span class="block text-sm font-bold">Оренда корту:</span>
+                  <span class="text-lg font-serif font-bold text-secondary-900">{{ pricing.court }} (08:00-22:00)</span>
+                </div>
+              </li>
+              <li class="flex items-center gap-4 text-secondary-700">
+                <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div>
+                  <span class="block text-sm font-bold">Оренда ракетки:</span>
+                  <span class="text-lg font-serif font-bold text-secondary-900">{{ pricing.racket }} / ракетка</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- History Section -->
+  <section class="py-20 bg-gray-50 overflow-hidden relative">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="max-w-4xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
+        <div class="lg:w-full space-y-8">
+          <div class="inline-block px-4 py-1 bg-primary-100 rounded-full text-primary-600 text-[10px] font-bold uppercase tracking-[0.2em] mb-4">
+            Сторінки історії
+          </div>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 italic">З глибини століть до наших днів</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-secondary-600 leading-relaxed font-light text-sm">
+            <p>
+              Перші згадки про гру, схожу на теніс, можна знайти в XII—XIII ст. в Італії. Гра називалася «джидоко», а м’яч у ній відбивався надітими на руку рукавицею, дерев’яним щитком або шкіряним ременем. Офіційно вважається, що теніс з’явився в XIV столітті на території сучасної Франції. Французька знать захоплювалася так званою «грою долонею» («же де пом»), яка справила великий вплив на розвиток сучасного тенісу.
+            </p>
+            <p>
+              В Україну теніс завезений у 1890 р. англійськими купцями, які створили тенісні клуби в Одесі та Таганрозі. Згодом теніс поширився і по інших містах України. До програми Олімпійських ігор теніс був включений у 1896 р., у 1928 р. був виключений, і лише у 1988 році теніс знову визнано олімпійським видом спорту.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        @for (feature of features; track feature.title) {
+          <div class="p-8 bg-gray-50 rounded-3xl border border-gray-100 hover:shadow-xl transition-all duration-500 group">
+            <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-primary-600 mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors shadow-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-serif font-bold text-secondary-900 mb-4">{{ feature.title }}</h3>
+            <p class="text-sm text-secondary-500 font-light leading-relaxed">{{ feature.desc }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-secondary-900 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 30px 30px;"></div>
+    <div class="container mx-auto px-4 lg:px-8 relative z-10 text-center">
+      <div class="max-w-3xl mx-auto space-y-10">
+        <h2 class="text-3xl md:text-5xl font-serif font-bold text-white italic">Забронюйте час на корті вже сьогодні!</h2>
+        <p class="text-primary-100 text-lg font-light leading-relaxed">
+          Ми чекаємо на Вас щодня з 08:00 до 22:00. Орендуйте корт або приєднуйтесь до нашої школи тенісу.
+        </p>
+        
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+          <a href="tel:+380673804355" class="inline-flex items-center gap-4 bg-white/10 backdrop-blur-md px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/20 transition-all group">
+            <div class="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center text-white shadow-lg">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+            </div>
+            <span class="text-2xl font-serif font-bold text-white tracking-tight">+38 (067) 380 43 55</span>
+          </a>
+          <button routerLink="/contacts" class="bg-primary-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-primary-500 transition-all shadow-xl active:scale-95">
+            Надіслати запит
+          </button>
+        </div>
+        
+        <div class="pt-10">
+          <button routerLink="/bowling-entertainment" class="text-primary-300 hover:text-white flex items-center gap-2 mx-auto transition-colors text-sm font-medium uppercase tracking-widest">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Назад до розваг
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -13,6 +13,10 @@ import { FamilyEventsComponent } from './features/family-events/family-events.co
 import { CorporateEventsComponent } from './features/corporate-events/corporate-events.component';
 import { ConcertsComponent } from './features/concerts/concerts.component';
 import { ConferenceServiceComponent } from './features/conference-service/conference-service.component';
+import { BowlingEntertainmentComponent } from './features/bowling-entertainment/bowling-entertainment.component';
+import { BowlingComponent } from './features/bowling/bowling.component';
+import { TennisCourtComponent } from './features/tennis-court/tennis-court.component';
+import { ChildrenAttractionsComponent } from './features/children-attractions/children-attractions.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,6 +30,10 @@ export const routes: Routes = [
   { path: 'corporate-events', component: CorporateEventsComponent },
   { path: 'concerts', component: ConcertsComponent },
   { path: 'conference-service', component: ConferenceServiceComponent },
+  { path: 'bowling-entertainment', component: BowlingEntertainmentComponent },
+  { path: 'bowling', component: BowlingComponent },
+  { path: 'tennis-court', component: TennisCourtComponent },
+  { path: 'children-attractions', component: ChildrenAttractionsComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'gallery', component: GalleryComponent },
   { path: 'contacts', component: ContactsComponent },
