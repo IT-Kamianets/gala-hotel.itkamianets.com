@@ -7,8 +7,8 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterLink],
   template: `
-    <section class="py-24 bg-gray-50">
-      <div class="container mx-auto px-4 lg:px-8">
+    <section class="py-24 bg-gray-50 overflow-hidden">
+      <div class="container mx-auto px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-3xl md:text-5xl font-serif font-bold text-secondary-900 mb-6 italic">
             Наші послуги
