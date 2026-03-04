@@ -18,7 +18,9 @@
 
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
       @for (item of previewImages; track item.url) {
-        <div class="group relative aspect-[3/4] overflow-hidden rounded-3xl shadow-lg cursor-pointer">
+        <div 
+          (click)="openImage(item)"
+          class="group relative aspect-[3/4] overflow-hidden rounded-3xl shadow-lg cursor-pointer">
           <img 
             [src]="item.url" 
             [alt]="item.title"
@@ -32,4 +34,40 @@
     </div>
 
   </div>
+
+  <!-- Image Lightbox Modal for Preview -->
+  @if (selectedImage) {
+    <div 
+      class="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10 animate-in fade-in duration-300"
+      (click)="closeImage()"
+    >
+      <div class="absolute inset-0 bg-secondary-900/95 backdrop-blur-md"></div>
+      
+      <div 
+        class="relative max-w-5xl w-full max-h-full flex flex-col items-center justify-center z-10"
+        (click)="$event.stopPropagation()"
+      >
+        <button 
+          (click)="closeImage()"
+          class="absolute -top-12 right-0 md:-right-12 text-white hover:text-primary-400 transition-colors p-2"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <div class="relative w-full overflow-hidden rounded-2xl shadow-2xl bg-secondary-800 flex items-center justify-center">
+          <img 
+            [src]="selectedImage.url" 
+            [alt]="selectedImage.title"
+            class="max-w-full max-h-[75vh] object-contain animate-in zoom-in duration-500"
+          >
+        </div>
+
+        <div class="mt-6 text-center text-white">
+          <h3 class="text-2xl font-serif font-bold italic">{{ selectedImage.title }}</h3>
+        </div>
+      </div>
+    </div>
+  }
 </section>

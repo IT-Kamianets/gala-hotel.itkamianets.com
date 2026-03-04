@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageHeroComponent } from '../../shared/components/page-hero/page-hero.component';
 
@@ -16,6 +16,7 @@ interface GalleryItem {
 })
 export class GalleryComponent {
   activeFilter: string = 'all';
+  selectedIndex: number | null = null;
 
   images: GalleryItem[] = [
     // --- Пуаро (Ресторан) ---
@@ -103,7 +104,44 @@ export class GalleryComponent {
       : this.images.filter(img => img.category === this.activeFilter);
   }
 
+  get selectedImage(): GalleryItem | null {
+    if (this.selectedIndex === null) return null;
+    return this.filteredImages[this.selectedIndex];
+  }
+
   setFilter(filter: string) {
     this.activeFilter = filter;
+    this.closeImage();
+  }
+
+  openImage(index: number) {
+    this.selectedIndex = index;
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeImage() {
+    this.selectedIndex = null;
+    document.body.style.overflow = 'auto';
+  }
+
+  nextImage() {
+    if (this.selectedIndex !== null) {
+      this.selectedIndex = (this.selectedIndex + 1) % this.filteredImages.length;
+    }
+  }
+
+  prevImage() {
+    if (this.selectedIndex !== null) {
+      this.selectedIndex = (this.selectedIndex - 1 + this.filteredImages.length) % this.filteredImages.length;
+    }
+  }
+
+  @HostListener('window:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (this.selectedIndex === null) return;
+    
+    if (event.key === 'ArrowRight') this.nextImage();
+    if (event.key === 'ArrowLeft') this.prevImage();
+    if (event.key === 'Escape') this.closeImage();
   }
 }

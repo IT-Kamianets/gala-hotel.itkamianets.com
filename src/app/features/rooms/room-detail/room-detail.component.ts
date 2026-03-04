@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { RoomService, Room } from '../../../core/services/room.service';
+import { RoomService, Room, RoomPriceOption } from '../../../core/services/room.service';
 
 @Component({
   selector: 'app-room-detail',
@@ -14,6 +14,8 @@ export class RoomDetailComponent implements OnInit {
   room: Room | undefined;
   bookingForm: FormGroup;
   submitted = false;
+  selectedImageIndex = 0;
+  selectedPriceOption: RoomPriceOption | null = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -34,13 +36,38 @@ export class RoomDetailComponent implements OnInit {
     const roomId = this.route.snapshot.paramMap.get('id');
     if (roomId) {
       this.room = this.roomService.getRoomById(roomId);
+      if (this.room?.priceOptions && this.room.priceOptions.length > 0) {
+        this.selectedPriceOption = this.room.priceOptions[0];
+        this.bookingForm.patchValue({ guests: this.selectedPriceOption.guests.toString() });
+      }
     }
+  }
+
+  selectPriceOption(option: RoomPriceOption) {
+    this.selectedPriceOption = option;
+    this.bookingForm.patchValue({ guests: option.guests.toString() });
+  }
+
+  get displayPrice(): number {
+    return this.selectedPriceOption ? this.selectedPriceOption.price : (this.room?.price || 0);
+  }
+
+  selectImage(index: number) {
+    this.selectedImageIndex = index;
+  }
+
+  get currentImage(): string {
+    if (this.room?.images && this.room.images.length > 0) {
+      return this.room.images[this.selectedImageIndex];
+    }
+    return this.room?.image || '';
   }
 
   onBook() {
     this.submitted = true;
     if (this.bookingForm.valid) {
-      alert(`Дякуємо! Запит на бронювання номера "${this.room?.title}" надіслано. Ми зателефонуємо вам для підтвердження.`);
+      const guestsLabel = this.selectedPriceOption ? this.selectedPriceOption.label : `${this.bookingForm.value.guests} осіб`;
+      alert(`Дякуємо! Запит на бронювання номера "${this.room?.title}" (${guestsLabel}) надіслано. Ми зателефонуємо вам для підтвердження.`);
       this.bookingForm.reset();
       this.submitted = false;
     }
