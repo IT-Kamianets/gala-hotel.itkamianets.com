@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -9,20 +9,14 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   imports: [CommonModule, RouterLink, RouterLinkActive, TranslateModule],
   templateUrl: './header.component.html',
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   private translate = inject(TranslateService);
   isMenuOpen = false;
 
-  currentLang: string;
+  currentLang: string = 'uk';
 
-  constructor() {
-    const savedLang = localStorage.getItem('selectedLang');
-    if (savedLang) {
-      this.translate.use(savedLang);
-      this.currentLang = savedLang;
-    } else {
-      this.currentLang = this.translate.currentLang || this.translate.defaultLang || 'uk';
-    }
+  ngOnInit() {
+    this.currentLang = this.translate.currentLang || this.translate.defaultLang || 'uk';
   }
 
   navLinks = [

@@ -34,6 +34,21 @@ export class GalleryComponent {
     { url: 'puaro/summer_altanka.png', category: 'restaurant', title: 'gallery.items.puaro_gazebo' },
     { url: 'puaro/services_puaro.jpg', category: 'restaurant', title: 'gallery.items.puaro_main' },
 
+    // --- Номери (Rooms) ---
+    { url: 'standard/standard1.png', category: 'rooms', title: 'rooms.data.standard.title' },
+    { url: 'standard/standard2.png', category: 'rooms', title: 'rooms.data.standard.title' },
+    { url: 'standard/standard3.png', category: 'rooms', title: 'rooms.data.standard.title' },
+    { url: 'standard-plus/plus1.png', category: 'rooms', title: 'rooms.data.standard_plus.title' },
+    { url: 'standard-plus/plus2.png', category: 'rooms', title: 'rooms.data.standard_plus.title' },
+    { url: 'standard-plus/plus3.png', category: 'rooms', title: 'rooms.data.standard_plus.title' },
+    { url: 'apartaments/apart1.png', category: 'rooms', title: 'rooms.data.apartments.title' },
+    { url: 'apartaments/apart2.png', category: 'rooms', title: 'rooms.data.apartments.title' },
+    { url: 'apartaments/apart3.png', category: 'rooms', title: 'rooms.data.apartments.title' },
+    { url: 'eco/eco1.png', category: 'rooms', title: 'rooms.data.eco.title' },
+    { url: 'eco/eco2.png', category: 'rooms', title: 'rooms.data.eco.title' },
+    { url: 'eco/eco3.png', category: 'rooms', title: 'rooms.data.eco.title' },
+    { url: 'eco/eco4.png', category: 'rooms', title: 'rooms.data.eco.title' },
+
     // --- Bellagio (Події) ---
     { url: 'belagio/wedding1.png', category: 'events', title: 'gallery.items.bellagio_wedding_1' },
     { url: 'belagio/wedding2.png', category: 'events', title: 'gallery.items.bellagio_wedding_2' },
@@ -67,6 +82,16 @@ export class GalleryComponent {
     { url: 'belagio/concert3.png', category: 'events', title: 'gallery.items.bellagio_concert_3' },
     { url: 'belagio/services_concert.png', category: 'events', title: 'gallery.items.bellagio_concert_org' },
 
+    // --- Відпочинок (Leisure) ---
+    { url: 'bowling/bowl1.png', category: 'leisure', title: 'gallery.items.bowling_club' },
+    { url: 'bowling/bowl2.png', category: 'leisure', title: 'gallery.items.bowling_club' },
+    { url: 'sauna/sauna1.png', category: 'leisure', title: 'gallery.items.leisure_zone' },
+    { url: 'sauna/sauna2.png', category: 'leisure', title: 'gallery.items.leisure_zone' },
+    { url: 'sauna/sauna3.png', category: 'leisure', title: 'gallery.items.leisure_zone' },
+    { url: 'sport/tenis.png', category: 'leisure', title: 'footer.service_tennis' },
+    { url: 'sport/baydarka.png', category: 'leisure', title: 'sport_extreme.activities.kayaking.title' },
+    { url: 'sport/brdm.png', category: 'leisure', title: 'sport_extreme.activities.brdm.title' },
+
     // --- Загальна галерея (Територія та відпочинок) ---
     { url: 'gallery/1.png', category: 'exterior', title: 'gallery.items.hotel_gala_1' },
     { url: 'gallery/2.png', category: 'exterior', title: 'gallery.items.hotel_gala_2' },
@@ -90,14 +115,6 @@ export class GalleryComponent {
     { url: 'gallery/20.png', category: 'exterior', title: 'gallery.items.hotel_gala_20' },
     { url: 'gallery/21.png', category: 'exterior', title: 'gallery.items.hotel_gala_21' },
     { url: 'gallery/22.png', category: 'exterior', title: 'gallery.items.hotel_gala_22' },
-
-    // --- Інші (Rooms, Leisure, Exterior) ---
-    { url: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=1000', category: 'rooms', title: 'gallery.items.deluxe_room' },
-    { url: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&q=80&w=1000', category: 'rooms', title: 'gallery.items.standard_twin' },
-    { url: 'https://images.unsplash.com/photo-1544078751-58fee2d8a03b?auto=format&fit=crop&q=80&w=1000', category: 'leisure', title: 'gallery.items.bowling_club' },
-    { url: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&q=80&w=1000', category: 'leisure', title: 'gallery.items.leisure_zone' },
-    { url: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1000', category: 'exterior', title: 'gallery.items.hotel_exterior' },
-    { url: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=1000', category: 'exterior', title: 'gallery.items.night_view' },
   ];
 
   get filteredImages() {
