@@ -1,0 +1,1235 @@
+{
+  "header": {
+    "home": "Home",
+    "rooms": "Rooms",
+    "services": "Services",
+    "gallery": "Gallery",
+    "contacts": "Contacts"
+  },
+  "footer": {
+    "about_text": "One of the 100 best hotels in Ukraine. A cozy complex with its own park, bowling, and Poirot restaurant.",
+    "navigation": "Navigation",
+    "nav_home": "Home",
+    "nav_rooms": "Rooms",
+    "nav_services": "Services",
+    "nav_contacts": "Contacts",
+    "services_title": "Services",
+    "service_puaro": "Poirot Restaurant",
+    "service_bellagio": "Bellagio",
+    "service_bowling": "Bowling Club",
+    "service_conference": "Conference Service",
+    "service_sauna": "Sauna",
+    "service_mineral_water": "Mineral Water",
+    "service_tennis": "Tennis Courts",
+    "contacts_title": "Contacts",
+    "address": "84 Lesya Ukrainka St, Kamianets-Podilskyi",
+    "stay_rules": "Stay Rules",
+    "copyright": "Gala Hotel Complex.",
+    "created_by": "Website created by",
+    "author": "Dmytro Demchenko"
+  },
+  "home": {
+    "about_title": "About Gala Hotel",
+    "about_p1": "Gala Hotel began its operation in 2002. Since then, we have grown from opening the main building to creating a large-scale infrastructure with restaurants, a bowling club, and professional courts.",
+    "about_p2": "In 2011, our hotel entered the list of the 100 best hotels in Ukraine, confirming high service levels and contribution to city development.",
+    "about_more": "Learn More",
+    "about_certified": "Certified Three-Star Hotel",
+    "hero": {
+      "title": "Your Cozy Retreat in the Heart of Kamianets-Podilskyi",
+      "subtitle": "Gala Hotel — a blend of modern comfort, fine dining, and active leisure for the whole family.",
+      "book": "Book Now",
+      "services": "Our Services",
+      "rating_label": "Google Rating",
+      "reception_label": "Reception",
+      "wifi_label": "Free",
+      "location_label": "Location"
+    },
+    "services": {
+      "title": "Our Services",
+      "description": "We offer a full range of services for your comfortable rest, recovery and entertainment.",
+      "more_btn": "All Hotel Services",
+      "items": {
+        "restaurants": {
+          "title": "Restaurants",
+          "description": "Fine dining at Poirot and Bellagio restaurants. Signature dishes and cozy atmosphere."
+        },
+        "leisure": {
+          "title": "Leisure",
+          "description": "Galactica bowling club, tennis courts, shooting range, and children's attractions for active leisure."
+        },
+        "health": {
+          "title": "Wellness",
+          "description": "Own mineral water well 'Naftusia', sauna, and a large park area for walks."
+        },
+        "conferences": {
+          "title": "Conferences",
+          "description": "Professional conference hall for 80 people with all necessary equipment for business events."
+        }
+      }
+    },
+    "rooms": {
+      "title": "Our Rooms",
+      "description": "Choose the perfect option for your stay. From cozy standards to luxury apartments.",
+      "view_btn": "View",
+      "all_rooms_btn": "View All Accommodation Options"
+    },
+    "gallery": {
+      "title": "A Glimpse of Our Comfort",
+      "more_link": "Go to Full Gallery",
+      "items": {
+        "park": "Park Area",
+        "gazebo": "Cozy Gazebo",
+        "puaro": "Poirot Restaurant",
+        "exterior": "Hotel Exterior"
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "About Gala Hotel",
+      "description": "History, achievements, and a full range of services of one of Ukraine's best hotels."
+    },
+    "history": {
+      "title": "Our History",
+      "description": "Gala Hotel Complex is a combination of many years of hospitality experience and continuous infrastructure development.",
+      "events": {
+        "2002": "Gala Hotel Complex began its operation.",
+        "2004": "Opening of the main hotel building.",
+        "2008": "Galactica Bowling Club and Poirot Restaurant started operating.",
+        "2009": "Receiving the 'Three Stars' category certificate.",
+        "2011": "Entering the list of the 100 best hotels in Ukraine.",
+        "2012": "Opening of the Bellagio club-restaurant."
+      }
+    },
+    "stats": {
+      "title": "Room Inventory",
+      "description": "Today the complex operates as a single entity with a wide range of basic and additional services. The complex includes 4 buildings and 68 comfortable rooms of various categories.",
+      "rooms_count": "68",
+      "rooms_label": "Total Rooms",
+      "buildings_count": "4",
+      "buildings_label": "Residential Buildings",
+      "table": {
+        "category": "Category",
+        "count": "Qty",
+        "features": "Features"
+      }
+    },
+    "rooms": {
+      "types": {
+        "standard": "Standard",
+        "standard_plus": "Standard Plus",
+        "apartments": "Apartments",
+        "eco": "ECO",
+        "economy": "Economy"
+      },
+      "capacity": {
+        "1_3": "1-3 persons",
+        "up_to_4": "up to 4 persons",
+        "two_room": "two-room",
+        "bunk_beds": "bunk beds"
+      }
+    },
+    "map": {
+      "title": "Complex Layout",
+      "alt": "Gala Hotel Complex Layout Plan",
+      "legend_title": "Map Legend:",
+      "legend": {
+        "building_1": "Building No. 1",
+        "building_2": "Building No. 2",
+        "rest_bellagio": "Bellagio Restaurant",
+        "rest_puaro": "Poirot Restaurant",
+        "bowling": "Galactica Bowling Club",
+        "terrace": "Summer Terrace",
+        "gazebo": "Gazebo",
+        "sauna": "Sauna / Guest House",
+        "tennis": "Tennis Court",
+        "shooting": "Shooting Range",
+        "playground": "Children's Playground",
+        "well": "Mineral Water Well",
+        "parrots": "Parrot Corner",
+        "conf_hall": "Conference Hall",
+        "utility": "Utility Block",
+        "parking_1": "Parking No. 1",
+        "parking_2": "Parking No. 2",
+        "building_3_eco": "New Building No. 3 'ECO'"
+      }
+    },
+    "rules": {
+      "title": "Check-in Rules",
+      "checkin_label": "Check-in Hour",
+      "checkout_label": "Check-out Hour",
+      "description": "Check-in is based on identity documents. The hotel has single, double, triple rooms. Quadruple accommodation for families is also possible.",
+      "pets": "Pets are allowed (100 UAH/day)"
+    },
+    "services": {
+      "title": "Additional Services",
+      "items": {
+        "safe": "Safe at Reception",
+        "luggage": "Luggage Storage",
+        "laundry": "Laundry and Ironing",
+        "well": "Naftusia Well",
+        "sauna_bowling": "Sauna and Bowling",
+        "tennis": "Tennis Court",
+        "playground": "Children's Playground (80 m2)",
+        "excursion": "Excursion Service"
+      }
+    },
+    "booking": {
+      "title": "Book Your Stay",
+      "phone_label": "Phone",
+      "email_label": "E-mail",
+      "online_label": "Online",
+      "select_room": "Choose Room",
+      "footer": "Room booking is free. We accept cash, cards, and bank transfers."
+    }
+  },
+  "contacts": {
+    "hero": {
+      "title": "Contacts",
+      "description": "We are always ready to answer your questions and help with booking. Contact us in any convenient way."
+    },
+    "address_label": "Our Address",
+    "address_value": "84 Lesya Ukrainka St,<br>Kamianets-Podilskyi, Ukraine",
+    "phones_label": "Phones",
+    "additional_label": "Additional Info",
+    "additional_value": "Children under 12 — free.<br>With pets — 120 UAH/day.",
+    "email_label": "E-mail",
+    "rules_cta": {
+      "title": "Stay Rules",
+      "description": "Learn about the order of stay, services, and entertainment in our hotel.",
+      "button": "View Rules"
+    },
+    "form": {
+      "title": "Message Us",
+      "name_label": "Your Name",
+      "name_placeholder": "Enter name",
+      "name_error": "Name is required",
+      "email_label": "Email Address",
+      "email_placeholder": "name@example.com",
+      "email_error": "Enter a valid email",
+      "subject_label": "Subject",
+      "subject_placeholder": "Choose subject",
+      "subject_options": {
+        "reservation": "Reservation",
+        "feedback": "Feedback",
+        "other": "Other"
+      },
+      "message_label": "Message",
+      "message_placeholder": "How can we help you?",
+      "message_error": "Message must be longer (min. 10 characters)",
+      "submit": "Send Message",
+      "success_alert": "Thank you! Your message has been sent. We will contact you soon."
+    }
+  },
+  "rooms": {
+    "hero": {
+      "title": "Elegance and Comfort",
+      "description": "Choose your perfect accommodation. Each of our rooms is created to make you feel at home."
+    },
+    "filters": {
+      "all": "All Rooms",
+      "standard": "Standard",
+      "deluxe": "Luxury"
+    },
+    "price_per_night": "/ night",
+    "more_info": "Details & Booking",
+    "amenities_more": "+ {{count}} more",
+    "testimonial": {
+      "text": "\"Incredible hotel! The Luxury room exceeded all expectations. Breakfast was delicious, and the staff was incredibly friendly.\"",
+      "author": "Anna Melnyk",
+      "author_label": "Regular Guest"
+    },
+    "data": {
+      "standard": {
+        "category": "Building I & II (23 rooms)",
+        "title": "Standard",
+        "description": "Classic room with all amenities. Breakfast is included in the price.",
+        "longDescription": "Comfortable room of 15 m², ideal for single, double or triple accommodation. Breakfast is included (choice from the menu from 08:00 to 11:00). Breakfasts are served at the Poirot restaurant. During festival and holiday days, the standard rate changes. Please check room prices with the administrator!",
+        "capacity": "1-3 persons",
+        "amenities": {
+          "breakfast": "Breakfast included",
+          "bed": "Single/double bed",
+          "tv": "Satellite TV",
+          "phone": "Phone",
+          "shower": "Shower cabin",
+          "toiletries": "Bath and toilet sets",
+          "perfumery": "Mini perfumery set"
+        },
+        "price_options": {
+          "1_person": "1-person accommodation",
+          "2_person": "2-person accommodation",
+          "3_person": "3-person accommodation"
+        }
+      },
+      "standard_plus": {
+        "category": "Building I & II (19 rooms)",
+        "title": "Standard Plus",
+        "description": "Improved room with extra space and updated interior.",
+        "longDescription": "Comfortable room of 21 m², ideal for up to 4 persons. Breakfast is included (choice from the menu from 08:00 to 11:00). Breakfasts are served at the Poirot restaurant. During festival and holiday days, the standard rate changes. Please check room prices with the administrator!",
+        "capacity": "1-4 persons",
+        "amenities": {
+          "internet": "Internet",
+          "hygiene": "Hygiene products"
+        },
+        "price_options": {
+          "4_person": "4-person accommodation"
+        }
+      },
+      "apartments": {
+        "category": "Building I (2 rooms)",
+        "title": "Apartments",
+        "description": "Spacious two-room suite with private entrance, ideal for family holidays.",
+        "longDescription": "Spacious two-room suite of 40 m² with private entrance, comfortably accommodating a whole family. Breakfast is included (choice from the menu from 08:00 to 11:00). Breakfasts are served at the Poirot restaurant. During festival and holiday days, the standard rate changes. Please check room prices with the administrator!",
+        "capacity": "1-4 persons",
+        "amenities": {
+          "bed_double": "Double bed",
+          "sofa": "Folding sofa",
+          "kitchen": "Kitchen and dishes",
+          "stove": "Electric stove",
+          "kettle": "Electric kettle",
+          "fridge": "Refrigerator",
+          "hairdryer": "Hair dryer"
+        }
+      },
+      "eco": {
+        "category": "ECO Building (18 rooms)",
+        "title": "ECO Room",
+        "description": "Budget and eco-friendly option for groups or large families.",
+        "longDescription": "Modern eco-rooms equipped with everything necessary for a comfortable stay. The room has two bunk beds. Breakfast is included (choice from the menu from 08:00 to 11:00). Breakfasts are served at the Poirot restaurant. During festival and holiday days, the standard rate changes. Please check room prices with the administrator!",
+        "capacity": "1-4 persons",
+        "amenities": {
+          "bunk_beds": "Two bunk beds",
+          "wifi": "Wi-Fi"
+        }
+      }
+    }
+  },
+  "services_page": {
+    "hero": {
+      "title": "Our Services",
+      "description": "We offer everything needed for your comfort and entertainment. Feel hospitality and quality service in every detail of your vacation."
+    },
+    "items": {
+      "restaurant_poirot": {
+        "title": "Poirot Restaurant",
+        "description": "European, Mediterranean, and Ukrainian cuisines in a sophisticated atmosphere.",
+        "longDescription": "Our main restaurant offers a wide range of dishes to satisfy the most demanding gourmets. You can choose a cozy hall, summer terrace, or private gazebos in our park for private meetings.",
+        "features": {
+          "menu": "Signature menu",
+          "terrace": "Summer terrace and gazebos",
+          "delivery": "Food delivery",
+          "wine": "Wine list"
+        },
+        "more_btn": "Learn more about restaurant"
+      },
+      "leisure_center": {
+        "title": "Leisure and Entertainment",
+        "description": "Variety of opportunities for active leisure and relaxation.",
+        "longDescription": "We offer our guests a world of entertainment on 1.2 hectares. From the drive of Galactica bowling club and tennis court to wellness in the sauna or at our own mineral water well.",
+        "features": {
+          "bowling_tennis": "Bowling and Tennis",
+          "camping": "Auto Camping",
+          "sauna_well": "Sauna and Well",
+          "child_attr": "Children attractions"
+        },
+        "more_btn": "Learn more about leisure"
+      },
+      "restaurant_bellagio": {
+        "title": "Bellagio Club-Restaurant",
+        "description": "Exquisite leisure and entertainment in a cozy atmosphere.",
+        "longDescription": "Bellagio Club-Restaurant is an ideal place for those who value quality rest, delicious cuisine, and pleasant atmosphere. Here you can spend an unforgettable evening enjoying fine drinks and dishes.",
+        "features": {
+          "menu": "Exquisite menu",
+          "bar": "Bar list",
+          "atmosphere": "Cozy atmosphere",
+          "music": "Music accompaniment"
+        },
+        "more_btn": "Learn more about Bellagio"
+      },
+      "conference_service": {
+        "title": "Conference Service",
+        "description": "Professional conference hall for business events for up to 80 people.",
+        "longDescription": "Our 100 m² conference hall is equipped with modern multimedia equipment. Ideal for seminars, workshops, and presentations with coffee break options.",
+        "features": {
+          "equipment": "Projector and screen",
+          "stereo": "Stereo system",
+          "wifi": "Wi-Fi",
+          "coffee": "Coffee breaks"
+        },
+        "more_btn": "Learn more about hall"
+      }
+    },
+    "more_generic": "Learn more",
+    "cta": {
+      "title": "Ready for an Unforgettable Vacation?",
+      "description": "We are waiting for you in Kamianets-Podilskyi. Book your room today and get a free breakfast as a gift!",
+      "button": "Book room now"
+    }
+  },
+  "gallery": {
+    "hero": {
+      "title": "Gallery",
+      "description": "Browse our hotel's atmosphere: cozy rooms, fine dishes, and active leisure areas."
+    },
+    "filters": {
+      "all": "All Photos",
+      "exterior": "Territory",
+      "rooms": "Rooms",
+      "restaurant": "Restaurant",
+      "events": "Events",
+      "leisure": "Leisure"
+    },
+    "categories": {
+      "restaurant": "Restaurant",
+      "events": "Event",
+      "rooms": "Room",
+      "leisure": "Leisure",
+      "exterior": "Territory"
+    },
+    "items": {
+      "puaro_interior": "Poirot Restaurant Interior",
+      "puaro_corner": "Cozy Corner of Poirot",
+      "puaro_details": "Interior Details",
+      "puaro_serving": "Table Setting",
+      "puaro_banquet": "Banquet Zone",
+      "puaro_atmosphere": "Evening Atmosphere",
+      "puaro_hall": "Guest Hall",
+      "puaro_interior_2": "Restaurant Interior",
+      "puaro_terrace": "Poirot Summer Terrace",
+      "puaro_gazebo": "Cozy Gazebo",
+      "puaro_main": "Poirot Restaurant",
+      "bellagio_wedding_1": "Wedding at Bellagio",
+      "bellagio_wedding_2": "Wedding Ceremony",
+      "bellagio_wedding_3": "Holiday Decoration",
+      "bellagio_wedding_4": "Happy Moments",
+      "bellagio_wedding_5": "Banquet Hall",
+      "bellagio_wedding_6": "Wedding Decor",
+      "bellagio_wedding_org": "Wedding Organization",
+      "bellagio_conf_1": "Conference Hall",
+      "bellagio_conf_2": "Business Events",
+      "bellagio_conf_3": "Technical Equipment",
+      "bellagio_conf_4": "Seminars and Training",
+      "bellagio_conf_biz": "Business Services",
+      "bellagio_corp_1": "Corporate Holiday",
+      "bellagio_corp_2": "Team Leisure",
+      "bellagio_corp_3": "Theme Party",
+      "bellagio_corp_4": "Holiday Evening",
+      "bellagio_corp_5": "Corporate in Restaurant",
+      "bellagio_corp_org": "Corporate Organization",
+      "bellagio_family_1": "Family Holiday",
+      "bellagio_family_2": "Birthday Party",
+      "bellagio_family_3": "Children Holiday",
+      "bellagio_family_4": "Anniversary with Relatives",
+      "bellagio_family_org": "Family Celebrations",
+      "bellagio_concert_1": "Concert Program",
+      "bellagio_concert_2": "Stage Performance",
+      "bellagio_concert_3": "Show Program",
+      "bellagio_concert_org": "Music Events",
+      "hotel_gala_1": "Gala Hotel 1",
+      "hotel_gala_2": "Gala Hotel 2",
+      "hotel_gala_3": "Gala Hotel 3",
+      "hotel_gala_4": "Gala Hotel 4",
+      "hotel_gala_5": "Gala Hotel 5",
+      "hotel_gala_6": "Gala Hotel 6",
+      "hotel_gala_7": "Gala Hotel 7",
+      "hotel_gala_8": "Gala Hotel 8",
+      "hotel_gala_9": "Gala Hotel 9",
+      "hotel_gala_10": "Gala Hotel 10",
+      "hotel_gala_11": "Gala Hotel 11",
+      "hotel_gala_12": "Gala Hotel 12",
+      "hotel_gala_13": "Gala Hotel 13",
+      "hotel_gala_14": "Gala Hotel 14",
+      "hotel_gala_15": "Gala Hotel 15",
+      "hotel_gala_16": "Gala Hotel 16",
+      "hotel_gala_17": "Gala Hotel 17",
+      "hotel_gala_18": "Gala Hotel 18",
+      "hotel_gala_19": "Gala Hotel 19",
+      "hotel_gala_20": "Gala Hotel 20",
+      "hotel_gala_21": "Gala Hotel 21",
+      "hotel_gala_22": "Gala Hotel 22",
+      "deluxe_room": "Luxury Room",
+      "standard_twin": "Standard Twin",
+      "bowling_club": "Bowling Club",
+      "leisure_zone": "Leisure Zone",
+      "hotel_exterior": "Hotel Exterior",
+      "night_view": "Night View"
+    }
+  },
+  "rules_page": {
+    "hero": {
+      "title": "Stay Rules",
+      "description": "Important information for Gala Hotel guests about stay order, services, and entertainment."
+    },
+    "general": {
+      "checkin": "Check-in Hour",
+      "checkout": "Check-out Hour",
+      "reception": "Reception",
+      "reception_value": "24/7"
+    },
+    "stay": {
+      "title": "Hotel Stay Order",
+      "cleaning": "Room cleaning — daily (routine, during stay)",
+      "bedding": "Bed linen change — once every 3 days (for stays over 3 days)",
+      "towels": "Towel change — on guest's request (daily, during routine cleaning)",
+      "responsibility": "Guest bears financial responsibility for hotel property",
+      "checkout_process": "On checkout, the room is handed over to the maid or administrator",
+      "parking_luggage": "Parking, luggage storage, and clothes ironing — free for residents"
+    },
+    "free_services": {
+      "title": "Free for Guests",
+      "breakfast": "Breakfasts (included in price, can be declined)",
+      "parking": "Guarded parking",
+      "luggage": "Luggage storage, ironing board, iron",
+      "mineral_water": "Naftusia mineral water well"
+    },
+    "paid_services": {
+      "title": "Additional Services",
+      "sauna": "Sauna (10% discount for hotel guests)",
+      "conference": "Conference hall",
+      "restaurant": "Restaurant and bar (10% discount for hotel guests)",
+      "bowling": "Bowling (discount with discount card)",
+      "tennis": "Tennis court",
+      "playground": "Children's playground with attractions",
+      "excursions": "Out-of-town and city excursions"
+    },
+    "attractions": {
+      "title": "Active Entertainment and Attractions",
+      "subtitle": "Make your vacation unforgettable!",
+      "archery": "Archery",
+      "shooting": "Pneumatic shooting range",
+      "angry_birds": "Angry birds",
+      "darts": "Darts",
+      "ring_toss": "Ring toss",
+      "djinn": "Djinn",
+      "trampoline": "Trampoline",
+      "sumo": "Team sumo",
+      "details_shots": "{{count}} shots (+{{bonus}} as a gift)",
+      "details_throws": "{{count}} throws (+{{bonus}} as a gift)",
+      "details_throws_only": "{{count}} throws",
+      "details_time": "{{count}} minutes",
+      "details_time_per_person": "{{count}} minutes (per person)"
+    },
+    "cta": {
+      "title": "Have additional questions?",
+      "description": "Our staff works 24/7 to ensure your comfort. Contact the reception at any time.",
+      "call_btn": "Call Reception",
+      "more_btn": "More About Hotel"
+    }
+  },
+  "bellagio_conference": {
+    "hero": {
+      "title": "Conferences at Bellagio",
+      "description": "Professional venue for seminars, workshops, and business meetings in Kamianets-Podilskyi."
+    },
+    "intro": {
+      "title": "Your Success Starts with the Right Place",
+      "description": "We offer conferences, seminars, and training sessions on the territory of Gala Hotel Complex. The Bellagio club-restaurant hall is equipped with all necessary technology, allowing you to focus on the most important — your knowledge and experience.",
+      "capacity": "Hall capacity up to 300 people"
+    },
+    "gallery_hint": "Scroll to view hall photos",
+    "features": {
+      "equipment": {
+        "title": "Technical Equipment",
+        "desc": "Modern projectors, screens, and sound systems for your presentation."
+      },
+      "accommodation": {
+        "title": "Guest Accommodation",
+        "desc": "Participants can comfortably stay in Gala Hotel rooms."
+      },
+      "catering": {
+        "title": "Catering",
+        "desc": "Organization of coffee breaks, lunches, and receptions of any complexity."
+      },
+      "leisure": {
+        "title": "Leisure",
+        "desc": "Large territory for nature walks after the workday."
+      }
+    },
+    "pricing": {
+      "title": "Hall Rental Cost",
+      "period": "Rental Period",
+      "period_1_3": "1-3 hours",
+      "period_3_6": "3-6 hours",
+      "period_6_plus": "6 or more hours",
+      "price": "Price",
+      "note": "* Discuss necessary equipment and settings with our technical staff in advance."
+    },
+    "gallery_items": {
+      "img1": "Bellagio Conference Hall 1",
+      "img2": "Bellagio Conference Hall 2",
+      "img3": "Bellagio Conference Hall 3",
+      "img4": "Bellagio Conference Hall 4"
+    },
+    "nature": {
+      "title": "Learning in Harmony with Nature",
+      "description": "On the territory of Gala Hotel Complex, participants will be able to not only participate in learning but also rest in nature. We recommend conducting training sessions away from the office bustle so that participants can feel free and better absorb new information."
+    },
+    "cta": {
+      "title": "Plan Your Conference Today",
+      "description": "Our staff will be happy to help organize the event, meals, and rest for your colleagues.",
+      "request_btn": "Submit Application"
+    }
+  },
+  "bellagio_wedding": {
+    "hero": {
+      "title": "Weddings at Bellagio",
+      "description": "Your perfect 'turnkey' wedding in the heart of Kamianets-Podilskyi."
+    },
+    "intro": {
+      "title": "Creating Your Fairytale Together",
+      "description": "A wedding is a special day, and we know how to make it unforgettable. Our team of professionals takes care of all organization chores so you can enjoy every minute of your holiday. From fine menu to drive show — we have everything for an ideal event."
+    },
+    "gallery_hint": "Scroll to view photos",
+    "gifts": {
+      "title": "Our Gift for Your Family",
+      "honeymoon": "Honeymoon Suite",
+      "morning": "Bride's Morning",
+      "anniversary": "Wedding Anniversary"
+    },
+    "services": {
+      "banquet": {
+        "title": "Banquet Hall",
+        "desc": "Spacious and elegant hall adaptable to any wedding style.",
+        "items": [
+          "Capacity up to 300 guests",
+          "Variability of seating",
+          "Professional lighting",
+          "Dance zone"
+        ]
+      },
+      "menu": {
+        "title": "Menu and Catering",
+        "desc": "Fine dishes of European and Ukrainian cuisine from our chefs.",
+        "items": [
+          "Individual menu",
+          "Candy bar",
+          "Holiday cake",
+          "High-class service"
+        ]
+      },
+      "organization": {
+        "title": "Turnkey Organization",
+        "desc": "We will help with every detail so you don't worry about small things.",
+        "items": [
+          "Event coordinator",
+          "Decor and floristry",
+          "Music accompaniment",
+          "Technical support"
+        ]
+      }
+    },
+    "finance": {
+      "title": "Budget and Features",
+      "rent": "Hall Rental",
+      "free": "Free",
+      "per_person": "Banquet per person",
+      "min_order": "Minimum order",
+      "currency": "UAH",
+      "note": "* We allow bringing your own alcohol, drinks, and fruits without any additional fees."
+    },
+    "cta": {
+      "title": "Book Your Date",
+      "description": "Contact our administrator for detailed consultation and hall viewing.",
+      "request_btn": "Send Request"
+    }
+  },
+  "bowling_page": {
+    "hero": {
+      "title": "Galactica Bowling Club",
+      "description": "The only bowling club in Kamianets-Podilskyi for the whole family, friends, and corporate competitions."
+    },
+    "intro": {
+      "title": "100% Rest!",
+      "description": "Galactica Bowling Club is the only place in town where you can play this exciting game. Here you can really rest 100%! Galactica has all conditions for people of any age. You can play bowling with family, friends, or colleagues, as this game has no limits — children, adults, men, and women can play it."
+    },
+    "service": {
+      "title": "Rules and Service",
+      "description": "The game is played in special shoes available at the bowling reception. We provide free instructor services and individual ball selection throughout the game.",
+      "rules": [
+        "Special shoes mandatory",
+        "Free briefing",
+        "Ball selection by weight",
+        "Safety compliance"
+      ]
+    },
+    "features": {
+      "kids": {
+        "title": "For the Youngest",
+        "description": "A special children's program is installed for players from 5 years old. One lane can accommodate from 1 to 8 people at a time."
+      },
+      "cosmic": {
+        "title": "'Cosmic' Lighting",
+        "description": "From 22:00, the bowling works with special ultraviolet lighting, creating a unique holiday atmosphere."
+      },
+      "hall": {
+        "title": "Lounge Hall",
+        "description": "A game table is installed at each lane, allowing you to combine play with ordering dishes from the restaurant or bowling menu."
+      }
+    },
+    "pricing": {
+      "title": "Lane Rental Price List",
+      "subtitle": "(number of players from 1 to 8 people)",
+      "table_head_days": "Days of the Week",
+      "table_head_price": "Hours and Cost (UAH/hour)",
+      "note": "* On weekends and holidays, the 'Saturday' rate applies. Socks are not included in the lane rental price."
+    },
+    "working_hours": {
+      "title": "Working Hours",
+      "weekdays": "Weekdays",
+      "weekends": "Weekends"
+    },
+    "contact": {
+      "title": "Bowling Operator",
+      "call_hint": "Call for booking"
+    },
+    "back_to_leisure": "Back to Leisure"
+  },
+  "camping_page": {
+    "hero": {
+      "title": "Auto Camping",
+      "description": "The only auto camping in Kamianets-Podilskyi on the picturesque territory of the hotel complex."
+    },
+    "intro": {
+      "title": "The Only Auto Camping in Kamianets-Podilskyi",
+      "description": "Haven't you thought about taking a break from work and grey weekdays and going for a couple of days to dive into the picturesque views of the Old Fortress castles. Our hotel offers auto camping on a beautiful park zone territory of 1.2 hectares."
+    },
+    "services": {
+      "title": "At Your Service, We Offer:",
+      "list": [
+        "Guarded complex territory",
+        "Electricity connection",
+        "Water access points",
+        "Shower and toilet use",
+        "Wi-Fi on territory",
+        "Resting areas and gazebos"
+      ]
+    },
+    "highlights": {
+      "nature": {
+        "title": "Nature",
+        "description": "Picturesque views and fresh air in the heart of the city."
+      },
+      "comfort": {
+        "title": "Comfort",
+        "description": "All necessary communications for your motorhome."
+      },
+      "security": {
+        "title": "Security",
+        "description": "24/7 security and closed complex territory."
+      }
+    },
+    "leisure": {
+      "title": "Entertainment and Leisure",
+      "description": "In the evenings, you can rest in city night clubs and discos. Sports and extreme entertainment, as well as exciting excursions, are offered for adults."
+    },
+    "pricing": {
+      "title": "Rental Cost",
+      "price": "300 UAH",
+      "period": "per day",
+      "description": "Get comfort, security, and best city views for an affordable price."
+    },
+    "booking": {
+      "title": "Book a Spot"
+    },
+    "back_to_leisure": "Back to Leisure"
+  },
+  "leisure_page": {
+    "hero": {
+      "title": "Leisure and Entertainment",
+      "description": "A variety of opportunities for active leisure, relaxation, and unforgettable emotions on the territory of Gala Hotel Complex."
+    },
+    "learn_more": "Learn More",
+    "intro": {
+      "title": "Your Leisure at Gala Hotel",
+      "description": "We offer our guests not just accommodation but a whole world of entertainment. From the drive of Galactica bowling club to calm recovery at the mineral water well.",
+      "description_2": "Whether you travel with family or came for sports competitions, on our 1.2-hectare territory, there is an ideal place for your rest."
+    },
+    "offers": {
+      "title": "We Offer for You:",
+      "list": [
+        "Galactica Bowling Club",
+        "Tennis Courts",
+        "Sauna",
+        "Mineral Water Well",
+        "Children's Playground and Attractions",
+        "Auto Camping",
+        "Archery and Shooting Range",
+        "Excursion Service"
+      ]
+    },
+    "galactica": {
+      "title": "Galactica Entertainment Center",
+      "description": "Spend unforgettable time with friends or family. We offer flexible rates for bowling and sports field rental. Our bar will provide you with drinks and snacks during the game.",
+      "bowling_price": "from 470 UAH",
+      "bowling_label": "Bowling (per 1 hour)",
+      "tennis_price": "300 UAH",
+      "tennis_label": "Tennis Court (1 hour)"
+    },
+    "events": {
+      "title": "Special Events",
+      "description": "Want to organize team competitions or a children's holiday? We will help conduct any event with professional accompaniment and holiday atmosphere."
+    },
+    "contact": {
+      "hint": "Booking and Info",
+      "title": "Complex Administrator",
+      "request_btn": "Send Request"
+    }
+  },
+  "conf_service_page": {
+    "hero": {
+      "title": "Conference Service",
+      "description": "Effective work and full-fledged rest in the conference hall of Gala Hotel complex."
+    },
+    "intro": {
+      "title": "Space for Your Ideas",
+      "description": "The 100 m² conference hall is made in cinema style with free chair placement. It's an ideal place for presentations, seminars, and business meetings.",
+      "format_audience": "Up to 80 people",
+      "label_audience": "'Auditorium' format",
+      "format_round": "20-30 people",
+      "label_round": "'Round Table' format"
+    },
+    "gallery_hint": "Scroll to view the hall",
+    "equipment": {
+      "title": "Technical Equipment",
+      "description": "Rental price already includes all necessary equipment for a professional event.",
+      "items": {
+        "projector": "Projector",
+        "screen": "Screen",
+        "flipchart": "Flip chart",
+        "markers": "Paper and markers",
+        "water": "Mineral water",
+        "wifi": "High-speed Wi-Fi",
+        "stereo": "Stereo system",
+        "microphones": "Wireless microphones"
+      }
+    },
+    "food": {
+      "title": "Coffee Breaks and Meals",
+      "description": "We understand the importance of pauses during work. Coffee breaks take place in the lounge lobby next to the hall or in the refined hall of Poirot restaurant.",
+      "description_2": "Full-fledged meals from our chefs will ensure participants' good mood and help better absorb new information."
+    },
+    "pricing": {
+      "title": "Rental Cost",
+      "subtitle": "Transparent and flexible conditions for every client.",
+      "hours": "Rental Hours",
+      "price": "Cost",
+      "table": {
+        "1_3": "1-3 hours",
+        "3_6": "3-6 hours",
+        "6_plus": "6 or more hours"
+      },
+      "note": "* Payment form and rental conditions are agreed individually."
+    },
+    "alternative": {
+      "title": "Need a Larger Hall?",
+      "description": "For large-scale conferences and workshops for up to 300 people, we offer the Bellagio club-restaurant hall on our complex territory.",
+      "link": "Learn more about Bellagio Conference"
+    },
+    "cta": {
+      "title": "Book Conference Hall",
+      "description": "Contact the hotel administrator to plan your successful event.",
+      "request_btn": "Send Request"
+    }
+  },
+  "restaurant": {
+    "hero": {
+      "title": "Poirot Restaurant",
+      "description": "Sophisticated combination of European and Ukrainian cuisine in the very heart of our hotel complex."
+    },
+    "intro": {
+      "title": "Memorable Taste",
+      "description": "Poirot Restaurant invites you to dive into the world of gastronomic pleasure. We masterfully combine traditions of Ukrainian hospitality with the refinement of European and Mediterranean cuisine. Each dish is a piece of art created with love by our chefs."
+    },
+    "gallery_hint": "Scroll to view more photos",
+    "halls": {
+      "title": "Our Halls",
+      "description": "Choose the ideal space for your event. Each hall has its unique atmosphere and opportunities for celebration.",
+      "main": {
+        "name": "Main Hall",
+        "capacity": "up to 80 people",
+        "description": "Perfect for birthday celebrations, corporate events, dinner with friends, baptisms, or romantic dinners.",
+        "features": {
+          "0": "Cozy atmosphere",
+          "1": "Music accompaniment",
+          "2": "Professional service"
+        }
+      },
+      "vip": {
+        "name": "VIP Hall",
+        "capacity": "up to 30 people",
+        "description": "Made in Italian style, this hall is ideal for private celebrations, receptions, and business meetings.",
+        "features": {
+          "0": "Italian style",
+          "1": "Privacy",
+          "2": "Ideal for negotiations"
+        }
+      },
+      "banquet": {
+        "name": "Banquet Hall",
+        "capacity": "up to 40 people",
+        "description": "Bright and spacious hall, which will become a great place for your family holidays and weddings.",
+        "features": {
+          "0": "Bright interior",
+          "1": "Holiday decoration",
+          "2": "Space for dancing"
+        }
+      }
+    },
+    "summer": {
+      "title": "Summer Terrace and Gazebo",
+      "label": "Summer Season",
+      "terrace": {
+        "name": "Summer Terrace",
+        "capacity": "70-100 people",
+        "description": "Suitable for banquets (70 people), receptions (up to 100 people), as well as for lunches and watching sports broadcasts."
+      },
+      "gazebo": {
+        "name": "Summer Gazebo",
+        "capacity": "up to 30 people",
+        "description": "Cozy place for birthday celebrations, anniversaries, baptisms, and receptions in the fresh air."
+      }
+    },
+    "cta": {
+      "title": "Planning an Event?",
+      "description": "Contact our administrator to discuss details of your holiday and book the best hall.",
+      "contact_btn": "Contact Us",
+      "call_btn": "Call"
+    }
+  },
+  "restaurant_bellagio": {
+    "hero": {
+      "title": "Bellagio Club-Restaurant",
+      "description": "Universal space for large-scale celebrations and business events in Kamianets-Podilskyi."
+    },
+    "cards": {
+      "wedding": "Weddings",
+      "conference": "Conferences",
+      "family": "Family Holidays",
+      "corporate": "Corporates",
+      "concerts": "Concerts",
+      "more_btn": "Learn More"
+    },
+    "atmosphere": {
+      "title": "Cuisine and Atmosphere",
+      "p1": "Bellagio club-restaurant is located on the territory of Gala Hotel Complex. We offer a combination of European, Mediterranean, and Ukrainian cuisine dishes.",
+      "p2": "Our two-level banquet hall can accommodate up to 250 people (150 seats on the first level and 100 seats on the second), making it the largest and most technological venue in the city."
+    },
+    "offers_title": "Bellagio Restaurant Offers:",
+    "pricing": {
+      "title": "Menu and Prices",
+      "description": "We offer diverse meals: from breakfasts (buffet) to refined banquet dishes from the chef. Our team will help compose an ideal menu for your holiday.",
+      "per_guest": "600 UAH",
+      "per_guest_label": "Recommended order per guest",
+      "min_order": "from 12,000 UAH",
+      "min_order_label": "Minimum banquet order"
+    },
+    "breakfast": {
+      "title": "Breakfasts",
+      "description": "For guests staying at Gala Hotel, breakfast (buffet) is included in the room rate. Start your morning deliciously!"
+    },
+    "cta": {
+      "label": "Booking and Consultation",
+      "title": "Restaurant Administrator",
+      "request_btn": "Send Request"
+    },
+    "offers": {
+      "0": "Weddings and outdoor ceremonies in Gala Hotel park",
+      "1": "Corporate events at affordable prices",
+      "2": "Conferences, seminars, and professional workshops",
+      "3": "Family holidays: anniversaries, baptisms, engagements",
+      "4": "Discos and theme parties with DJ",
+      "5": "Concerts — professional stage and equipment for artists"
+    }
+  },
+  "sauna_page": {
+    "hero": {
+      "title": "Wood-fired Sauna",
+      "description": "Real wooden bathhouse for your health and ideal rest in Kamianets-Podilskyi."
+    },
+    "intro": {
+      "title": "Traditions of Recovery and Relaxation",
+      "description": "Correct procedure of using dry steam is a way as old as the world and surprisingly effective to relax, rest, recover, and gain strength. Our sauna is built using traditional technology from natural wood, giving a soft and clean wood smell from the first seconds of stay."
+    },
+    "comfort": {
+      "title": "Everything for Your Comfort",
+      "description": "We have created all conditions for you to get real pleasure. The sauna has everything necessary for useful and unforgettable rest.",
+      "capacity_label": "Sauna Capacity",
+      "capacity_value": "up to 8 people",
+      "amenities": {
+        "0": "Steam room (dry steam)",
+        "1": "Cooling barrel",
+        "2": "Cozy rest room",
+        "3": "Modern TV",
+        "4": "Equipped kitchen",
+        "5": "Convenient shower cabin",
+        "6": "Towels and hygiene products",
+        "7": "Oak and birch brooms"
+      }
+    },
+    "pricing": {
+      "title": "Visit Cost",
+      "value": "500 UAH",
+      "label": "per hour",
+      "note": "* Minimum order — 2 hours",
+      "hours_label": "Working Hours",
+      "hours_value": "11:00 – 23:00"
+    },
+    "special": {
+      "label": "Special Offer",
+      "title": "10% Discount for Hotel Guests",
+      "description": "For all residents of Gala hotel complex, there is a permanent discount for sauna visits. Rest profitably and usefully!"
+    },
+    "cta": {
+      "label": "Sauna Booking",
+      "title": "Hotel Administrator",
+      "request_btn": "Ask for Free Hours"
+    },
+    "back_link": "Back to Leisure"
+  },
+  "sport_extreme": {
+    "hero": {
+      "title": "Sport and Extreme",
+      "description": "Active leisure in Kamianets-Podilskyi: from morning jogs in the park to extreme rafting and BRDM rides."
+    },
+    "city_intro": {
+      "title": "Rest in the 'Stone Flower'",
+      "description": "Kamianets-Podilskyi is one of the oldest cities in Ukraine, where unique natural and cultural-historical monuments are combined. Rest here will become an unforgettable adventure in your life, as the city offers not only history but also many opportunities for active leisure.",
+      "reasons_title": "7 Reasons to Visit Us",
+      "history_title": "Historical Monuments",
+      "history_desc": "Be sure to visit the Old Castle, Peter and Paul Cathedral, Turkish Bridge, and Stefan Batory Tower. Enjoy the beauty of Smotrych Canyon and the magic of flooded Bakota.",
+      "reasons": {
+        "0": "Center of festival life: military-historical reconstructions and Retrofest",
+        "1": "All-Ukrainian Beer and Ballooning Festival (October)",
+        "2": "Unique historical monuments: Old Castle and Turkish Bridge",
+        "3": "Picturesque canyons of Smotrych and Dniester rivers",
+        "4": "Atlantis cave — second most beautiful gypsum cave in Europe",
+        "5": "Flooded city of Bakota and rock cave monastery",
+        "6": "Podilski Tovtry National Park"
+      }
+    },
+    "activities": {
+      "park": {
+        "title": "RUNNING IN PARK ZONE",
+        "description": "Large park zone near Gala Hotel is ideal for morning jogs that improve health and mood."
+      },
+      "football": {
+        "title": "MINI FOOTBALL FIELD",
+        "description": "Field with artificial grass (30*15m) for football and basketball. Outdoor gym machines are nearby."
+      },
+      "tennis": {
+        "title": "LAWN TENNIS",
+        "description": "Professional court to maintain tone, develop reaction and strategic thinking."
+      },
+      "kayaking": {
+        "title": "KAYAK RAFTING",
+        "description": "Unforgettable trips along Smotrych, Dniester, Zbruch, and Zhvanchyk rivers. Full camping gear and treats."
+      },
+      "boat": {
+        "title": "BOAT AND STEAMSHIP",
+        "description": "Walks along canyons, fishing, water skiing, wakeboarding, and underwater hunting."
+      },
+      "brdm": {
+        "title": "EXTREME ON BRDM",
+        "description": "Rides on modernized military vehicle through swamps and hills. Real drive for a group!"
+      }
+    },
+    "activities_title": "Leisure Options from Gala Hotel",
+    "activities_subtitle": "Only relevant and safe entertainment for our guests",
+    "expeditions": {
+      "title": "Rafting and Expeditions",
+      "description": "We have all necessary gear for rafting accompanied by professional instructors. We organize evenings by the campfire with most delicious fish soup and baked fish.",
+      "max_label": "Maximum",
+      "max_value": "12 adults",
+      "locations_label": "Locations",
+      "locations_value": "Zbruch, Zhvanchyk"
+    },
+    "cta": {
+      "title": "Want to Book Entertainment?",
+      "description": "Contact our administrator to agree on time and cost of individual tours.",
+      "contacts_btn": "Other Contacts"
+    },
+    "back_link": "Back to Leisure"
+  },
+  "tennis_court": {
+    "hero": {
+      "title": "Tennis Court 'Gala Tennis'",
+      "description": "Lawn tennis school for children and adults on the territory of Gala Hotel in Kamianets-Podilskyi."
+    },
+    "intro": {
+      "title": "Welcome to 'GALA TENNIS' Lawn Tennis School",
+      "description": "Lawn tennis school for adults and children in Gala Hotel complex in Kamianets-Podilskyi is an ideal place for active leisure and sports development. Play for your pleasure, learn or train for competitions on our professional court."
+    },
+    "rules": {
+      "title": "Important to Know",
+      "label": "Court Rules",
+      "description": "Only players in <span class=\"font-bold text-primary-600\">special shoes</span> are allowed on the court. This ensures preservation of the surface and players' safety during the game.",
+      "rent_court": "Court rental:",
+      "rent_racket": "Racket rental:"
+    },
+    "history": {
+      "label": "History Pages",
+      "title": "From Ancient Times to Our Days",
+      "p1": "First mentions of a game similar to tennis can be found in 12-13th centuries in Italy. The game was called 'jidoko', and the ball was hit with a glove, wooden shield, or leather belt put on the hand. Officially, tennis appeared in the 14th century on the territory of modern France. French nobility was fond of so-called 'palm game' ('jeu de paume'), which greatly influenced modern tennis development.",
+      "p2": "Tennis was brought to Ukraine in 1890 by English merchants who created tennis clubs in Odesa and Taganrog. Later tennis spread to other cities of Ukraine. Tennis was included in the Olympic Games program in 1896, excluded in 1928, and only in 1988 recognized as an Olympic sport again."
+    },
+    "cta": {
+      "title": "Book Time on Court Today!",
+      "description": "We are waiting for you daily from 08:00 to 22:00. Rent a court or join our tennis school.",
+      "request_btn": "Send Request",
+      "back_link": "Back to Leisure"
+    }
+  },
+  "corporate_events": {
+    "hero": {
+      "title": "Corporates at Bellagio",
+      "description": "Professional organization of holidays for your team in the city's best club-restaurant."
+    },
+    "intro": {
+      "title": "Rest that Strengthens the Team",
+      "description": "A corporate event is not just an excuse to rest, but an opportunity to get to know each other better and feel part of a whole. Whether it's a company birthday, professional holiday, or New Year — we will make your event unforgettable."
+    },
+    "gallery_hint": "Scroll to view photos",
+    "details": {
+      "title": "What Do We Offer?",
+      "description": "We offer organization and conducting of your holiday in the large hall of Bellagio club-restaurant. Great cuisine, drive atmosphere, and professional service at reasonable prices await you.",
+      "items": {
+        "0": "Music design and laser show",
+        "1": "Photo zone as a gift!",
+        "2": "Active collective rest (bowling, tennis)"
+      }
+    },
+    "cta": {
+      "title": "Plan Your Dream Corporate",
+      "description": "Contact our administrator for cost calculation and hall booking.",
+      "address": "84 Lesya Ukrainka St",
+      "location": "Poirot / Bellagio restaurant, Gala Hotel complex",
+      "request_btn": "Submit Application"
+    }
+  },
+  "family_events": {
+    "hero": {
+      "title": "Family Holidays",
+      "description": "Anniversaries, birthdays, and baptisms — creating unforgettable memories for your family."
+    },
+    "intro": {
+      "title": "A Holiday that Stays in Your Heart",
+      "description": "An anniversary or birthday is a special moment when closest people gather. We will make sure this day becomes a pleasant memory. We also offer best active leisure in Kamianets-Podilskyi for your whole group."
+    },
+    "gallery_hint": "Scroll to view photos",
+    "christenings": {
+      "title": "Baptism of Your Baby",
+      "description": "This is first of all a sacrament, so everything must be solemn and beautiful! We will create a cozy atmosphere of a family holiday, provide a comfortable area for feeding the baby, and ensure professional service.",
+      "quote": "“We are chosen for high service levels and reasonable prices!”"
+    },
+    "cta": {
+      "title": "Book Hall Right Now",
+      "description": "Contact our administrator for detailed information and planning of your holiday.",
+      "address": "84 Lesya Ukrainka St",
+      "location": "Poirot restaurant, Gala Hotel complex",
+      "request_btn": "Submit Application"
+    }
+  },
+  "mineral_water": {
+    "hero": {
+      "title": "Mineral Water Well",
+      "description": "Therapeutic table water 'Old Fortress' of 'Naftusia' type directly from our own well on the hotel territory."
+    },
+    "intro": {
+      "label": "Did You Know?…",
+      "title": "Well No. 30",
+      "description": "Well No. 30, drilled in 1988, is located directly on the territory of Gala Hotel complex. In 2004, the mineral water was named <span class=\"font-bold text-primary-600\">'Old Fortress'</span>. By its properties, it is therapeutic table water of 'Naftusia Zbrucha' type."
+    },
+    "characteristics": {
+      "title": "Main Characteristics",
+      "items": {
+        "0": "Sulfate-hydrocarbonate magnesium-calcium of low mineralization (1.3 - 2.2 g/dm³).",
+        "1": "Cold neutral-weakly alkaline — temperature 11.5 °C.",
+        "2": "Odorless, colorless, fresh to taste, without accompanying gases."
+      }
+    },
+    "composition": {
+      "title": "Chemical Composition",
+      "names": {
+        "hydrocarbonates": "Hydrocarbonates",
+        "sulfates": "Sulfates",
+        "chlorides": "Chlorides",
+        "calcium": "Calcium",
+        "magnesium": "Magnesium",
+        "sodium_potassium": "Sodium and Potassium"
+      },
+      "bio_active_label": "Bio-active Components",
+      "bio_active_desc": "Iron, Bromine, Iodine, Arsenic, Orthoboric and Metasilicic acids, organic substances."
+    },
+    "therapeutic": {
+      "title": "Therapeutic Properties",
+      "description": "Many years of observation by leading medical specialists proved that taking 'Old Fortress' water allows consolidating the effect of drug therapy and significantly prolong the remission period.",
+      "items": {
+        "0": "Diuretic effect, removal of small stones and sand",
+        "1": "Activation of bile formation and bile secretion",
+        "2": "Promotion of radionuclides removal from organism",
+        "3": "Anti-inflammatory and detoxifying effect",
+        "4": "Consolidation of drug therapy effect",
+        "5": "Prolongation of disease remission period"
+      }
+    },
+    "opinions": {
+      "title": "Expert Conclusions",
+      "quote": "“Mineral water intake allows conducting therapy using fewer medications and makes disease remission longer.”"
+    },
+    "cta": {
+      "title": "Feel the Healing Power of Nature",
+      "description": "Our well is open to all hotel guests. Learn more about the wellness course from our administrator.",
+      "contacts_btn": "Hotel Contacts",
+      "back_link": "Back to Leisure"
+    }
+  },
+  "children_attractions": {
+    "hero": {
+      "title": "Children's Attractions and Leisure",
+      "description": "A world of joy and safe entertainment for your children on the territory of Gala Hotel complex."
+    },
+    "intro": {
+      "title": "Happy Childhood and Merry Rest",
+      "description": "We know how important it is for children to have space for active games and new discoveries. Our territory is equipped so that your little ones can safely play, run and get positive emotions every day.",
+      "description_2": "We offer various options for children's leisure, where each child will find an activity to taste — from quiet games to active fun."
+    },
+    "offers_title": "Our Complex Offers:",
+    "atmosphere": {
+      "title": "Space for Family Moments",
+      "description": "While your children are busy with a fun game, you can enjoy the peace of our park or taste delicious dishes in the restaurant nearby. We have created all conditions for family rest to be comfortable for everyone.",
+      "security": "Safe closed complex territory",
+      "walking": "Plenty of space for walks in the fresh air"
+    },
+    "events": {
+      "title": "Children Holidays",
+      "description": "Want to organize a bright birthday for a child? Our territory and professional service will help make this day special and filled with happy smiles."
+    },
+    "cta": {
+      "label": "More Information",
+      "title": "Contact Our Administrator",
+      "details_btn": "Ask for Details"
+    },
+    "back_link": "Back to Leisure"
+  },
+  "concerts": {
+    "hero": {
+      "title": "Concerts and Show Programs",
+      "description": "Unique theatrical space for concerts, creative evenings and bright performances at Bellagio."
+    },
+    "intro": {
+      "title": "Atmosphere of Uniqueness in Theater Style",
+      "description": "We will be happy to help make your holiday bright and fun! The spacious and bright Bellagio restaurant hall is an ideal option, equipped with modern light-sound technology and a large separate stage, raised above the hall level and equipped with wing curtains. The hall, decorated in theater style, will create an atmosphere of special solemnity."
+    },
+    "gallery_hint": "Scroll to view stage and hall",
+    "technical": {
+      "title": "Theme Design and Leisure",
+      "description": "We organize decoration for any theme party: from birthday and corporate to other calendar holidays. We also give special rest in Kamianets-Podilskyi for those interested in active leisure on our complex territory.",
+      "quote": "“We are chosen for professional service and reasonable prices!”"
+    },
+    "cta": {
+      "title": "Organize a Performance with Us",
+      "description": "Contact our administrator to discuss the technical rider and book a date for your concert or show.",
+      "request_btn": "Send Proposal"
+    }
+  }
+}
