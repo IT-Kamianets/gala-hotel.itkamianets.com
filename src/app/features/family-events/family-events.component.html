@@ -1,16 +1,16 @@
 <div class="pt-20">
   <app-page-hero 
-    title="Сімейні свята" 
-    description="Ювілеї, дні народження та хрестини — створюємо незабутні спогади для вашої родини.">
+    [title]="'family_events.hero.title' | translate" 
+    [description]="'family_events.hero.description' | translate">
   </app-page-hero>
 
   <!-- Intro Section -->
   <section class="py-20 bg-white">
     <div class="container mx-auto px-4 lg:px-8">
       <div class="max-w-4xl mx-auto text-center space-y-8">
-        <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 italic">Свято, що залишиться в серці</h2>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 italic">{{ 'family_events.intro.title' | translate }}</h2>
         <p class="text-lg text-secondary-600 leading-relaxed font-light">
-          Ювілей або День народження — це особливий момент, коли збираються найближчі люди. Ми подбаємо про те, щоб цей день став приємним спогадом. Також ми пропонуємо найкращий активний відпочинок у Кам’янці-Подільському для всієї вашої компанії.
+          {{ 'family_events.intro.description' | translate }}
         </p>
         <div class="w-24 h-1 bg-primary-500 mx-auto rounded-full"></div>
       </div>
@@ -23,34 +23,15 @@
       <div class="flex space-x-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 lg:mx-0 lg:px-0">
         @for (image of galleryImages; track image.url) {
           <div class="flex-shrink-0 w-[300px] md:w-[450px] aspect-[4/3] rounded-3xl overflow-hidden snap-start shadow-md hover:shadow-xl transition-shadow duration-500">
-            <img [src]="image.url" [alt]="image.alt" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+            <img [src]="image.url" [alt]="image.alt | translate" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
           </div>
         }
       </div>
       <div class="flex items-center justify-center space-x-2 text-secondary-400 text-xs font-medium animate-pulse">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m-4 4H3" />
         </svg>
-        <span>Прокрутіть, щоб переглянути фото</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features Grid -->
-  <section class="py-20 bg-gray-50">
-    <div class="container mx-auto px-4 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        @for (feature of features; track feature.title) {
-          <div class="p-8 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-            <div class="w-10 h-10 bg-primary-100 rounded-xl flex items-center justify-center text-primary-600 mb-6">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-serif font-bold text-secondary-900 mb-3">{{ feature.title }}</h3>
-            <p class="text-sm text-secondary-500 font-light leading-relaxed">{{ feature.desc }}</p>
-          </div>
-        }
+        <span>{{ 'family_events.gallery_hint' | translate }}</span>
       </div>
     </div>
   </section>
@@ -60,17 +41,17 @@
     <div class="container mx-auto px-4 lg:px-8">
       <div class="flex flex-col lg:flex-row-reverse items-center gap-16">
         <div class="lg:w-1/2 space-y-8">
-          <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 leading-tight">Хрестини вашого малюка</h2>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 leading-tight">{{ 'family_events.christenings.title' | translate }}</h2>
           <p class="text-lg text-secondary-600 leading-relaxed font-light">
-            Це насамперед таїнство, тому усе має бути урочисто та гарно! Ми створимо затишну атмосферу родинного свята, надамо комфортну зону для годування маляти та забезпечимо професійний сервіс.
+            {{ 'family_events.christenings.description' | translate }}
           </p>
           <div class="bg-primary-50 p-6 rounded-2xl border border-primary-100">
-            <p class="text-secondary-800 font-medium italic">"Нас обирають за високий рівень сервісу та розумні ціни!"</p>
+            <p class="text-secondary-800 font-medium italic">{{ 'family_events.christenings.quote' | translate }}</p>
           </div>
         </div>
         <div class="lg:w-1/2">
           <div class="rounded-[3rem] overflow-hidden shadow-2xl relative">
-            <img src="belagio/services_family.png" alt="Christenings" class="w-full">
+            <img src="belagio/services_family.png" [alt]="'family_events.christenings.title' | translate" class="w-full">
             <div class="absolute inset-0 bg-primary-900/10"></div>
           </div>
         </div>
@@ -83,9 +64,9 @@
     <div class="container mx-auto px-4 lg:px-8">
       <div class="max-w-4xl mx-auto rounded-[4rem] bg-white p-12 md:p-20 text-center space-y-10 border border-primary-50 shadow-xl relative overflow-hidden">
         <div class="relative z-10 space-y-6">
-          <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 italic">Бронюйте зал прямо зараз</h2>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 italic">{{ 'family_events.cta.title' | translate }}</h2>
           <p class="text-lg text-secondary-600 font-light max-w-xl mx-auto">
-            Зв'яжіться з нашим адміністратором для отримання детальної інформації та планування вашого свята.
+            {{ 'family_events.cta.description' | translate }}
           </p>
           
           <div class="flex flex-col items-center gap-6">
@@ -99,12 +80,12 @@
             </a>
             
             <div class="text-sm text-secondary-500 font-light">
-              <p>вул. Лесі Українки, 84</p>
-              <p>ресторан «Пуаро», комплекс «Гала-готель»</p>
+              <p>{{ 'family_events.cta.address' | translate }}</p>
+              <p>{{ 'family_events.cta.location' | translate }}</p>
             </div>
 
             <button routerLink="/contacts" class="bg-secondary-900 text-white px-12 py-4 rounded-xl font-bold text-lg hover:bg-primary-600 transition-all shadow-xl active:scale-95">
-              Залишити заявку
+              {{ 'family_events.cta.request_btn' | translate }}
             </button>
           </div>
         </div>

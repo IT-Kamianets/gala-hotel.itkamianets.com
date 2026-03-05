@@ -28,100 +28,116 @@ export class RoomService {
   private rooms: Room[] = [
     {
       id: 'standard',
-      category: 'Корпус I та Корпус II (23 номери)',
-      title: 'Стандарт',
-      description: 'Класичний номер зі всіма зручностями. У вартість проживання входить сніданок.',
-      longDescription: `Комфортний номер площею 15 м², ідеально підходить для одномісного, двомісного або тримісного розміщення. 
-      У вартість проживання входить сніданок (на вибір, згідно з меню з 08:00 до 11:00). Сніданки проходять на території «Гала-Готелю» в ресторані «Пуаро».
-      У фестивальні та святкові дні стандартний тариф змінюється. Ціни на номери обов'язково уточнюйте у адміністратора!`,
+      category: 'rooms.data.standard.category',
+      title: 'rooms.data.standard.title',
+      description: 'rooms.data.standard.description',
+      longDescription: 'rooms.data.standard.longDescription',
       price: 1300,
       priceOptions: [
-        { label: '1-місне розміщення', guests: 1, price: 1300 },
-        { label: '2-місне розміщення', guests: 2, price: 1700 },
-        { label: '3-місне розміщення', guests: 3, price: 2200 }
+        { label: 'rooms.data.standard.price_options.1_person', guests: 1, price: 1300 },
+        { label: 'rooms.data.standard.price_options.2_person', guests: 2, price: 1700 },
+        { label: 'rooms.data.standard.price_options.3_person', guests: 3, price: 2200 }
       ],
       image: 'standard/standard1.png',
       images: ['standard/standard1.png', 'standard/standard2.png', 'standard/standard3.png'],
-      capacity: '1-3 особи',
+      capacity: 'rooms.data.standard.capacity',
       size: '15 м²',
-      amenities: ['Сніданок включено', 'Односпальне/двоспальне ліжко', 'Супутникове ТБ', 'Телефон', 'Душова кабіна', 'Банне та туалетне приладдя', 'Міні-набір парфумерії']
+      amenities: [
+        'rooms.data.standard.amenities.breakfast',
+        'rooms.data.standard.amenities.bed',
+        'rooms.data.standard.amenities.tv',
+        'rooms.data.standard.amenities.phone',
+        'rooms.data.standard.amenities.shower',
+        'rooms.data.standard.amenities.toiletries',
+        'rooms.data.standard.amenities.perfumery'
+      ]
     },
     {
       id: 'standard-plus',
-      category: 'Корпус I та Корпус II (19 номерів)',
-      title: 'Стандарт Плюс',
-      description: 'Покращений номер з додатковим простором та оновленим інтер’єром.',
-      longDescription: `Комфортний номер площею 21 м², ідеально підходить для проживання до 4 осіб. 
-      У вартість проживання входить сніданок (на вибір, згідно з меню з 08:00 до 11:00). Сніданки проходять на території головного корпусу «Гала-Готелю» у ресторані «Пуаро».
-      У фестивальні та святкові дні стандартний тариф змінюється. Ціни на номери обов’язково уточнюйте в адміністратора!`,
+      category: 'rooms.data.standard_plus.category',
+      title: 'rooms.data.standard_plus.title',
+      description: 'rooms.data.standard_plus.description',
+      longDescription: 'rooms.data.standard_plus.longDescription',
       price: 1400,
       priceOptions: [
-        { label: '1-місне розміщення', guests: 1, price: 1400 },
-        { label: '2-місне розміщення', guests: 2, price: 1800 },
-        { label: '3-місне розміщення', guests: 3, price: 2300 },
-        { label: '4-місне розміщення', guests: 4, price: 2900 }
+        { label: 'rooms.data.standard.price_options.1_person', guests: 1, price: 1400 },
+        { label: 'rooms.data.standard.price_options.2_person', guests: 2, price: 1800 },
+        { label: 'rooms.data.standard.price_options.3_person', guests: 3, price: 2300 },
+        { label: 'rooms.data.standard_plus.price_options.4_person', guests: 4, price: 2900 }
       ],
       image: 'standard-plus/plus1.png',
       images: ['standard-plus/plus1.png', 'standard-plus/plus2.png', 'standard-plus/plus3.png'],
-      capacity: '1-4 особи',
+      capacity: 'rooms.data.standard_plus.capacity',
       size: '21 м²',
-      amenities: ['Сніданок включено', 'Односпальне/двоспальне ліжко', 'Супутникове ТБ', 'Телефон', 'Інтернет', 'Душова кабіна', 'Гігієнічні засоби', 'Міні-набір парфумерії']
+      amenities: [
+        'rooms.data.standard.amenities.breakfast',
+        'rooms.data.standard.amenities.bed',
+        'rooms.data.standard.amenities.tv',
+        'rooms.data.standard.amenities.phone',
+        'rooms.data.standard_plus.amenities.internet',
+        'rooms.data.standard.amenities.shower',
+        'rooms.data.standard_plus.amenities.hygiene',
+        'rooms.data.standard.amenities.perfumery'
+      ]
     },
     {
       id: 'apartments',
-      category: 'Корпус I (2 номери)',
-      title: 'Апартаменти',
-      description: 'Просторий двокімнатний номер з окремим входом, ідеальний для сімейного відпочинку.',
-      longDescription: `Просторий двокімнатний номер площею 40 м² з окремим входом, де може комфортно розміститися ціла сім’я.
-      У вартість проживання входить сніданок (на вибір, згідно з меню з 08:00 до 11:00). Сніданки проходять на території головного корпусу «Гала-Готелю» у ресторані «Пуаро».
-      У фестивальні та святкові дні стандартний тариф змінюється. Ціни на номери обов’язково уточнюйте в адміністратора!`,
+      category: 'rooms.data.apartments.category',
+      title: 'rooms.data.apartments.title',
+      description: 'rooms.data.apartments.description',
+      longDescription: 'rooms.data.apartments.longDescription',
       price: 2100,
       priceOptions: [
-        { label: '1-місне розміщення', guests: 1, price: 2100 },
-        { label: '2-місне розміщення', guests: 2, price: 2600 },
-        { label: '3-місне розміщення', guests: 3, price: 3000 },
-        { label: '4-місне розміщення', guests: 4, price: 3600 }
+        { label: 'rooms.data.standard.price_options.1_person', guests: 1, price: 2100 },
+        { label: 'rooms.data.standard.price_options.2_person', guests: 2, price: 2600 },
+        { label: 'rooms.data.standard.price_options.3_person', guests: 3, price: 3000 },
+        { label: 'rooms.data.standard_plus.price_options.4_person', guests: 4, price: 3600 }
       ],
       image: 'apartaments/apart1.png',
       images: ['apartaments/apart1.png', 'apartaments/apart2.png', 'apartaments/apart3.png'],
-      capacity: '1-4 особи',
+      capacity: 'rooms.data.apartments.capacity',
       size: '40 м²',
       amenities: [
-        'Сніданок включено', 
-        'Двоспальне ліжко', 
-        'Розкладний диван', 
-        'Кухня та посуд', 
-        'Електрична плита', 
-        'Електрочайник', 
-        'Супутникове ТБ', 
-        'Телефон', 
-        'Холодильник', 
-        'Інтернет', 
-        'Душова кабіна', 
-        'Гігієнічні засоби', 
-        'Фен'
+        'rooms.data.standard.amenities.breakfast', 
+        'rooms.data.apartments.amenities.bed_double', 
+        'rooms.data.apartments.amenities.sofa', 
+        'rooms.data.apartments.amenities.kitchen', 
+        'rooms.data.apartments.amenities.stove', 
+        'rooms.data.apartments.amenities.kettle', 
+        'rooms.data.standard.amenities.tv', 
+        'rooms.data.standard.amenities.phone', 
+        'rooms.data.apartments.amenities.fridge', 
+        'rooms.data.standard_plus.amenities.internet', 
+        'rooms.data.standard.amenities.shower', 
+        'rooms.data.standard_plus.amenities.hygiene', 
+        'rooms.data.apartments.amenities.hairdryer'
       ]
     },
     {
       id: 'eco-room',
-      category: 'ЕКО корпус (18 номерів)',
-      title: 'ЕКО Номер',
-      description: 'Бюджетний та екологічний варіант для компаній або великих родин.',
-      longDescription: `Сучасні екологічні номери, обладнані всім необхідним для комфортного відпочинку. 
-      У номері встановлено два двоярусних ліжка. У вартість проживання входить сніданок (на вибір, згідно з меню з 08:00 до 11:00). Сніданки проходять на території головного корпусу «Гала-Готелю» у ресторані «Пуаро».
-      У фестивальні та святкові дні стандартний тариф змінюється. Ціни на номери обов’язково уточнюйте в адміністратора!`,
+      category: 'rooms.data.eco.category',
+      title: 'rooms.data.eco.title',
+      description: 'rooms.data.eco.description',
+      longDescription: 'rooms.data.eco.longDescription',
       price: 850,
       priceOptions: [
-        { label: '1-місне розміщення', guests: 1, price: 850 },
-        { label: '2-місне розміщення', guests: 2, price: 1200 },
-        { label: '3-місне розміщення', guests: 3, price: 1700 },
-        { label: '4-місне розміщення', guests: 4, price: 2180 }
+        { label: 'rooms.data.standard.price_options.1_person', guests: 1, price: 850 },
+        { label: 'rooms.data.standard.price_options.2_person', guests: 2, price: 1200 },
+        { label: 'rooms.data.standard.price_options.3_person', guests: 3, price: 1700 },
+        { label: 'rooms.data.standard_plus.price_options.4_person', guests: 4, price: 2180 }
       ],
       image: 'eco/eco1.png',
       images: ['eco/eco1.png', 'eco/eco2.png', 'eco/eco3.png', 'eco/eco4.png'],
-      capacity: '1-4 особи',
+      capacity: 'rooms.data.eco.capacity',
       size: '18 м²',
-      amenities: ['Сніданок включено', 'Два двоярусних ліжка', 'Супутникове ТБ', 'Гігієнічні засоби', 'Міні-набір парфумерії', 'Wi-Fi']
+      amenities: [
+        'rooms.data.standard.amenities.breakfast', 
+        'rooms.data.eco.amenities.bunk_beds', 
+        'rooms.data.standard.amenities.tv', 
+        'rooms.data.standard_plus.amenities.hygiene', 
+        'rooms.data.standard.amenities.perfumery', 
+        'rooms.data.eco.amenities.wifi'
+      ]
     }
   ];
 

@@ -1,7 +1,7 @@
 <div class="pt-20">
   <app-page-hero 
-    title="Боулінг-клуб «Галактика»" 
-    description="Єдиний у Кам'янці-Подільському боулінг-клуб для всієї родини, друзів та корпоративних змагань.">
+    [title]="'bowling_page.hero.title' | translate" 
+    [description]="'bowling_page.hero.description' | translate">
   </app-page-hero>
 
   <!-- Intro Section -->
@@ -9,18 +9,18 @@
     <div class="container mx-auto px-4 lg:px-8">
       <div class="max-w-4xl mx-auto space-y-12">
         <div class="text-center space-y-6">
-          <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 italic">Відпочинок на всі 100%!</h2>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 italic">{{ 'bowling_page.intro.title' | translate }}</h2>
           <p class="text-lg text-secondary-600 leading-relaxed font-light">
-            Боулінг-клуб «Галактика» – єдиний в місті заклад, де можна пограти в цю захоплюючу гру. Саме тут Ви і зможете відпочити на всі 100%! Адже у «Галактиці» створенні всі умови для того, щоб сюди приходили люди будь-якого віку. Ви можете грати у боулінг з сім’єю, з друзями, з колегами по роботі, адже ця гра не має ніяких обмежень – у неї можуть грати як діти, так і дорослі, як чоловіки, так і жінки.
+            {{ 'bowling_page.intro.description' | translate }}
           </p>
           <div class="w-24 h-1 bg-primary-500 mx-auto rounded-full"></div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div class="space-y-6">
-            <h3 class="text-2xl font-serif font-bold text-secondary-900">Правила та сервіс</h3>
+            <h3 class="text-2xl font-serif font-bold text-secondary-900">{{ 'bowling_page.service.title' | translate }}</h3>
             <p class="text-secondary-600 font-light leading-relaxed">
-              Гра проходить у спеціальному взутті, яке можна отримати на рецепції боулінгу. Ми надаємо безкоштовні послуги інструктора та індивідуальний підбір кулі впродовж усієї гри.
+              {{ 'bowling_page.service.description' | translate }}
             </p>
             <ul class="space-y-3">
               @for (rule of rules; track rule) {
@@ -30,13 +30,13 @@
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span class="text-secondary-700 text-sm font-light">{{ rule }}</span>
+                  <span class="text-secondary-700 text-sm font-light">{{ rule | translate }}</span>
                 </li>
               }
             </ul>
           </div>
           <div class="rounded-3xl overflow-hidden shadow-2xl rotate-1">
-            <img src="bowling/bowl1.png" alt="Bowling Lanes" class="w-full">
+            <img src="bowling/bowl1.png" [alt]="'bowling_page.hero.title' | translate" class="w-full">
           </div>
         </div>
       </div>
@@ -53,9 +53,9 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
-          <h4 class="text-xl font-serif font-bold text-secondary-900 mb-4">Для наймолодших</h4>
+          <h4 class="text-xl font-serif font-bold text-secondary-900 mb-4">{{ 'bowling_page.features.kids.title' | translate }}</h4>
           <p class="text-secondary-600 text-sm font-light leading-relaxed">
-            Встановлена спеціальна дитяча програма для гравців віком від 5 років. На одній ігровій доріжці одночасно може грати від 1 до 8 осіб.
+            {{ 'bowling_page.features.kids.description' | translate }}
           </p>
         </div>
 
@@ -65,9 +65,9 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
             </svg>
           </div>
-          <h4 class="text-xl font-serif font-bold text-secondary-900 mb-4">Освітлення «Космік»</h4>
+          <h4 class="text-xl font-serif font-bold text-secondary-900 mb-4">{{ 'bowling_page.features.cosmic.title' | translate }}</h4>
           <p class="text-secondary-600 text-sm font-light leading-relaxed">
-            З 22:00 години боулінг працює при спеціальному освітленні ультрафіолетом, що створює неповторну атмосферу свята.
+            {{ 'bowling_page.features.cosmic.description' | translate }}
           </p>
         </div>
 
@@ -77,9 +77,9 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
             </svg>
           </div>
-          <h4 class="text-xl font-serif font-bold text-secondary-900 mb-4">Відпочинкова зала</h4>
+          <h4 class="text-xl font-serif font-bold text-secondary-900 mb-4">{{ 'bowling_page.features.hall.title' | translate }}</h4>
           <p class="text-secondary-600 text-sm font-light leading-relaxed">
-            Біля кожної доріжки встановлено ігровий столик, що дає змогу поєднати гру з замовленням страв з ресторанного або боулінг-меню.
+            {{ 'bowling_page.features.hall.description' | translate }}
           </p>
         </div>
       </div>
@@ -91,8 +91,8 @@
     <div class="container mx-auto px-4 lg:px-8">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12">
-          <h2 class="text-3xl font-serif font-bold text-secondary-900 mb-4 italic uppercase tracking-wider">Прайс-лист оренди доріжки</h2>
-          <p class="text-secondary-500 font-light">(кількість гравців від 1 до 8 осіб)</p>
+          <h2 class="text-3xl font-serif font-bold text-secondary-900 mb-4 italic uppercase tracking-wider">{{ 'bowling_page.pricing.title' | translate }}</h2>
+          <p class="text-secondary-500 font-light">{{ 'bowling_page.pricing.subtitle' | translate }}</p>
           <div class="w-20 h-1 bg-primary-500 mx-auto mt-6 rounded-full"></div>
         </div>
 
@@ -100,8 +100,8 @@
           <table class="w-full text-left border-collapse">
             <thead class="bg-secondary-900 text-white">
               <tr>
-                <th class="p-6 md:p-8 font-serif font-bold text-lg">Дні тижня</th>
-                <th colspan="2" class="p-6 md:p-8 font-serif font-bold text-lg text-center border-l border-white/10">Години та Вартість (грн/год)</th>
+                <th class="p-6 md:p-8 font-serif font-bold text-lg">{{ 'bowling_page.pricing.table_head_days' | translate }}</th>
+                <th colspan="2" class="p-6 md:p-8 font-serif font-bold text-lg text-center border-l border-white/10">{{ 'bowling_page.pricing.table_head_price' | translate }}</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-gray-100">
@@ -120,7 +120,7 @@
           </table>
           <div class="p-6 bg-gray-50 border-t border-gray-100 text-center">
             <p class="text-sm text-secondary-500 font-light italic">
-              * У вихідні та святкові дні діє “суботній” тариф. Шкарпетки не входять у вартість оренди доріжки.
+              {{ 'bowling_page.pricing.note' | translate }}
             </p>
           </div>
         </div>
@@ -134,26 +134,26 @@
     <div class="container mx-auto px-4 lg:px-8 relative z-10 text-center max-w-4xl mx-auto space-y-12">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="bg-white/10 backdrop-blur-md p-10 rounded-[3rem] border border-white/20">
-          <h3 class="text-2xl font-serif font-bold mb-6 text-primary-400">Графік роботи</h3>
+          <h3 class="text-2xl font-serif font-bold mb-6 text-primary-400">{{ 'bowling_page.working_hours.title' | translate }}</h3>
           <div class="space-y-4">
             <div>
-              <span class="block text-xs uppercase tracking-widest text-primary-200 mb-1">Будні дні</span>
+              <span class="block text-xs uppercase tracking-widest text-primary-200 mb-1">{{ 'bowling_page.working_hours.weekdays' | translate }}</span>
               <span class="text-2xl font-serif font-bold">{{ workingHours.weekdays }}</span>
             </div>
             <div>
-              <span class="block text-xs uppercase tracking-widest text-primary-200 mb-1">Вихідні дні</span>
+              <span class="block text-xs uppercase tracking-widest text-primary-200 mb-1">{{ 'bowling_page.working_hours.weekends' | translate }}</span>
               <span class="text-2xl font-serif font-bold">{{ workingHours.weekends }}</span>
             </div>
           </div>
         </div>
 
         <div class="bg-white/10 backdrop-blur-md p-10 rounded-[3rem] border border-white/20 flex flex-col justify-center">
-          <h3 class="text-2xl font-serif font-bold mb-6 text-primary-400">Оператор боулінгу</h3>
+          <h3 class="text-2xl font-serif font-bold mb-6 text-primary-400">{{ 'bowling_page.contact.title' | translate }}</h3>
           <a href="tel:+380673500013" class="group space-y-2 block">
             <div class="text-3xl md:text-4xl font-serif font-bold group-hover:text-primary-400 transition-colors">
               + 38 (067) 350 00 13
             </div>
-            <span class="text-xs uppercase tracking-[0.2em] text-primary-200">Зателефонувати для бронювання</span>
+            <span class="text-xs uppercase tracking-[0.2em] text-primary-200">{{ 'bowling_page.contact.call_hint' | translate }}</span>
           </a>
         </div>
       </div>
@@ -167,7 +167,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
         </svg>
-        <span>Повернутися до розваг</span>
+        <span>{{ 'bowling_page.back_to_leisure' | translate }}</span>
       </button>
     </div>
   </section>

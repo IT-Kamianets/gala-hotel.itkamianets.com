@@ -1,7 +1,7 @@
 <div class="pt-20">
   <app-page-hero 
-    title="Наші Послуги" 
-    description="Ми пропонуємо все необхідне для вашого комфорту та розваг. Відчуйте гостинність та якісний сервіс у кожній деталі вашого відпочинку.">
+    [title]="'services_page.hero.title' | translate" 
+    [description]="'services_page.hero.description' | translate">
   </app-page-hero>
 
 <!-- Services List -->
@@ -19,7 +19,7 @@
             <div class="overflow-hidden rounded-2xl shadow-2xl">
               <img 
                 [src]="service.image" 
-                [alt]="service.title" 
+                [alt]="service.title | translate" 
                 class="w-full h-[300px] md:h-[450px] object-cover group-hover:scale-110 transition-transform duration-700"
               >
             </div>
@@ -33,13 +33,13 @@
           <div class="w-full lg:w-1/2 space-y-8">
             <div class="space-y-4">
               <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 leading-tight">
-                {{ service.title }}
+                {{ service.title | translate }}
               </h2>
               <div class="w-20 h-1.5 bg-primary-500 rounded-full"></div>
             </div>
 
             <p class="text-lg text-secondary-600 leading-relaxed font-light">
-              {{ service.longDescription }}
+              {{ service.longDescription | translate }}
             </p>
 
             <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -50,7 +50,7 @@
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span>{{ feature }}</span>
+                  <span>{{ feature | translate }}</span>
                 </li>
               }
             </ul>
@@ -61,34 +61,34 @@
                 routerLink="/restaurant"
                 class="bg-secondary-900 text-white px-8 py-3.5 rounded-xl font-bold hover:bg-primary-600 transition-all shadow-lg hover:shadow-primary-600/20 active:scale-95"
               >
-                Дізнатися більше про ресторан
+                {{ 'services_page.items.restaurant_poirot.more_btn' | translate }}
               </button>
               <button 
                 *ngIf="service.id === 'restaurant-bellagio'"
                 routerLink="/restaurant-bellagio"
                 class="bg-secondary-900 text-white px-8 py-3.5 rounded-xl font-bold hover:bg-primary-600 transition-all shadow-lg hover:shadow-primary-600/20 active:scale-95"
               >
-                Дізнатися більше про Bellagio
+                {{ 'services_page.items.restaurant_bellagio.more_btn' | translate }}
               </button>
               <button 
                 *ngIf="service.id === 'conference-service'"
                 routerLink="/conference-service"
                 class="bg-secondary-900 text-white px-8 py-3.5 rounded-xl font-bold hover:bg-primary-600 transition-all shadow-lg hover:shadow-primary-600/20 active:scale-95"
               >
-                Дізнатися більше про зал
+                {{ 'services_page.items.conference_service.more_btn' | translate }}
               </button>
               <button 
                 *ngIf="service.id === 'leisure-center'"
                 routerLink="/bowling-entertainment"
                 class="bg-secondary-900 text-white px-8 py-3.5 rounded-xl font-bold hover:bg-primary-600 transition-all shadow-lg hover:shadow-primary-600/20 active:scale-95"
               >
-                Дізнатися більше про відпочинок
+                {{ 'services_page.items.leisure_center.more_btn' | translate }}
               </button>
               <button 
                 *ngIf="service.id !== 'restaurant-poirot' && service.id !== 'restaurant-bellagio' && service.id !== 'conference-service' && service.id !== 'leisure-center'"
                 class="bg-secondary-900 text-white px-8 py-3.5 rounded-xl font-bold hover:bg-primary-600 transition-all shadow-lg hover:shadow-primary-600/20 active:scale-95"
               >
-                Дізнатися більше
+                {{ 'services_page.more_generic' | translate }}
               </button>
             </div>
           </div>
@@ -105,15 +105,15 @@
     <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-64 h-64 bg-primary-400/10 rounded-full"></div>
 
     <div class="container mx-auto px-4 lg:px-8 text-center relative z-10">
-      <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-6">Готові до незабутнього відпочинку?</h2>
+      <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-6">{{ 'services_page.cta.title' | translate }}</h2>
       <p class="text-primary-100 text-lg mb-10 max-w-2xl mx-auto font-light leading-relaxed">
-        Ми чекаємо на вас у Кам’янці-Подільському. Забронюйте свій номер вже сьогодні та отримайте безкоштовний сніданок у подарунок!
+        {{ 'services_page.cta.description' | translate }}
       </p>
       <button 
         routerLink="/rooms"
         class="bg-white text-secondary-900 px-12 py-4 rounded-xl font-bold text-lg hover:bg-primary-50 transition-all shadow-2xl hover:scale-105"
       >
-        Забронювати номер зараз
+        {{ 'services_page.cta.button' | translate }}
       </button>
     </div>
   </section>

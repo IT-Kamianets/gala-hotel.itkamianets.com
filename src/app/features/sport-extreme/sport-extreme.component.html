@@ -1,81 +1,80 @@
 <div class="pt-20">
   <app-page-hero 
-    title="Спорт та Екстрим" 
-    description="Активний відпочинок у Кам'янці-Подільському: від ранкових пробіжок у парку до екстремальних сплавів та поїздок на БРДМ.">
+    [title]="'sport_extreme.hero.title' | translate" 
+    [description]="'sport_extreme.hero.description' | translate">
   </app-page-hero>
 
-  <!-- City Intro Section -->
+  <!-- City Introduction -->
   <section class="py-20 bg-white">
     <div class="container mx-auto px-4 lg:px-8">
-      <div class="max-w-4xl mx-auto space-y-12">
-        <div class="text-center space-y-6">
-          <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 italic">Відпочинок у «Кам'яній квітці»</h2>
+      <div class="max-w-5xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+        <div class="lg:w-3/5 space-y-8">
+          <div class="space-y-4">
+            <span class="text-primary-600 text-xs font-bold uppercase tracking-[0.3em] block">{{ 'header.contacts' | translate }}</span>
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-secondary-900 leading-tight italic">
+              {{ 'sport_extreme.city_intro.title' | translate }}
+            </h2>
+          </div>
           <p class="text-lg text-secondary-600 leading-relaxed font-light">
-            Кам’янець-Подільський – одне з найдавніших міст України, де поєднані унікальні природні та культурно-історичні пам’ятки. Відпочинок тут стане незабутньою пригодою у вашому житті, адже місто пропонує не лише історію, а й безліч можливостей для активного дозвілля.
+            {{ 'sport_extreme.city_intro.description' | translate }}
           </p>
-          <div class="w-24 h-1 bg-primary-500 mx-auto rounded-full"></div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="bg-gray-50 p-8 rounded-[2.5rem] border border-gray-100">
-            <h3 class="text-xl font-serif font-bold text-secondary-900 mb-6 uppercase tracking-wider">7 причин відвідати нас</h3>
-            <ul class="space-y-3">
-              @for (reason of reasons; track reason) {
-                <li class="flex items-start gap-3">
-                  <div class="mt-1 flex-shrink-0 w-5 h-5 bg-primary-100 rounded-full flex items-center justify-center text-primary-600">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6">
+            <div class="space-y-4">
+              <h4 class="font-bold text-secondary-900 uppercase tracking-widest text-xs flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-primary-500 rounded-full"></div>
+                {{ 'sport_extreme.city_intro.reasons_title' | translate }}
+              </h4>
+              <ul class="space-y-3">
+                @for (reason of reasons; track reason) {
+                  <li class="text-sm text-secondary-500 font-light flex gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                     </svg>
-                  </div>
-                  <span class="text-secondary-700 text-sm font-light">{{ reason }}</span>
-                </li>
-              }
-            </ul>
-          </div>
-          <div class="space-y-6">
-            <h3 class="text-xl font-serif font-bold text-secondary-900 mb-6 uppercase tracking-wider">Історичні пам'ятки</h3>
-            <p class="text-secondary-600 text-sm font-light leading-relaxed">
-              Обов'язково відвідайте Старий замок, Кафедральний собор Петра і Павла, Турецький міст та Башту Стефана Баторія. Насолодіться красою Смотрицького каньйону та магією затопленої Бакоти.
-            </p>
-            <div class="rounded-3xl overflow-hidden shadow-xl">
-              <img src="gallery/1.png" alt="Kamianets Fortress" class="w-full h-48 object-cover">
+                    {{ reason | translate }}
+                  </li>
+                }
+              </ul>
             </div>
+            <div class="space-y-4 p-8 bg-gray-50 rounded-[2.5rem] border border-gray-100">
+              <h4 class="font-bold text-secondary-900 uppercase tracking-widest text-xs">{{ 'sport_extreme.city_intro.history_title' | translate }}</h4>
+              <p class="text-sm text-secondary-600 font-light leading-relaxed italic">
+                {{ 'sport_extreme.city_intro.history_desc' | translate }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-2/5">
+          <div class="relative group">
+            <div class="absolute -inset-4 bg-primary-100 rounded-[3rem] rotate-3 -z-10 group-hover:rotate-0 transition-transform duration-700"></div>
+            <img src="gallery/14.png" [alt]="'sport_extreme.city_intro.title' | translate" class="rounded-[2.5rem] shadow-2xl w-full h-[550px] object-cover">
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Activity Grid -->
+  <!-- Activities Grid -->
   <section class="py-20 bg-gray-50">
     <div class="container mx-auto px-4 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-serif font-bold text-secondary-900">Варіанти Дозвілля від Gala Hotel</h2>
-        <p class="text-secondary-500 font-light mt-4">Лише актуальні та безпечні розваги для наших гостей</p>
+      <div class="text-center mb-16 space-y-4">
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 italic">{{ 'sport_extreme.activities_title' | translate }}</h2>
+        <p class="text-secondary-500 font-light text-sm uppercase tracking-widest">{{ 'sport_extreme.activities_subtitle' | translate }}</p>
+        <div class="w-20 h-1 bg-primary-500 mx-auto rounded-full"></div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         @for (item of activities; track item.title) {
-          <div class="bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col h-full group">
-            <div class="relative h-64 overflow-hidden">
-              <img [src]="item.image" [alt]="item.title" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-              <div class="absolute inset-0 bg-gradient-to-t from-secondary-900/60 to-transparent"></div>
-              <h3 class="absolute bottom-6 left-8 text-xl font-serif font-bold text-white tracking-wider uppercase">
-                {{ item.title }}
-              </h3>
+          <div class="group bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col">
+            <div class="h-64 overflow-hidden relative">
+              <img [src]="item.img" [alt]="item.title | translate" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+              <div class="absolute inset-0 bg-secondary-900/20 group-hover:bg-transparent transition-colors"></div>
             </div>
-            <div class="p-8 flex-grow flex flex-col space-y-6">
-              <p class="text-secondary-600 text-sm font-light leading-relaxed">
-                {{ item.description }}
+            <div class="p-10 flex-grow flex flex-col items-center text-center">
+              <h3 class="text-xl font-serif font-bold text-secondary-900 mb-4 group-hover:text-primary-600 transition-colors uppercase tracking-tight">{{ item.title | translate }}</h3>
+              <p class="text-secondary-500 font-light text-sm leading-relaxed mb-8">
+                {{ item.desc | translate }}
               </p>
-              <div class="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
-                <a [href]="'tel:' + item.phone.replace(' ', '')" class="text-primary-600 font-bold text-xs flex items-center gap-2 hover:text-primary-700">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  {{ item.phone }}
-                </a>
-              </div>
             </div>
           </div>
         }
@@ -83,57 +82,61 @@
     </div>
   </section>
 
-  <!-- Extreme/Special Section -->
-  <section class="py-24 bg-primary-900 text-white relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 30px 30px;"></div>
-    <div class="container mx-auto px-4 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div class="space-y-8">
-          <h2 class="text-3xl md:text-5xl font-serif font-bold italic leading-tight">Сплави та Експедиції</h2>
-          <p class="text-primary-100 leading-relaxed font-light text-lg">
-            Ми маємо все необхідне спорядження для сплавів у супроводі професійних інструкторів. Організовуємо вечори біля багаття з найсмачнішою рибною юшкою та запеченою рибою.
+  <!-- Rafting Detail -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="max-w-4xl mx-auto rounded-[4rem] bg-secondary-900 p-12 md:p-20 shadow-2xl relative overflow-hidden text-white flex flex-col md:flex-row items-center gap-12">
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 30px 30px;"></div>
+        <div class="md:w-3/5 relative z-10 space-y-8 text-center md:text-left">
+          <h2 class="text-3xl md:text-4xl font-serif font-bold italic text-primary-400">{{ 'sport_extreme.expeditions.title' | translate }}</h2>
+          <p class="text-lg text-primary-100 font-light leading-relaxed">
+            {{ 'sport_extreme.expeditions.description' | translate }}
           </p>
-          <div class="grid grid-cols-2 gap-4">
-            <div class="p-4 bg-white/10 rounded-2xl border border-white/20">
-              <span class="block text-primary-400 font-bold uppercase tracking-widest text-[10px] mb-1">Максимум</span>
-              <span class="text-xl font-serif font-bold">12 дорослих</span>
+          <div class="flex flex-wrap justify-center md:justify-start gap-8 pt-4">
+            <div>
+              <span class="block text-primary-400 text-[10px] font-bold uppercase tracking-widest mb-1">{{ 'sport_extreme.expeditions.max_label' | translate }}</span>
+              <span class="text-2xl font-serif font-bold">{{ 'sport_extreme.expeditions.max_value' | translate }}</span>
             </div>
-            <div class="p-4 bg-white/10 rounded-2xl border border-white/20">
-              <span class="block text-primary-400 font-bold uppercase tracking-widest text-[10px] mb-1">Локації</span>
-              <span class="text-xl font-serif font-bold">Збруч, Жванчик</span>
+            <div>
+              <span class="block text-primary-400 text-[10px] font-bold uppercase tracking-widest mb-1">{{ 'sport_extreme.expeditions.locations_label' | translate }}</span>
+              <span class="text-2xl font-serif font-bold">{{ 'sport_extreme.expeditions.locations_value' | translate }}</span>
             </div>
           </div>
         </div>
-        <div class="rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white/10">
-          <img src="sport/baydarka.png" alt="Kayaking Trip" class="w-full">
+        <div class="md:w-2/5 relative z-10 flex flex-col items-center gap-6">
+          <div class="w-24 h-24 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 animate-bounce">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 007 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <button routerLink="/contacts" class="bg-primary-600 text-white px-10 py-4 rounded-xl font-bold hover:bg-primary-500 transition-all shadow-xl active:scale-95 whitespace-nowrap">
+            {{ 'sport_extreme.cta.title' | translate }}
+          </button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="py-20 bg-white text-center">
-    <div class="container mx-auto px-4 lg:px-8">
-      <div class="max-w-3xl mx-auto bg-primary-50 rounded-[2.5rem] p-8 md:p-12 border border-primary-100">
-        <h2 class="text-2xl md:text-3xl font-serif font-bold text-secondary-900 mb-6 italic">Бажаєте забронювати розвагу?</h2>
-        <p class="text-secondary-600 font-light mb-8">Зверніться до нашого адміністратора для узгодження часу та вартості індивідуальних турів.</p>
-        <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-          <a href="tel:+380673811969" class="bg-secondary-900 text-white px-10 py-4 rounded-xl font-bold hover:bg-primary-600 transition-all shadow-xl active:scale-95">
-            +38 (067) 381 19 69
-          </a>
-          <button routerLink="/contacts" class="text-primary-600 font-bold uppercase tracking-widest text-xs hover:text-primary-700 transition-colors">
-            Інші контакти
-          </button>
-        </div>
-      </div>
-      
-      <div class="mt-12">
-        <button routerLink="/bowling-entertainment" class="text-secondary-400 hover:text-primary-600 font-medium flex items-center gap-2 mx-auto transition-colors text-xs uppercase tracking-widest">
+  <!-- CTA -->
+  <section class="py-24 bg-gray-50 text-center">
+    <div class="container mx-auto px-4 lg:px-8 space-y-10">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 max-w-2xl mx-auto italic">{{ 'sport_extreme.cta.description' | translate }}</h2>
+      <div class="flex items-center justify-center gap-6">
+        <a routerLink="/contacts" class="text-primary-600 font-bold uppercase tracking-widest text-xs hover:text-primary-700 transition-colors flex items-center gap-2">
+          {{ 'sport_extreme.cta.contacts_btn' | translate }}
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+      <div class="pt-8 border-t border-gray-200">
+        <a routerLink="/services" class="text-secondary-400 hover:text-primary-600 text-xs font-bold uppercase tracking-widest transition-colors inline-flex items-center gap-2">
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
-          <span>Повернутися до розваг</span>
-        </button>
+          {{ 'sport_extreme.back_link' | translate }}
+        </a>
       </div>
     </div>
   </section>

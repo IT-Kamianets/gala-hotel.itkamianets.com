@@ -1,7 +1,7 @@
 <div class="pt-20">
   <app-page-hero 
-    title="Про «Гала Готель»" 
-    description="Історія створення, досягнення та повний спектр послуг одного з найкращих готелів України.">
+    [title]="'about.hero.title' | translate" 
+    [description]="'about.hero.description' | translate">
   </app-page-hero>
 
   <!-- History Timeline -->
@@ -9,9 +9,9 @@
     <div class="container mx-auto px-4 lg:px-8">
       <div class="max-w-4xl mx-auto space-y-12">
         <div class="text-center space-y-6">
-          <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 italic">Наша Історія</h2>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 italic">{{ 'about.history.title' | translate }}</h2>
           <p class="text-lg text-secondary-600 leading-relaxed font-light">
-            Готельно-туристичний комплекс «Гала-Готель» — це поєднання багаторічного досвіду гостинності та постійного розвитку інфраструктури.
+            {{ 'about.history.description' | translate }}
           </p>
           <div class="w-24 h-1 bg-primary-500 mx-auto rounded-full"></div>
         </div>
@@ -26,7 +26,7 @@
                 <div class="flex items-center justify-between space-x-2 mb-1">
                   <span class="font-serif font-bold text-primary-600 text-xl">{{ item.year }}</span>
                 </div>
-                <p class="text-secondary-600 font-light text-sm">{{ item.event }}</p>
+                <p class="text-secondary-600 font-light text-sm">{{ item.event | translate }}</p>
               </div>
             </div>
           }
@@ -40,18 +40,18 @@
     <div class="container mx-auto px-4 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div class="space-y-8">
-          <h2 class="text-3xl font-serif font-bold text-secondary-900 italic">Номерний фонд</h2>
+          <h2 class="text-3xl font-serif font-bold text-secondary-900 italic">{{ 'about.stats.title' | translate }}</h2>
           <p class="text-secondary-600 leading-relaxed font-light">
-            На сьогоднішній день комплекс працює як єдине ціле з широким спектром основних та додаткових послуг. Готельно-туристичний комплекс включає в себе 4 корпуси та 68 комфортабельних номерів різних категорій.
+            {{ 'about.stats.description' | translate }}
           </p>
           <div class="grid grid-cols-2 gap-4">
             <div class="p-6 bg-white rounded-3xl shadow-sm border border-gray-100">
-              <span class="block text-4xl font-serif font-bold text-primary-600">68</span>
-              <span class="text-xs uppercase tracking-widest text-secondary-400 font-bold">Номерів загалом</span>
+              <span class="block text-4xl font-serif font-bold text-primary-600">{{ 'about.stats.rooms_count' | translate }}</span>
+              <span class="text-xs uppercase tracking-widest text-secondary-400 font-bold">{{ 'about.stats.rooms_label' | translate }}</span>
             </div>
             <div class="p-6 bg-white rounded-3xl shadow-sm border border-gray-100">
-              <span class="block text-4xl font-serif font-bold text-primary-600">4</span>
-              <span class="text-xs uppercase tracking-widest text-secondary-400 font-bold">Житлових корпуси</span>
+              <span class="block text-4xl font-serif font-bold text-primary-600">{{ 'about.stats.buildings_count' | translate }}</span>
+              <span class="text-xs uppercase tracking-widest text-secondary-400 font-bold">{{ 'about.stats.buildings_label' | translate }}</span>
             </div>
           </div>
         </div>
@@ -60,17 +60,17 @@
           <table class="w-full text-left border-collapse">
             <thead class="bg-secondary-900 text-white">
               <tr>
-                <th class="p-6 font-serif font-bold">Категорія</th>
-                <th class="p-6 font-serif font-bold">К-сть</th>
-                <th class="p-6 font-serif font-bold">Особливості</th>
+                <th class="p-6 font-serif font-bold">{{ 'about.stats.table.category' | translate }}</th>
+                <th class="p-6 font-serif font-bold">{{ 'about.stats.table.count' | translate }}</th>
+                <th class="p-6 font-serif font-bold">{{ 'about.stats.table.features' | translate }}</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-gray-100">
               @for (room of roomTypes; track room.name) {
                 <tr class="hover:bg-primary-50/50 transition-colors">
-                  <td class="p-6 font-bold text-secondary-900 text-sm">{{ room.name }}</td>
+                  <td class="p-6 font-bold text-secondary-900 text-sm">{{ room.name | translate }}</td>
                   <td class="p-6 text-primary-600 font-bold">{{ room.count }}</td>
-                  <td class="p-6 text-secondary-500 text-xs font-light">{{ room.capacity }} ({{ room.size }})</td>
+                  <td class="p-6 text-secondary-500 text-xs font-light">{{ room.capacity | translate }} ({{ room.size | translate }})</td>
                 </tr>
               }
             </tbody>
@@ -84,7 +84,7 @@
   <section class="py-20 bg-white">
     <div class="container mx-auto px-4 lg:px-8">
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 italic mb-4">План-схема комплексу</h2>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 italic mb-4">{{ 'about.map.title' | translate }}</h2>
         <div class="w-24 h-1 bg-primary-500 mx-auto rounded-full"></div>
       </div>
       
@@ -92,13 +92,13 @@
         <!-- Map Image -->
         <div class="xl:w-2/3 w-full">
           <div class="rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white bg-gray-100">
-            <img src="map.png" alt="План-схема комплексу Гала Готель" class="w-full h-auto">
+            <img src="map.png" [alt]="'about.map.alt' | translate" class="w-full h-auto">
           </div>
         </div>
         
         <!-- Legend Grid -->
         <div class="xl:w-1/3 w-full bg-gray-50 rounded-[2.5rem] p-8 border border-gray-100">
-          <h3 class="text-xl font-serif font-bold text-secondary-900 mb-6 pb-4 border-b border-gray-200">Легенда схеми:</h3>
+          <h3 class="text-xl font-serif font-bold text-secondary-900 mb-6 pb-4 border-b border-gray-200">{{ 'about.map.legend_title' | translate }}</h3>
           <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-y-3 gap-x-6">
             @for (item of mapLegend; track item.id) {
               <div class="flex items-start gap-3 group">
@@ -106,7 +106,7 @@
                   {{ item.id }}
                 </span>
                 <span class="text-secondary-700 text-sm font-light leading-snug group-hover:text-secondary-900 transition-colors">
-                  {{ item.name }}
+                  {{ item.name | translate }}
                 </span>
               </div>
             }
@@ -120,7 +120,7 @@
   <section class="py-20 bg-white">
     <div class="container mx-auto px-4 lg:px-8">
       <div class="max-w-4xl mx-auto bg-primary-50 rounded-[3rem] p-10 md:p-16 border border-primary-100">
-        <h2 class="text-3xl font-serif font-bold text-secondary-900 mb-8 italic">Правила поселення</h2>
+        <h2 class="text-3xl font-serif font-bold text-secondary-900 mb-8 italic">{{ 'about.rules.title' | translate }}</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div class="space-y-6">
             <div class="flex items-center gap-4">
@@ -130,7 +130,7 @@
                 </svg>
               </div>
               <div>
-                <span class="block text-xs uppercase tracking-widest text-secondary-400 font-bold">Година заїзду</span>
+                <span class="block text-xs uppercase tracking-widest text-secondary-400 font-bold">{{ 'about.rules.checkin_label' | translate }}</span>
                 <span class="text-xl font-serif font-bold text-secondary-900">14:00</span>
               </div>
             </div>
@@ -141,20 +141,20 @@
                 </svg>
               </div>
               <div>
-                <span class="block text-xs uppercase tracking-widest text-secondary-400 font-bold">Година виїзду</span>
+                <span class="block text-xs uppercase tracking-widest text-secondary-400 font-bold">{{ 'about.rules.checkout_label' | translate }}</span>
                 <span class="text-xl font-serif font-bold text-secondary-900">12:00</span>
               </div>
             </div>
           </div>
           <div class="space-y-4">
             <p class="text-secondary-600 font-light leading-relaxed text-sm">
-              Поселення здійснюється на основі документів, що засвідчують особу. У готелі наявні номери одно-, дво-, трьохмісного розміщення. Можливе також чотирьохмісне розміщення для родин.
+              {{ 'about.rules.description' | translate }}
             </p>
             <div class="flex items-center gap-3 text-primary-600 font-bold text-xs uppercase tracking-widest">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
-              Можливе розміщення з тваринами (100 грн/добу)
+              {{ 'about.rules.pets' | translate }}
             </div>
           </div>
         </div>
@@ -166,7 +166,7 @@
   <section class="py-20 bg-gray-50">
     <div class="container mx-auto px-4 lg:px-8">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-serif font-bold text-secondary-900 mb-12 text-center italic">Додаткові послуги</h2>
+        <h2 class="text-3xl font-serif font-bold text-secondary-900 mb-12 text-center italic">{{ 'about.services.title' | translate }}</h2>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
           @for (service of additionalServices; track service) {
             <div class="p-6 bg-white rounded-2xl border border-gray-100 text-center hover:shadow-md transition-shadow group">
@@ -175,7 +175,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <span class="text-xs font-bold text-secondary-700 uppercase tracking-wider">{{ service }}</span>
+              <span class="text-xs font-bold text-secondary-700 uppercase tracking-wider">{{ service | translate }}</span>
             </div>
           }
         </div>
@@ -187,22 +187,22 @@
   <section class="py-24 bg-primary-900 text-white relative overflow-hidden">
     <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 30px 30px;"></div>
     <div class="container mx-auto px-4 lg:px-8 relative z-10 text-center max-w-4xl">
-      <h2 class="text-3xl md:text-5xl font-serif font-bold mb-10 italic">Забронюйте Ваш відпочинок</h2>
+      <h2 class="text-3xl md:text-5xl font-serif font-bold mb-10 italic">{{ 'about.booking.title' | translate }}</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
         <a href="tel:+380673811969" class="p-6 bg-white/10 rounded-3xl border border-white/20 hover:bg-white/20 transition-colors">
-          <span class="block text-[10px] uppercase font-bold text-primary-400 mb-2">Телефон</span>
+          <span class="block text-[10px] uppercase font-bold text-primary-400 mb-2">{{ 'about.booking.phone_label' | translate }}</span>
           <span class="font-serif font-bold text-lg">+38 067 381 19 69</span>
         </a>
         <a href="mailto:info@gala-hotel.com.ua" class="p-6 bg-white/10 rounded-3xl border border-white/20 hover:bg-white/20 transition-colors">
-          <span class="block text-[10px] uppercase font-bold text-primary-400 mb-2">E-mail</span>
+          <span class="block text-[10px] uppercase font-bold text-primary-400 mb-2">{{ 'about.booking.email_label' | translate }}</span>
           <span class="font-serif font-bold text-lg">info&#64;gala-hotel.com.ua</span>
         </a>
         <button routerLink="/rooms" class="p-6 bg-primary-600 rounded-3xl border border-primary-500 hover:bg-primary-500 transition-colors shadow-lg">
-          <span class="block text-[10px] uppercase font-bold text-white mb-2">Онлайн</span>
-          <span class="font-serif font-bold text-lg">Вибрати номер</span>
+          <span class="block text-[10px] uppercase font-bold text-white mb-2">{{ 'about.booking.online_label' | translate }}</span>
+          <span class="font-serif font-bold text-lg">{{ 'about.booking.select_room' | translate }}</span>
         </button>
       </div>
-      <p class="text-primary-200 text-sm font-light">Бронювання номерів є безкоштовним. Ми приймаємо готівку, картки та безготівковий розрахунок.</p>
+      <p class="text-primary-200 text-sm font-light">{{ 'about.booking.footer' | translate }}</p>
     </div>
   </section>
 </div>

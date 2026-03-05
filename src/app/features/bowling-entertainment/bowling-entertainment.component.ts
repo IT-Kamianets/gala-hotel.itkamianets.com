@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageHeroComponent } from '../../shared/components/page-hero/page-hero.component';
 import { RouterLink } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 interface HighlightCard {
   title: string;
@@ -12,54 +13,56 @@ interface HighlightCard {
 @Component({
   selector: 'app-bowling-entertainment',
   standalone: true,
-  imports: [CommonModule, PageHeroComponent, RouterLink],
+  imports: [CommonModule, PageHeroComponent, RouterLink, TranslateModule],
   templateUrl: './bowling-entertainment.component.html',
 })
 export class BowlingEntertainmentComponent {
   highlightCards: HighlightCard[] = [
     {
-      title: 'БОУЛІНГ',
-      description: 'Боулінг-клуб «Galactica» пропонує 4 професійні доріжки, сучасне обладнання та комфортну зону відпочинку.',
+      title: 'footer.service_bowling',
+      description: 'bowling_page.hero.description',
       image: 'bowling/bowl1.png'
     },
     {
-      title: 'ТЕНІСНИЙ КОРТ',
-      description: 'Професійний тенісний корт з якісним покриттям для активного відпочинку та тренувань.',
+      title: 'footer.service_tennis',
+      description: 'leisure_page.galactica.description',
       image: 'tenis/tenis1.png'
     },
     {
-      title: 'ДИЯЧИЙ МАЙДАНЧИК',
-      description: 'Сучасна ігрова зона на свіжому повітрі з атракціонами для безпечного та веселого дозвілля дітей.',
+      title: 'gallery.categories.leisure',
+      description: 'about.services.items.playground',
       image: 'child/child1.png'
     },
     {
-      title: 'АВТОКЕМПІНГ',
-      description: 'Сучасний автокемпінг з усіма необхідними зручностями для комфортної зупинки мандрівників на колесах.',
+      title: 'services_page.items.leisure_center.features.camping',
+      description: 'camping_page.hero.description',
       image: 'camping/camping1.png'
     },
     {
-      title: 'САУНА',
-      description: 'Класична сауна для повного релаксу та відновлення сил після насиченого дня.',
+      title: 'footer.service_sauna',
+      description: 'rules_page.paid_services.sauna',
       image: 'sauna/sauna1.png'
     },
     {
-      title: 'БЮВЕТ',
-      description: 'Власний бювет з мінеральною водою типу «Нафтуся» для здоров’я та оздоровлення наших гостей.',
+      title: 'footer.service_mineral_water',
+      description: 'about.services.items.well',
       image: 'water/water1.png'
     },
     {
-      title: 'СПОРТ І ЕКСТРИМ',
-      description: 'Для поціновувачів активного драйву: професійний тир та спортивні активності на території комплексу.',
+      title: 'gallery.filters.leisure',
+      description: 'leisure_page.events.description',
       image: 'sport/baydarka.png'
     }
   ];
 
   offers = [
-    '4 професійні доріжки для боулінгу',
-    'Оренда тенісного корту та інвентаря',
-    'Професійний тир для перевірки влучності',
-    'Дитячий майданчик з безпечним покриттям',
-    'Організація дитячих днів народжень',
-    'Корпоративні турніри з боулінгу'
+    'leisure_page.offers.list.0',
+    'leisure_page.offers.list.1',
+    'leisure_page.offers.list.2',
+    'leisure_page.offers.list.3',
+    'leisure_page.offers.list.4',
+    'leisure_page.offers.list.5',
+    'leisure_page.offers.list.6',
+    'leisure_page.offers.list.7'
   ];
 }

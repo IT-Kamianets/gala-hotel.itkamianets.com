@@ -1,7 +1,7 @@
 <div class="pt-20 bg-gray-50 min-h-screen">
   <app-page-hero 
-    title="Галерея" 
-    description="Перегляньте атмосферу нашого готелю: затишні номери, вишукані страви та зони для активного відпочинку.">
+    [title]="'gallery.hero.title' | translate" 
+    [description]="'gallery.hero.description' | translate">
   </app-page-hero>
 
   <!-- Filter Controls -->
@@ -11,42 +11,42 @@
       [ngClass]="activeFilter === 'all' ? 'bg-primary-600 text-white shadow-lg' : 'bg-white text-secondary-600 hover:bg-primary-50'"
       class="px-6 py-2 rounded-full text-sm font-bold transition-all border border-transparent shadow-sm"
     >
-      Всі фото
+      {{ 'gallery.filters.all' | translate }}
     </button>
     <button 
       (click)="setFilter('exterior')"
       [ngClass]="activeFilter === 'exterior' ? 'bg-primary-600 text-white shadow-lg' : 'bg-white text-secondary-600 hover:bg-primary-50'"
       class="px-6 py-2 rounded-full text-sm font-bold transition-all border border-transparent shadow-sm"
     >
-      Територія
+      {{ 'gallery.filters.exterior' | translate }}
     </button>
     <button 
       (click)="setFilter('rooms')"
       [ngClass]="activeFilter === 'rooms' ? 'bg-primary-600 text-white shadow-lg' : 'bg-white text-secondary-600 hover:bg-primary-50'"
       class="px-6 py-2 rounded-full text-sm font-bold transition-all border border-transparent shadow-sm"
     >
-      Номери
+      {{ 'gallery.filters.rooms' | translate }}
     </button>
     <button 
       (click)="setFilter('restaurant')"
       [ngClass]="activeFilter === 'restaurant' ? 'bg-primary-600 text-white shadow-lg' : 'bg-white text-secondary-600 hover:bg-primary-50'"
       class="px-6 py-2 rounded-full text-sm font-bold transition-all border border-transparent shadow-sm"
     >
-      Ресторан
+      {{ 'gallery.filters.restaurant' | translate }}
     </button>
     <button 
       (click)="setFilter('events')"
       [ngClass]="activeFilter === 'events' ? 'bg-primary-600 text-white shadow-lg' : 'bg-white text-secondary-600 hover:bg-primary-50'"
       class="px-6 py-2 rounded-full text-sm font-bold transition-all border border-transparent shadow-sm"
     >
-      Події
+      {{ 'gallery.filters.events' | translate }}
     </button>
     <button 
       (click)="setFilter('leisure')"
       [ngClass]="activeFilter === 'leisure' ? 'bg-primary-600 text-white shadow-lg' : 'bg-white text-secondary-600 hover:bg-primary-50'"
       class="px-6 py-2 rounded-full text-sm font-bold transition-all border border-transparent shadow-sm"
     >
-      Відпочинок
+      {{ 'gallery.filters.leisure' | translate }}
     </button>
   </div>
 
@@ -59,19 +59,15 @@
           class="group relative aspect-square overflow-hidden rounded-2xl shadow-md cursor-pointer animate-in fade-in zoom-in duration-500">
           <img 
             [src]="image.url" 
-            [alt]="image.title"
+            [alt]="image.title | translate"
             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           >
           <!-- Hover Overlay -->
           <div class="absolute inset-0 bg-secondary-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
             <span class="text-[10px] uppercase tracking-[0.2em] text-primary-400 font-bold mb-1">
-              {{ image.category === 'restaurant' ? 'Ресторан' : 
-                 image.category === 'events' ? 'Подія' : 
-                 image.category === 'rooms' ? 'Номер' : 
-                 image.category === 'leisure' ? 'Відпочинок' : 
-                 image.category === 'exterior' ? 'Територія' : image.category }}
+              {{ 'gallery.categories.' + image.category | translate }}
             </span>
-            <h3 class="text-white font-serif font-bold text-lg leading-tight">{{ image.title }}</h3>
+            <h3 class="text-white font-serif font-bold text-lg leading-tight">{{ image.title | translate }}</h3>
           </div>
         </div>
       }
@@ -90,7 +86,7 @@
       <!-- Top Bar: Counter and Close -->
       <div class="absolute top-0 inset-x-0 p-6 flex justify-between items-center z-20 text-white">
         <div class="flex flex-col">
-          <span class="text-[10px] uppercase tracking-[0.3em] text-primary-400 font-bold">{{ selectedImage.category }}</span>
+          <span class="text-[10px] uppercase tracking-[0.3em] text-primary-400 font-bold">{{ 'gallery.categories.' + selectedImage.category | translate }}</span>
           <span class="text-sm font-medium opacity-60">{{ selectedIndex + 1 }} / {{ filteredImages.length }}</span>
         </div>
         <button (click)="closeImage()" class="p-3 bg-white/10 hover:bg-white/20 rounded-full transition-all group">
@@ -128,13 +124,13 @@
         <div class="relative max-w-[95vw] w-full h-full flex flex-col items-center justify-center">
           <img 
             [src]="selectedImage.url" 
-            [alt]="selectedImage.title"
+            [alt]="selectedImage.title | translate"
             class="max-w-full max-h-[85vh] md:max-h-[90vh] object-contain shadow-2xl rounded-sm animate-in fade-in zoom-in duration-500"
           >
           
           <!-- Bottom Caption - More compact -->
           <div class="mt-4 text-center text-white max-w-4xl animate-in slide-in-from-bottom duration-500">
-            <h3 class="text-lg md:text-2xl font-serif font-bold italic drop-shadow-lg">{{ selectedImage.title }}</h3>
+            <h3 class="text-lg md:text-2xl font-serif font-bold italic drop-shadow-lg">{{ selectedImage.title | translate }}</h3>
           </div>
         </div>
       </div>

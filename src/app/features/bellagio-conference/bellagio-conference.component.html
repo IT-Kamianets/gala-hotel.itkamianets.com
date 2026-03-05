@@ -1,48 +1,35 @@
 <div class="pt-20">
   <app-page-hero 
-    title="Конференції у «Белладжіо»" 
-    description="Професійний майданчик для проведення семінарів, тренінгів та ділових зустрічей у Кам’янці-Подільському.">
+    [title]="'bellagio_conference.hero.title' | translate" 
+    [description]="'bellagio_conference.hero.description' | translate">
   </app-page-hero>
 
   <!-- Intro Section -->
   <section class="py-20 bg-white">
     <div class="container mx-auto px-4 lg:px-8">
-      <div class="flex flex-col lg:flex-row items-center gap-16">
-        <div class="lg:w-1/2 space-y-8">
-          <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 leading-tight">Ваш успіх починається з правильного місця</h2>
+      <div class="max-w-4xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+        <div class="lg:w-3/5 space-y-8">
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 italic leading-tight">
+            {{ 'bellagio_conference.intro.title' | translate }}
+          </h2>
           <p class="text-lg text-secondary-600 leading-relaxed font-light">
-            Ми пропонуємо проведення конференцій, семінарів та тренінгів на території готельно-ресторанного комплексу «Гала готель». Зал клубу-ресторану «Bellagio» оснащений усією необхідною технікою, що дозволяє зосередитися на головному — ваших знаннях та досвіді.
+            {{ 'bellagio_conference.intro.description' | translate }}
           </p>
-          <div class="p-6 bg-primary-50 rounded-2xl border border-primary-100 flex items-center gap-4">
-            <div class="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center text-white font-bold">300</div>
-            <span class="text-secondary-800 font-medium tracking-wide">Вмісткість залу до 300 чоловік</span>
+          <div class="flex items-center gap-4 py-2">
+            <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 shadow-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <span class="text-xs font-bold text-secondary-500 uppercase tracking-widest">{{ 'bellagio_conference.intro.capacity' | translate }}</span>
           </div>
         </div>
-        <div class="lg:w-1/2">
-          <div class="rounded-[3rem] overflow-hidden shadow-2xl">
-            <img src="belagio/services_conf.png" alt="Conference in Bellagio" class="w-full">
+        <div class="lg:w-2/5">
+          <div class="relative">
+            <div class="absolute -inset-4 bg-primary-100 rounded-[3rem] -rotate-3 -z-10"></div>
+            <img src="belagio/conf1.png" [alt]="'bellagio_conference.gallery_items.img1' | translate" class="rounded-[2.5rem] shadow-2xl w-full h-[400px] object-cover">
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Photo Gallery (Carousel) -->
-  <section class="pb-20 overflow-hidden">
-    <div class="container mx-auto px-4 lg:px-8">
-      <div class="flex space-x-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 lg:mx-0 lg:px-0">
-        @for (image of galleryImages; track image.url) {
-          <div class="flex-shrink-0 w-[300px] md:w-[450px] aspect-[4/3] rounded-3xl overflow-hidden snap-start shadow-md hover:shadow-xl transition-shadow duration-500">
-            <img [src]="image.url" [alt]="image.alt" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
-          </div>
-        }
-      </div>
-      <!-- Hint to scroll -->
-      <div class="flex items-center justify-center space-x-2 text-secondary-400 text-xs font-medium animate-pulse">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
-        <span>Прокрутіть, щоб переглянути фото залу</span>
       </div>
     </div>
   </section>
@@ -52,88 +39,98 @@
     <div class="container mx-auto px-4 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         @for (feature of features; track feature.title) {
-          <div class="p-8 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-            <div class="w-10 h-10 bg-primary-100 rounded-xl flex items-center justify-center text-primary-600 mb-6">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div class="p-8 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all group">
+            <div class="w-12 h-12 bg-primary-50 rounded-2xl flex items-center justify-center text-primary-600 mb-6 group-hover:bg-primary-600 group-hover:text-white transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" *ngIf="feature.title.includes('tech') || feature.title.includes('equipment')">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" *ngIf="feature.title.includes('accommodation')">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" *ngIf="feature.title.includes('catering')">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" *ngIf="feature.title.includes('leisure')">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2 2 2 0 012 2v.656m-2.431 3.592a2 2 0 01-1.964.305l-2.043-.681a2 2 0 01-1.286-1.286l-.681-2.043a2 2 0 01.305-1.964m11.332-1.39a2 2 0 00-1.936-2.585h-1.014a2 2 0 01-1.892-1.335l-.112-.338a2 2 0 00-1.892-1.335H11.5a2 2 0 00-1.936 2.585l.112.338a2 2 0 01-1.892 1.335h-1.014a2 2 0 00-1.936 2.585l.112.338a2 2 0 01-1.892 1.335H4.5a2 2 0 00-1.936 2.585l.112.338a2 2 0 01-1.892 1.335h-1.014" />
+              </svg>
+              <!-- Default Icon if no match -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" *ngIf="!feature.title.includes('tech') && !feature.title.includes('equipment') && !feature.title.includes('accommodation') && !feature.title.includes('catering') && !feature.title.includes('leisure')">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h3 class="text-xl font-serif font-bold text-secondary-900 mb-3">{{ feature.title }}</h3>
-            <p class="text-sm text-secondary-500 font-light leading-relaxed">{{ feature.desc }}</p>
+            <h3 class="text-xl font-serif font-bold text-secondary-900 mb-4">{{ feature.title | translate }}</h3>
+            <p class="text-secondary-600 font-light text-sm leading-relaxed">{{ feature.desc | translate }}</p>
           </div>
         }
       </div>
     </div>
   </section>
 
+  <!-- Horizontal Scroll Gallery Hint -->
+  <div class="bg-white py-6 text-center border-y border-gray-100">
+    <div class="flex items-center justify-center gap-3 animate-pulse">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+      </svg>
+      <span class="text-[10px] uppercase font-bold tracking-widest text-secondary-400">{{ 'bellagio_conference.gallery_hint' | translate }}</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- Horizontal Gallery -->
+  <section class="overflow-x-auto pb-10 hide-scrollbar bg-white">
+    <div class="flex gap-6 px-4 lg:px-8 min-w-max">
+      @for (img of galleryImages; track img.url) {
+        <div class="w-[300px] md:w-[500px] h-[350px] rounded-3xl overflow-hidden shadow-lg border-4 border-white hover:border-primary-100 transition-all group">
+          <img [src]="img.url" [alt]="img.alt | translate" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+        </div>
+      }
+    </div>
+  </section>
+
   <!-- Pricing Table -->
   <section class="py-20 bg-white">
-    <div class="container mx-auto px-4 lg:px-8 max-w-4xl">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 mb-4">Вартість оренди залу</h2>
-        <div class="w-20 h-1 bg-primary-500 mx-auto rounded-full"></div>
-      </div>
-
-      <div class="overflow-hidden rounded-3xl border border-gray-100 shadow-xl">
-        <table class="w-full text-left border-collapse">
-          <thead>
-            <tr class="bg-primary-900 text-white">
-              <th class="p-6 md:p-8 font-serif text-lg">Період оренди</th>
-              <th class="p-6 md:p-8 font-serif text-lg text-right">Ціна</th>
+    <div class="container mx-auto px-4 lg:px-8">
+      <div class="max-w-3xl mx-auto overflow-hidden rounded-[2.5rem] border border-gray-100 shadow-xl">
+        <table class="w-full text-left border-collapse bg-white">
+          <thead class="bg-secondary-900 text-white">
+            <tr>
+              <th class="p-8 font-serif font-bold text-lg">{{ 'bellagio_conference.pricing.period' | translate }}</th>
+              <th class="p-8 font-serif font-bold text-lg text-right">{{ 'bellagio_conference.pricing.price' | translate }}</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-gray-100">
             @for (item of pricing; track item.period) {
-              <tr class="hover:bg-gray-50 transition-colors">
-                <td class="p-6 md:p-8 text-secondary-700 font-medium">{{ item.period }}</td>
-                <td class="p-6 md:p-8 text-secondary-900 font-bold text-right text-lg">{{ item.price }}</td>
+              <tr class="hover:bg-primary-50 transition-colors">
+                <td class="p-8 font-bold text-secondary-900">{{ item.period | translate }}</td>
+                <td class="p-8 text-primary-600 font-bold text-xl text-right">{{ item.price }}</td>
               </tr>
             }
           </tbody>
         </table>
-      </div>
-      <p class="mt-8 text-sm text-secondary-400 text-center font-light italic">
-        * Заздалегідь обговоріть необхідне обладнання та налаштування з нашим технічним персоналом.
-      </p>
-    </div>
-  </section>
-
-  <!-- Why Nature? -->
-  <section class="py-20 bg-primary-900 text-white relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
-    <div class="container mx-auto px-4 lg:px-8 relative z-10 text-center max-w-3xl">
-      <h2 class="text-3xl md:text-4xl font-serif font-bold mb-8 italic">Навчання в гармонії з природою</h2>
-      <p class="text-lg text-primary-100 leading-relaxed font-light">
-        На території комплексу «Гала готель» учасники зможуть не тільки брати участь у навчанні, а й відпочивати на природі. Ми рекомендуємо проводити тренінги подалі від офісної метушні, щоб учасники змогли відчути себе вільно та краще засвоїти нову інформацію.
-      </p>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="py-24 bg-white">
-    <div class="container mx-auto px-4 lg:px-8">
-      <div class="max-w-4xl mx-auto rounded-[4rem] bg-primary-50 p-12 md:p-20 text-center space-y-10 border border-primary-100 shadow-sm relative overflow-hidden">
-        <div class="relative z-10 space-y-6">
-          <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 italic">Сплануйте вашу конференцію вже сьогодні</h2>
-          <p class="text-lg text-secondary-600 font-light max-w-xl mx-auto">
-            Наш персонал з радістю допоможе організувати захід, харчування та відпочинок для ваших колег.
-          </p>
-          
-          <div class="flex flex-col items-center gap-6">
-            <a href="tel:+380673804355" class="inline-flex items-center gap-4 group bg-white px-8 py-4 rounded-2xl border border-secondary-200">
-              <div class="w-12 h-12 bg-secondary-900 rounded-full flex items-center justify-center text-white shadow-lg group-hover:bg-primary-600 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-              </div>
-              <span class="text-2xl font-serif font-bold text-secondary-900">+38 (067) 380 43 55</span>
-            </a>
-            
-            <button routerLink="/contacts" class="bg-secondary-900 text-white px-12 py-4 rounded-xl font-bold text-lg hover:bg-primary-600 transition-all shadow-xl active:scale-95">
-              Залишити заявку
-            </button>
-          </div>
+        <div class="p-6 bg-gray-50 border-t border-gray-100 italic text-xs text-secondary-500 text-center">
+          {{ 'bellagio_conference.pricing.note' | translate }}
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nature Info Section -->
+  <section class="py-24 bg-primary-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 30px 30px;"></div>
+    <div class="container mx-auto px-4 lg:px-8 text-center max-w-4xl relative z-10">
+      <h2 class="text-3xl md:text-5xl font-serif font-bold mb-10 italic">
+        {{ 'bellagio_conference.nature.title' | translate }}
+      </h2>
+      <p class="text-primary-100 text-lg md:text-xl font-light leading-relaxed mb-12">
+        {{ 'bellagio_conference.nature.description' | translate }}
+      </p>
+      <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+        <a href="tel:+380673812221" class="bg-primary-600 text-white px-10 py-4 rounded-xl font-bold hover:bg-primary-500 transition-all shadow-xl active:scale-95">
+          {{ 'bellagio_conference.cta.request_btn' | translate }}
+        </a>
       </div>
     </div>
   </section>

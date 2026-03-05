@@ -1,150 +1,173 @@
-<div class="pt-24 bg-white min-h-screen" *ngIf="room; else notFound">
-  
+<div class="pt-24 pb-20 bg-gray-50 min-h-screen" *ngIf="room">
   <div class="container mx-auto px-4 lg:px-8">
     
-    <!-- Header -->
-    <div class="mb-10 border-b border-gray-100 pb-6">
-      <nav class="flex items-center space-x-2 text-[10px] uppercase tracking-[0.2em] text-gray-400 mb-4">
-        <a routerLink="/rooms" class="hover:text-primary-600 transition-colors">Номери</a>
-        <span>/</span>
-        <span class="text-secondary-900 font-bold">{{ room.title }}</span>
-      </nav>
-      <div class="space-y-1">
-        <span class="text-primary-600 text-[10px] font-bold uppercase tracking-[0.3em]">{{ room.category }}</span>
-        <h1 class="text-3xl md:text-5xl font-serif font-bold text-secondary-900">{{ room.title }}</h1>
-      </div>
-    </div>
+    <!-- Back Link -->
+    <a routerLink="/rooms" class="inline-flex items-center text-secondary-500 hover:text-primary-600 transition-colors mb-8 group">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+      </svg>
+      <span class="font-medium">{{ 'header.rooms' | translate }}</span>
+    </a>
 
-    <!-- Layout Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 pb-20">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
       
-      <!-- Left Column (Photos + Description) -->
+      <!-- Left Column: Gallery & Description -->
       <div class="lg:col-span-2 space-y-10">
         
-        <!-- Gallery Player -->
+        <!-- Gallery -->
         <div class="space-y-4">
-          <div class="rounded-[2rem] overflow-hidden shadow-2xl aspect-[16/9] border border-gray-100 bg-gray-50">
-            <img [src]="currentImage" [alt]="room.title" class="w-full h-full object-cover transition-all duration-500">
+          <div class="aspect-[16/9] rounded-[2.5rem] overflow-hidden shadow-2xl bg-white border-4 border-white">
+            <img [src]="currentImage" [alt]="room.title | translate" class="w-full h-full object-cover transition-all duration-700 animate-in fade-in zoom-in-95">
           </div>
           
-          <div class="grid grid-cols-4 md:grid-cols-6 gap-3" *ngIf="room.images && room.images.length > 1">
-            <div 
-              *ngFor="let img of room.images; let i = index"
-              (click)="selectImage(i)"
-              class="rounded-xl overflow-hidden aspect-video shadow-sm cursor-pointer border-2 transition-all"
-              [ngClass]="selectedImageIndex === i ? 'border-primary-500 scale-95 shadow-md' : 'border-transparent opacity-70 hover:opacity-100'"
-            >
-              <img [src]="img" class="w-full h-full object-cover">
-            </div>
-          </div>
-        </div>
-
-        <!-- Description Section -->
-        <div class="bg-white p-2">
-          <h2 class="text-2xl font-serif font-bold text-secondary-900 mb-6 italic">Опис та деталі</h2>
-          <p class="text-gray-600 leading-relaxed font-light text-lg mb-8 whitespace-pre-line">
-            {{ room.longDescription }}
-          </p>
-          
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 py-8 border-y border-gray-50">
-            <div class="flex flex-col">
-              <span class="text-[9px] uppercase tracking-widest text-gray-400 font-bold mb-1">Місткість</span>
-              <span class="text-sm font-bold text-secondary-900">{{ room.capacity }}</span>
-            </div>
-            <div class="flex flex-col">
-              <span class="text-[9px] uppercase tracking-widest text-gray-400 font-bold mb-1">Площа</span>
-              <span class="text-sm font-bold text-secondary-900">{{ room.size }}</span>
-            </div>
-            <div class="flex flex-col">
-              <span class="text-[9px] uppercase tracking-widest text-gray-400 font-bold mb-1">Сніданок</span>
-              <span class="text-sm font-bold text-primary-600">Включено</span>
-            </div>
-            <div class="flex flex-col">
-              <span class="text-[9px] uppercase tracking-widest text-gray-400 font-bold mb-1">Ціна</span>
-              <span class="text-sm font-bold text-secondary-900">Від ₴{{ room.price }}</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Amenities Section -->
-        <div class="bg-gray-50 p-8 md:p-10 rounded-[2.5rem] border border-gray-100">
-          <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
-            <h3 class="text-xl font-serif font-bold text-secondary-900 italic">Зручності в номері</h3>
-            <a routerLink="/rules" class="inline-flex items-center gap-2 text-[10px] font-bold text-primary-600 uppercase tracking-widest hover:text-primary-700 transition-colors group">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              Правила проживання
-            </a>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            @for (amenity of room.amenities; track amenity) {
-              <div class="flex items-center space-x-3 p-3 bg-white rounded-xl shadow-sm border border-transparent hover:border-primary-100 transition-all">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                <span class="text-secondary-700 text-xs font-medium">{{ amenity }}</span>
-              </div>
+          <div class="flex gap-4 overflow-x-auto pb-2 scrollbar-hide" *ngIf="room.images && room.images.length > 1">
+            @for (img of room.images; track img; let i = $index) {
+              <button 
+                (click)="selectImage(i)"
+                [class.ring-4]="selectedImageIndex === i"
+                class="flex-shrink-0 w-24 md:w-32 aspect-video rounded-xl overflow-hidden ring-primary-500 ring-offset-2 transition-all shadow-md active:scale-95"
+              >
+                <img [src]="img" class="w-full h-full object-cover">
+              </button>
             }
           </div>
         </div>
-      </div>
 
-      <!-- Right Column: Booking Card -->
-      <div class="lg:col-span-1">
-        <div class="bg-white p-8 rounded-[2.5rem] shadow-2xl border border-primary-50 sticky top-28">
-          <div class="text-center mb-8">
-            <h3 class="text-lg font-serif font-bold text-secondary-900 mb-2">Бронювання</h3>
-            <div class="inline-flex items-baseline space-x-1">
-              <span class="text-4xl font-serif font-bold text-primary-600 transition-all duration-300">₴{{ displayPrice }}</span>
-              <span class="text-[10px] text-gray-400 uppercase font-bold tracking-widest">/ доба</span>
+        <!-- Room Header Info -->
+        <div class="bg-white p-8 md:p-12 rounded-[3rem] shadow-sm border border-gray-100 space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div class="space-y-2">
+              <span class="inline-block px-3 py-1 bg-primary-100 text-primary-700 text-[10px] font-bold uppercase tracking-widest rounded-full">
+                {{ room.category | translate }}
+              </span>
+              <h1 class="text-4xl md:text-5xl font-serif font-bold text-secondary-900 tracking-tight">
+                {{ room.title | translate }}
+              </h1>
+            </div>
+            <div class="text-right">
+              <div class="flex items-baseline justify-end gap-1">
+                <span class="text-xs text-secondary-400 font-bold uppercase">{{ 'rooms.price_per_night' | translate }}</span>
+                <span class="text-4xl font-serif font-bold text-primary-600">{{ displayPrice }} грн</span>
+              </div>
             </div>
           </div>
-          
-          <form [formGroup]="bookingForm" (ngSubmit)="onBook()" class="space-y-6">
-            
-            <!-- Price Options Menu -->
-            <div *ngIf="room.priceOptions && room.priceOptions.length > 0" class="space-y-3">
-              <label class="text-[9px] uppercase tracking-widest text-gray-400 font-bold ml-1 block">Варіант розміщення</label>
-              <div class="flex flex-col gap-2">
-                <button 
-                  type="button"
-                  *ngFor="let option of room.priceOptions"
-                  (click)="selectPriceOption(option)"
-                  class="flex items-center justify-between px-4 py-3 rounded-xl border transition-all text-left group"
-                  [ngClass]="selectedPriceOption === option ? 'bg-primary-600 border-primary-600 text-white shadow-lg shadow-primary-600/20' : 'bg-gray-50 border-gray-100 text-secondary-700 hover:border-primary-200'"
-                >
-                  <span class="text-xs font-bold">{{ option.label }}</span>
-                  <span class="text-[10px] font-serif" [ngClass]="selectedPriceOption === option ? 'text-primary-100' : 'text-primary-600'">₴{{ option.price }}</span>
-                </button>
-              </div>
-            </div>
 
-            <div class="space-y-3">
-              <div>
-                <label class="text-[9px] uppercase tracking-widest text-gray-400 font-bold ml-1 mb-1 block">Період проживання</label>
-                <div class="flex items-center bg-gray-50 rounded-xl border border-gray-100 overflow-hidden">
-                  <input type="date" formControlName="checkIn" class="w-1/2 px-3 py-3.5 bg-transparent outline-none text-[10px] font-bold border-r border-gray-100">
-                  <input type="date" formControlName="checkOut" class="w-1/2 px-3 py-3.5 bg-transparent outline-none text-[10px] font-bold">
+          <!-- Quick Stats -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 py-8 border-y border-gray-50">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-primary-50 rounded-xl flex items-center justify-center text-primary-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <span class="text-sm text-secondary-600 font-medium">{{ room.capacity | translate }}</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-primary-50 rounded-xl flex items-center justify-center text-primary-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 4l-5 5M4 16v4m0 0h4m-4-4l5-5m11 5l-5-5m5 5v4m0 0h-4" />
+                </svg>
+              </div>
+              <span class="text-sm text-secondary-600 font-medium">{{ room.size }}</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-primary-50 rounded-xl flex items-center justify-center text-primary-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                </svg>
+              </div>
+              <span class="text-sm text-secondary-600 font-medium">3 ★</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-primary-50 rounded-xl flex items-center justify-center text-primary-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+                </svg>
+              </div>
+              <span class="text-sm text-secondary-600 font-medium">{{ 'home.hero.wifi_label' | translate }}</span>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="space-y-4">
+            <h3 class="text-xl font-serif font-bold text-secondary-900 italic">{{ 'services_page.items.restaurant_poirot.description' | translate }}</h3>
+            <p class="text-secondary-600 leading-relaxed font-light">
+              {{ room.longDescription | translate }}
+            </p>
+          </div>
+
+          <!-- Amenities Grid -->
+          <div class="space-y-6 pt-4">
+            <h3 class="text-xl font-serif font-bold text-secondary-900 italic">{{ 'about.services.title' | translate }}</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
+              @for (amenity of room.amenities; track amenity) {
+                <div class="flex items-center gap-3">
+                  <div class="w-2 h-2 bg-primary-500 rounded-full"></div>
+                  <span class="text-sm text-secondary-600">{{ amenity | translate }}</span>
                 </div>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Booking Form -->
+      <div class="lg:col-span-1">
+        <div class="bg-white p-8 md:p-10 rounded-[3rem] shadow-2xl border border-primary-50 sticky top-28">
+          <h2 class="text-2xl font-serif font-bold text-secondary-900 mb-8">{{ 'about.booking.title' | translate }}</h2>
+          
+          <!-- Price Options (if any) -->
+          @if (room.priceOptions && room.priceOptions.length > 0) {
+            <div class="mb-8 space-y-3">
+              <span class="text-[10px] uppercase font-bold text-secondary-400 tracking-widest">{{ 'about.booking.select_room' | translate }}</span>
+              <div class="grid grid-cols-1 gap-2">
+                @for (option of room.priceOptions; track option.label) {
+                  <button 
+                    (click)="selectPriceOption(option)"
+                    [class]="selectedPriceOption === option ? 'bg-primary-600 text-white shadow-lg' : 'bg-gray-50 text-secondary-600 hover:bg-primary-50'"
+                    class="w-full p-4 rounded-2xl text-left transition-all border border-transparent flex justify-between items-center"
+                  >
+                    <span class="text-sm font-bold">{{ option.label | translate }}</span>
+                    <span class="font-serif font-bold">{{ option.price }} грн</span>
+                  </button>
+                }
               </div>
+            </div>
+          }
 
-              <input type="text" formControlName="name" placeholder="Ваше ім'я" class="w-full px-4 py-3.5 rounded-xl bg-gray-50 border border-gray-100 focus:ring-2 focus:ring-primary-500 outline-none transition-all text-sm">
-              <input type="tel" formControlName="phone" placeholder="Номер телефону" class="w-full px-4 py-3.5 rounded-xl bg-gray-50 border border-gray-100 focus:ring-2 focus:ring-primary-500 outline-none transition-all text-sm">
+          <form [formGroup]="bookingForm" (ngSubmit)="onBook()" class="space-y-5">
+            <!-- Form fields -->
+            <div class="grid grid-cols-2 gap-4">
+              <div class="space-y-1.5">
+                <label class="text-[10px] uppercase font-bold text-secondary-400 ml-2 tracking-widest">{{ 'about.rules.checkin_label' | translate }}</label>
+                <input type="date" formControlName="checkIn" class="w-full bg-gray-50 border-transparent rounded-2xl p-4 text-sm focus:bg-white focus:ring-2 focus:ring-primary-500 transition-all">
+              </div>
+              <div class="space-y-1.5">
+                <label class="text-[10px] uppercase font-bold text-secondary-400 ml-2 tracking-widest">{{ 'about.rules.checkout_label' | translate }}</label>
+                <input type="date" formControlName="checkOut" class="w-full bg-gray-50 border-transparent rounded-2xl p-4 text-sm focus:bg-white focus:ring-2 focus:ring-primary-500 transition-all">
+              </div>
             </div>
 
-            <button type="submit" class="w-full bg-secondary-900 text-white py-4 rounded-xl font-bold hover:bg-primary-600 transition-all shadow-xl shadow-secondary-900/20 active:scale-[0.98] text-base">
-              Забронювати
+            <div class="space-y-1.5">
+              <label class="text-[10px] uppercase font-bold text-secondary-400 ml-2 tracking-widest">{{ 'contacts.form.name_label' | translate }}</label>
+              <input type="text" formControlName="name" [placeholder]="'contacts.form.name_placeholder' | translate" class="w-full bg-gray-50 border-transparent rounded-2xl p-4 text-sm focus:bg-white focus:ring-2 focus:ring-primary-500 transition-all">
+            </div>
+
+            <div class="space-y-1.5">
+              <label class="text-[10px] uppercase font-bold text-secondary-400 ml-2 tracking-widest">{{ 'about.booking.phone_label' | translate }}</label>
+              <input type="tel" formControlName="phone" placeholder="+38 (0__) ___ __ __" class="w-full bg-gray-50 border-transparent rounded-2xl p-4 text-sm focus:bg-white focus:ring-2 focus:ring-primary-500 transition-all">
+            </div>
+
+            <button 
+              type="submit" 
+              class="w-full bg-secondary-900 text-white py-5 rounded-2xl font-bold text-lg hover:bg-primary-600 transition-all shadow-xl active:scale-95 disabled:opacity-50 mt-4"
+            >
+              {{ 'home.hero.book' | translate }}
             </button>
-            
-            <div class="space-y-2">
-              <p class="text-[8px] text-center text-gray-400 leading-relaxed px-4 uppercase tracking-[0.2em] font-bold">
-                Наш адміністратор зателефонує вам
-              </p>
-              <p class="text-[8px] text-center text-primary-600 leading-relaxed px-4 uppercase tracking-[0.1em] font-bold">
-                У фестивальні та святкові дні тариф змінюється!
-              </p>
-            </div>
+
+            <p class="text-[10px] text-secondary-400 text-center px-4 leading-relaxed italic">
+              {{ 'about.booking.footer' | translate }}
+            </p>
           </form>
         </div>
       </div>
@@ -152,10 +175,3 @@
     </div>
   </div>
 </div>
-
-<ng-template #notFound>
-  <div class="pt-32 pb-20 text-center container mx-auto px-4">
-    <h1 class="text-4xl font-serif font-bold text-secondary-900 mb-6 italic">Номер не знайдено</h1>
-    <a routerLink="/rooms" class="text-primary-600 font-bold hover:text-primary-700 underline">Повернутися до вибору</a>
-  </div>
-</ng-template>

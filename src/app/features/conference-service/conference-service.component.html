@@ -1,7 +1,7 @@
 <div class="pt-20">
   <app-page-hero 
-    title="Конференц-Сервіс" 
-    description="Ефективна робота та повноцінний відпочинок у конференц-залі готельного комплексу «Gala Hotel».">
+    [title]="'conf_service_page.hero.title' | translate" 
+    [description]="'conf_service_page.hero.description' | translate">
   </app-page-hero>
 
   <!-- Intro Section -->
@@ -9,25 +9,25 @@
     <div class="container mx-auto px-4 lg:px-8">
       <div class="flex flex-col lg:flex-row items-center gap-16">
         <div class="lg:w-1/2 space-y-8">
-          <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 leading-tight">Простір для ваших ідей</h2>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 leading-tight">{{ 'conf_service_page.intro.title' | translate }}</h2>
           <p class="text-lg text-secondary-600 leading-relaxed font-light">
-            Конференц-зала площею 100 м² виконана у стилі кінотеатру з довільним розміщенням стільців. Це ідеальне місце для проведення презентацій, семінарів та ділових зустрічей.
+            {{ 'conf_service_page.intro.description' | translate }}
           </p>
           
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="p-6 bg-primary-50 rounded-2xl border border-primary-100">
-              <span class="block text-2xl font-serif font-bold text-primary-600 mb-1">До 80 осіб</span>
-              <span class="text-xs text-secondary-500 uppercase font-bold tracking-wider">Формат «Аудиторія»</span>
+              <span class="block text-2xl font-serif font-bold text-primary-600 mb-1">{{ 'conf_service_page.intro.format_audience' | translate }}</span>
+              <span class="text-xs text-secondary-500 uppercase font-bold tracking-wider">{{ 'conf_service_page.intro.label_audience' | translate }}</span>
             </div>
             <div class="p-6 bg-primary-50 rounded-2xl border border-primary-100">
-              <span class="block text-2xl font-serif font-bold text-primary-600 mb-1">20-30 осіб</span>
-              <span class="text-xs text-secondary-500 uppercase font-bold tracking-wider">«Круглий стіл»</span>
+              <span class="block text-2xl font-serif font-bold text-primary-600 mb-1">{{ 'conf_service_page.intro.format_round' | translate }}</span>
+              <span class="text-xs text-secondary-500 uppercase font-bold tracking-wider">{{ 'conf_service_page.intro.label_round' | translate }}</span>
             </div>
           </div>
         </div>
         <div class="lg:w-1/2">
           <div class="rounded-[3rem] overflow-hidden shadow-2xl relative group">
-            <img src="conference-service/confserv1.png" alt="Conference Hall" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <img src="conference-service/confserv1.png" [alt]="'conf_service_page.hero.title' | translate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             <div class="absolute inset-0 bg-secondary-900/10"></div>
           </div>
         </div>
@@ -49,7 +49,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
         </svg>
-        <span>Прокрутіть, щоб переглянути зал</span>
+        <span>{{ 'conf_service_page.gallery_hint' | translate }}</span>
       </div>
     </div>
   </section>
@@ -58,8 +58,8 @@
   <section class="py-20 bg-gray-50">
     <div class="container mx-auto px-4 lg:px-8">
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 mb-4">Технічне оснащення</h2>
-        <p class="text-secondary-500 font-light max-w-2xl mx-auto">У вартість оренди вже включено все необхідне обладнання для професійного заходу.</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 mb-4">{{ 'conf_service_page.equipment.title' | translate }}</h2>
+        <p class="text-secondary-500 font-light max-w-2xl mx-auto">{{ 'conf_service_page.equipment.description' | translate }}</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -70,7 +70,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <span class="text-secondary-700 font-medium text-sm">{{ item }}</span>
+            <span class="text-secondary-700 font-medium text-sm">{{ item | translate }}</span>
           </div>
         }
       </div>
@@ -82,12 +82,12 @@
     <div class="container mx-auto px-4 lg:px-8">
       <div class="flex flex-col lg:flex-row-reverse items-center gap-16">
         <div class="lg:w-1/2 space-y-8">
-          <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900">Кава-брейки та харчування</h2>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900">{{ 'conf_service_page.food.title' | translate }}</h2>
           <p class="text-lg text-secondary-600 leading-relaxed font-light">
-            Ми розуміємо важливість пауз під час роботи. Кава-брейки проходять у холі зони відпочинку поруч із залою або у вишуканому залі ресторану «Пуаро».
+            {{ 'conf_service_page.food.description' | translate }}
           </p>
           <p class="text-secondary-600 font-light leading-relaxed">
-            Повноцінне харчування від наших шеф-кухарів забезпечить гарний настрій учасників та допоможе краще засвоїти нову інформацію.
+            {{ 'conf_service_page.food.description_2' | translate }}
           </p>
         </div>
         <div class="lg:w-1/2 grid grid-cols-2 gap-4">
@@ -103,22 +103,22 @@
     <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
     <div class="container mx-auto px-4 lg:px-8 relative z-10 max-w-4xl">
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4 italic text-primary-400">Вартість оренди</h2>
-        <p class="text-primary-100 font-light">Прозорі та гнучкі умови для кожного клієнта.</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4 italic text-primary-400">{{ 'conf_service_page.pricing.title' | translate }}</h2>
+        <p class="text-primary-100 font-light">{{ 'conf_service_page.pricing.subtitle' | translate }}</p>
       </div>
 
       <div class="overflow-hidden rounded-3xl border border-white/10 shadow-2xl bg-white/5 backdrop-blur-md">
         <table class="w-full text-left border-collapse">
           <thead>
             <tr class="bg-white/10">
-              <th class="p-6 md:p-8 font-serif text-lg">Години Оренди</th>
-              <th class="p-6 md:p-8 font-serif text-lg text-right">Вартість</th>
+              <th class="p-6 md:p-8 font-serif text-lg">{{ 'conf_service_page.pricing.hours' | translate }}</th>
+              <th class="p-6 md:p-8 font-serif text-lg text-right">{{ 'conf_service_page.pricing.price' | translate }}</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-white/10">
             @for (item of pricing; track item.hours) {
               <tr class="hover:bg-white/5 transition-colors">
-                <td class="p-6 md:p-8 text-primary-50 font-medium">{{ item.hours }}</td>
+                <td class="p-6 md:p-8 text-primary-50 font-medium">{{ item.hours | translate }}</td>
                 <td class="p-6 md:p-8 text-primary-400 font-bold text-right text-xl">{{ item.price }}</td>
               </tr>
             }
@@ -126,7 +126,7 @@
         </table>
       </div>
       <p class="mt-8 text-sm text-primary-200 text-center font-light italic">
-        * Форма оплати та умови оренди узгоджуються індивідуально.
+        {{ 'conf_service_page.pricing.note' | translate }}
       </p>
     </div>
   </section>
@@ -134,12 +134,12 @@
   <!-- Alternative Option -->
   <section class="py-20 bg-white">
     <div class="container mx-auto px-4 lg:px-8 text-center max-w-3xl">
-      <h2 class="text-2xl font-serif font-bold text-secondary-900 mb-6">Потрібен більший зал?</h2>
+      <h2 class="text-2xl font-serif font-bold text-secondary-900 mb-6">{{ 'conf_service_page.alternative.title' | translate }}</h2>
       <p class="text-secondary-600 font-light mb-8">
-        Для масштабних конференцій та тренінгів до 300 осіб ми пропонуємо зал клубу-ресторану «Bellagio» на території нашого комплексу.
+        {{ 'conf_service_page.alternative.description' | translate }}
       </p>
       <a routerLink="/bellagio-conference" class="text-primary-600 font-bold hover:text-primary-700 underline flex items-center justify-center gap-2">
-        Дізнатися більше про Bellagio Conference
+        {{ 'conf_service_page.alternative.link' | translate }}
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
         </svg>
@@ -152,9 +152,9 @@
     <div class="container mx-auto px-4 lg:px-8">
       <div class="max-w-4xl mx-auto rounded-[4rem] bg-white p-12 md:p-20 text-center space-y-10 border border-primary-50 shadow-xl">
         <div class="space-y-6">
-          <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 italic">Забронюйте конференц-залу</h2>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 italic">{{ 'conf_service_page.cta.title' | translate }}</h2>
           <p class="text-lg text-secondary-600 font-light max-w-xl mx-auto">
-            Зв'яжіться з адміністратором готелю для планування вашого успішного заходу.
+            {{ 'conf_service_page.cta.description' | translate }}
           </p>
           
           <div class="flex flex-col items-center gap-6">
@@ -168,7 +168,7 @@
             </a>
             
             <button routerLink="/contacts" class="bg-secondary-900 text-white px-12 py-4 rounded-xl font-bold text-lg hover:bg-primary-600 transition-all shadow-xl active:scale-95">
-              Залишити запит
+              {{ 'conf_service_page.cta.request_btn' | translate }}
             </button>
           </div>
         </div>

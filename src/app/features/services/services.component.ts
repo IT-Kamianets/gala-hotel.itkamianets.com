@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageHeroComponent } from '../../shared/components/page-hero/page-hero.component';
 import { RouterLink } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 interface ServiceItem {
   id: string;
@@ -15,42 +16,62 @@ interface ServiceItem {
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [CommonModule, PageHeroComponent, RouterLink],
+  imports: [CommonModule, PageHeroComponent, RouterLink, TranslateModule],
   templateUrl: './services.component.html',
 })
 export class ServicesComponent {
   services: ServiceItem[] = [
     {
       id: 'restaurant-poirot',
-      title: 'Ресторан «Пуаро»',
-      description: 'Європейська, середземноморська та українська кухні у вишуканій атмосфері.',
-      longDescription: 'Наш головний ресторан пропонує широкий вибір страв, що задовольнять найвибагливіших гурманів. Ви можете обрати затишний зал, літню терасу або окремі альтанки у нашому парку для приватних зустрічей.',
+      title: 'services_page.items.restaurant_poirot.title',
+      description: 'services_page.items.restaurant_poirot.description',
+      longDescription: 'services_page.items.restaurant_poirot.longDescription',
       image: 'puaro/services_puaro.jpg',
-      features: ['Авторське меню', 'Літня тераса та альтанки', 'Доставка страв', 'Винна карта']
+      features: [
+        'services_page.items.restaurant_poirot.features.menu', 
+        'services_page.items.restaurant_poirot.features.terrace', 
+        'services_page.items.restaurant_poirot.features.delivery', 
+        'services_page.items.restaurant_poirot.features.wine'
+      ]
     },
     {
       id: 'leisure-center',
-      title: 'Відпочинок та розваги',
-      description: 'Різноманіття можливостей для активного дозвілля та релаксу.',
-      longDescription: 'Ми пропонуємо нашим гостям цілий світ розваг на території 1.2 га. Від драйву боулінг-клубу «Galactica» та тенісного корту до оздоровлення в сауні чи біля власного бювету з мінеральною водою.',
+      title: 'services_page.items.leisure_center.title',
+      description: 'services_page.items.leisure_center.description',
+      longDescription: 'services_page.items.leisure_center.longDescription',
       image: 'bowling/bowl1.png',
-      features: ['Боулінг та Теніс', 'Автокемпінг', 'Сауна та Бювет', 'Дитячі атракціони']
+      features: [
+        'services_page.items.leisure_center.features.bowling_tennis', 
+        'services_page.items.leisure_center.features.camping', 
+        'services_page.items.leisure_center.features.sauna_well', 
+        'services_page.items.leisure_center.features.child_attr'
+      ]
     },
     {
       id: 'restaurant-bellagio',
-      title: 'Ресторан-клуб «Bellagio»',
-      description: 'Вишуканий відпочинок та розваги у затишній атмосфері.',
-      longDescription: 'Ресторан-клуб «Bellagio» — це ідеальне місце для тих, хто цінує якісний відпочинок, смачну кухню та приємну атмосферу. Тут ви можете провести незабутній вечір, насолоджуючись вишуканими напоями та стравами.',
+      title: 'services_page.items.restaurant_bellagio.title',
+      description: 'services_page.items.restaurant_bellagio.description',
+      longDescription: 'services_page.items.restaurant_bellagio.longDescription',
       image: 'belagio/wedding5.png',
-      features: ['Вишукане меню', 'Барна карта', 'Затишна атмосфера', 'Музичний супровід']
+      features: [
+        'services_page.items.restaurant_bellagio.features.menu', 
+        'services_page.items.restaurant_bellagio.features.bar', 
+        'services_page.items.restaurant_bellagio.features.atmosphere', 
+        'services_page.items.restaurant_bellagio.features.music'
+      ]
     },
     {
       id: 'conference-service',
-      title: 'Конференц-Сервіс',
-      description: 'Професійна конференц-зала для ділових заходів до 80 осіб.',
-      longDescription: 'Наша конференц-зала площею 100 м² оснащена сучасним мультимедійним обладнанням. Ідеально підходить для семінарів, тренінгів та презентацій з можливістю організації кава-брейків.',
+      title: 'services_page.items.conference_service.title',
+      description: 'services_page.items.conference_service.description',
+      longDescription: 'services_page.items.conference_service.longDescription',
       image: 'conference-service/confserv1.png',
-      features: ['Проектор та екран', 'Стерео система', 'Wi-Fi', 'Кава-брейки']
+      features: [
+        'services_page.items.conference_service.features.equipment', 
+        'services_page.items.conference_service.features.stereo', 
+        'services_page.items.conference_service.features.wifi', 
+        'services_page.items.conference_service.features.coffee'
+      ]
     }
-    ];
-    }
+  ];
+}

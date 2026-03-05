@@ -1,55 +1,58 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageHeroComponent } from '../../shared/components/page-hero/page-hero.component';
 import { RouterLink } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-rules',
   standalone: true,
-  imports: [CommonModule, PageHeroComponent, RouterLink],
+  imports: [CommonModule, PageHeroComponent, RouterLink, TranslateModule],
   templateUrl: './rules.component.html',
 })
 export class RulesComponent {
+  private translate = inject(TranslateService);
+
   generalRules = [
-    { title: 'Година заїзду', value: '14:00' },
-    { title: 'Година виїзду', value: '12:00' },
-    { title: 'Рецепція', value: 'Цілодобово' }
+    { title: 'rules_page.general.checkin', value: '14:00' },
+    { title: 'rules_page.general.checkout', value: '12:00' },
+    { title: 'rules_page.general.reception', value: 'rules_page.general.reception_value' }
   ];
 
   stayRules = [
-    'Прибирання номерів — щоденне (поточне, при проживанні)',
-    'Заміна постільної білизни — 1 раз в 3 дня (при проживанні більше ніж 3 доби)',
-    'Заміна рушників — по вимозі гостя (щоденне, при поточному прибиранні)',
-    'За майно готелю гість несе матеріальну відповідальність',
-    'При виїзді номер здається покоївці або адміністратору',
-    'Паркінг, камера схову та прасування одягу — безкоштовно для проживаючих'
+    'rules_page.stay.cleaning',
+    'rules_page.stay.bedding',
+    'rules_page.stay.towels',
+    'rules_page.stay.responsibility',
+    'rules_page.stay.checkout_process',
+    'rules_page.stay.parking_luggage'
   ];
 
   freeServices = [
-    'Сніданки (входять у вартість, можна відмовитися)',
-    'Паркінг під охороною',
-    'Камера схову, гладильна дошка, праска',
-    'Бювет з мінеральною водою «Нафтуся»'
+    'rules_page.free_services.breakfast',
+    'rules_page.free_services.parking',
+    'rules_page.free_services.luggage',
+    'rules_page.free_services.mineral_water'
   ];
 
   paidServices = [
-    'Сауна (для гостей готелю знижка 10%)',
-    'Конференц-зала',
-    'Ресторан та бар (для гостей готелю знижка 10%)',
-    'Боулінг (знижка за наявності дисконту)',
-    'Тенісний корт',
-    'Дитячий майданчик з атракціонами',
-    'Екскурсії виїзні та по місту'
+    'rules_page.paid_services.sauna',
+    'rules_page.paid_services.conference',
+    'rules_page.paid_services.restaurant',
+    'rules_page.paid_services.bowling',
+    'rules_page.paid_services.tennis',
+    'rules_page.paid_services.playground',
+    'rules_page.paid_services.excursions'
   ];
 
   attractions = [
-    { name: 'Стрільба з лука', price: '10.00 грн', details: '5 пострілів (+3 у подарунок)' },
-    { name: 'Пневматичний тир', price: '10.00 грн', details: '5 пострілів (+3 у подарунок)' },
-    { name: 'Angry birds', price: '15.00 грн', details: '6 пострілів (+2 у подарунок)' },
-    { name: 'Дартс', price: '10.00 грн', details: '5 кидків (+3 у подарунок)' },
-    { name: 'Кольцеброс', price: '10.00 грн', details: '5 кидків (+3 у подарунок)' },
-    { name: 'Джин', price: '15.00 грн', details: '5 кидків' },
-    { name: 'Батут', price: '10.00 грн', details: '10 хвилин' },
-    { name: 'Командне сумо', price: '20.00 грн', details: '10 хвилин (з особи)' }
+    { name: 'rules_page.attractions.archery', details: 'rules_page.attractions.details_shots', price: '100 грн', params: { count: 10, bonus: 2 } },
+    { name: 'rules_page.attractions.shooting', details: 'rules_page.attractions.details_shots', price: '100 грн', params: { count: 20, bonus: 2 } },
+    { name: 'rules_page.attractions.angry_birds', details: 'rules_page.attractions.details_throws', price: '100 грн', params: { count: 10, bonus: 2 } },
+    { name: 'rules_page.attractions.darts', details: 'rules_page.attractions.details_throws', price: '100 грн', params: { count: 10, bonus: 2 } },
+    { name: 'rules_page.attractions.ring_toss', details: 'rules_page.attractions.details_throws_only', price: '100 грн', params: { count: 10 } },
+    { name: 'rules_page.attractions.djinn', details: 'rules_page.attractions.details_time', price: '100 грн', params: { count: 10 } },
+    { name: 'rules_page.attractions.trampoline', details: 'rules_page.attractions.details_time', price: '100 грн', params: { count: 10 } },
+    { name: 'rules_page.attractions.sumo', details: 'rules_page.attractions.details_time_per_person', price: '100 грн', params: { count: 10 } }
   ];
 }

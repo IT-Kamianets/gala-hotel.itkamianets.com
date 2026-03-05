@@ -1,7 +1,7 @@
 <div class="pt-20">
   <app-page-hero 
-    title="Контакти" 
-    description="Ми завжди готові відповісти на ваші запитання та допомогти з бронюванням. Зв’яжіться з нами зручним для вас способом.">
+    [title]="'contacts.hero.title' | translate" 
+    [description]="'contacts.hero.description' | translate">
   </app-page-hero>
 
   <section class="py-20">
@@ -20,8 +20,8 @@
                 </svg>
               </div>
               <div>
-                <h3 class="text-lg font-bold text-secondary-900 mb-1">Наша адреса</h3>
-                <p class="text-secondary-600">вул. Лесі Українки, 84,<br>Кам'янець-Подільський, Україна</p>
+                <h3 class="text-lg font-bold text-secondary-900 mb-1">{{ 'contacts.address_label' | translate }}</h3>
+                <p class="text-secondary-600" [innerHTML]="'contacts.address_value' | translate"></p>
               </div>
             </div>
 
@@ -33,7 +33,7 @@
                 </svg>
               </div>
               <div class="flex flex-col">
-                <h3 class="text-lg font-bold text-secondary-900 mb-1">Телефони</h3>
+                <h3 class="text-lg font-bold text-secondary-900 mb-1">{{ 'contacts.phones_label' | translate }}</h3>
                 <a href="tel:+380673812221" class="text-secondary-600 hover:text-primary-600 transition-colors font-medium">
                   +38 067 381 2221
                 </a>
@@ -51,8 +51,8 @@
                 </svg>
               </div>
               <div>
-                <h3 class="text-lg font-bold text-secondary-900 mb-1">Додатково</h3>
-                <p class="text-secondary-600 text-sm">Діти до 12 років — безкоштовно.<br>З тваринами — 120 грн/доба.</p>
+                <h3 class="text-lg font-bold text-secondary-900 mb-1">{{ 'contacts.additional_label' | translate }}</h3>
+                <p class="text-secondary-600 text-sm" [innerHTML]="'contacts.additional_value' | translate"></p>
               </div>
             </div>
 
@@ -64,7 +64,7 @@
                 </svg>
               </div>
               <div>
-                <h3 class="text-lg font-bold text-secondary-900 mb-1">E-mail</h3>
+                <h3 class="text-lg font-bold text-secondary-900 mb-1">{{ 'contacts.email_label' | translate }}</h3>
                 <a href="mailto:info@gala-hotel.com.ua" class="text-secondary-600 hover:text-primary-600 transition-colors">
                   info&#64;gala-hotel.com.ua
                 </a>
@@ -76,11 +76,11 @@
           <div class="p-8 rounded-[2.5rem] bg-secondary-900 text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl relative overflow-hidden group">
             <div class="absolute inset-0 bg-primary-600 opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
             <div class="relative z-10 space-y-2 text-center md:text-left">
-              <h3 class="text-2xl font-serif font-bold italic">Правила проживання</h3>
-              <p class="text-primary-100 font-light text-sm">Ознайомтеся з порядком перебування, послугами та розвагами у нашому готелі.</p>
+              <h3 class="text-2xl font-serif font-bold italic">{{ 'contacts.rules_cta.title' | translate }}</h3>
+              <p class="text-primary-100 font-light text-sm">{{ 'contacts.rules_cta.description' | translate }}</p>
             </div>
             <button routerLink="/rules" class="relative z-10 bg-white text-secondary-900 px-8 py-3.5 rounded-xl font-bold hover:bg-primary-50 transition-all shadow-lg active:scale-95 whitespace-nowrap">
-              Переглянути правила
+              {{ 'contacts.rules_cta.button' | translate }}
             </button>
           </div>
 
@@ -100,61 +100,61 @@
 
         <!-- Contact Form -->
         <div class="bg-white p-8 md:p-12 rounded-3xl shadow-2xl border border-primary-50">
-          <h2 class="text-3xl font-serif font-bold text-secondary-900 mb-8">Напишіть нам</h2>
+          <h2 class="text-3xl font-serif font-bold text-secondary-900 mb-8">{{ 'contacts.form.title' | translate }}</h2>
           
           <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div class="space-y-2">
-                <label class="text-sm font-semibold text-secondary-700 ml-1">Ваше ім'я</label>
+                <label class="text-sm font-semibold text-secondary-700 ml-1">{{ 'contacts.form.name_label' | translate }}</label>
                 <input 
                   type="text" 
                   formControlName="name"
                   class="w-full px-5 py-4 rounded-xl border border-secondary-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 outline-none transition-all placeholder:text-secondary-300"
-                  placeholder="Введіть ім'я"
+                  [placeholder]="'contacts.form.name_placeholder' | translate"
                 >
-                <span *ngIf="submitted && contactForm.get('name')?.errors" class="text-xs text-red-500 ml-1">Ім'я є обов'язковим</span>
+                <span *ngIf="submitted && contactForm.get('name')?.errors" class="text-xs text-red-500 ml-1">{{ 'contacts.form.name_error' | translate }}</span>
               </div>
               <div class="space-y-2">
-                <label class="text-sm font-semibold text-secondary-700 ml-1">Електронна пошта</label>
+                <label class="text-sm font-semibold text-secondary-700 ml-1">{{ 'contacts.form.email_label' | translate }}</label>
                 <input 
                   type="email" 
                   formControlName="email"
                   class="w-full px-5 py-4 rounded-xl border border-secondary-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 outline-none transition-all placeholder:text-secondary-300"
-                  placeholder="name@example.com"
+                  [placeholder]="'contacts.form.email_placeholder' | translate"
                 >
-                <span *ngIf="submitted && contactForm.get('email')?.errors" class="text-xs text-red-500 ml-1">Введіть коректний email</span>
+                <span *ngIf="submitted && contactForm.get('email')?.errors" class="text-xs text-red-500 ml-1">{{ 'contacts.form.email_error' | translate }}</span>
               </div>
             </div>
 
             <div class="space-y-2">
-              <label class="text-sm font-semibold text-secondary-700 ml-1">Тема звернення</label>
+              <label class="text-sm font-semibold text-secondary-700 ml-1">{{ 'contacts.form.subject_label' | translate }}</label>
               <select 
                 formControlName="subject"
                 class="w-full px-5 py-4 rounded-xl border border-secondary-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 outline-none transition-all"
               >
-                <option value="">Оберіть тему</option>
-                <option value="reservation">Бронювання</option>
-                <option value="feedback">Відгук</option>
-                <option value="other">Інше</option>
+                <option value="">{{ 'contacts.form.subject_placeholder' | translate }}</option>
+                <option value="reservation">{{ 'contacts.form.subject_options.reservation' | translate }}</option>
+                <option value="feedback">{{ 'contacts.form.subject_options.feedback' | translate }}</option>
+                <option value="other">{{ 'contacts.form.subject_options.other' | translate }}</option>
               </select>
             </div>
 
             <div class="space-y-2">
-              <label class="text-sm font-semibold text-secondary-700 ml-1">Повідомлення</label>
+              <label class="text-sm font-semibold text-secondary-700 ml-1">{{ 'contacts.form.message_label' | translate }}</label>
               <textarea 
                 formControlName="message"
                 rows="5" 
                 class="w-full px-5 py-4 rounded-xl border border-secondary-200 focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 outline-none transition-all placeholder:text-secondary-300 resize-none"
-                placeholder="Чим ми можемо вам допомогти?"
+                [placeholder]="'contacts.form.message_placeholder' | translate"
               ></textarea>
-              <span *ngIf="submitted && contactForm.get('message')?.errors" class="text-xs text-red-500 ml-1">Повідомлення має бути довшим (мін. 10 символів)</span>
+              <span *ngIf="submitted && contactForm.get('message')?.errors" class="text-xs text-red-500 ml-1">{{ 'contacts.form.message_error' | translate }}</span>
             </div>
 
             <button 
               type="submit" 
               class="w-full bg-secondary-900 text-white py-5 rounded-xl font-bold text-lg hover:bg-primary-600 transition-all shadow-lg hover:shadow-primary-600/20 active:scale-[0.98]"
             >
-              Надіслати повідомлення
+              {{ 'contacts.form.submit' | translate }}
             </button>
           </form>
         </div>

@@ -1,30 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageHeroComponent } from '../../shared/components/page-hero/page-hero.component';
 import { RouterLink } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-mineral-water',
   standalone: true,
-  imports: [CommonModule, PageHeroComponent, RouterLink],
+  imports: [CommonModule, PageHeroComponent, RouterLink, TranslateModule],
   templateUrl: './mineral-water.component.html',
 })
 export class MineralWaterComponent {
+  private translate = inject(TranslateService);
+
   chemicalComposition = [
-    { name: 'Гідрокарбонати', value: '450-620' },
-    { name: 'Сульфати', value: '260-460' },
-    { name: 'Хлориди', value: '<160' },
-    { name: 'Кальцій', value: '180-300' },
-    { name: 'Магній', value: '60-180' },
-    { name: 'Натрій і калій', value: '<180' }
+    { name: 'mineral_water.composition.names.hydrocarbonates', value: '1000-1500' },
+    { name: 'mineral_water.composition.names.sulfates', value: '150-300' },
+    { name: 'mineral_water.composition.names.chlorides', value: '50-150' },
+    { name: 'mineral_water.composition.names.calcium', value: '150-300' },
+    { name: 'mineral_water.composition.names.magnesium', value: '50-150' },
+    { name: 'mineral_water.composition.names.sodium_potassium', value: '50-150' }
   ];
 
   therapeuticEffects = [
-    'Сечогінний ефект, видалення дрібних конкрементів та піску',
-    'Активізація жовчоутворення та жовчовиділення',
-    'Сприяння виділенню радіонуклідів з організму',
-    'Протизапальна та дезінтоксикаційна дія',
-    'Закріплення ефекту медикаментозної терапії',
-    'Продовження періоду ремісії захворювань'
+    'mineral_water.therapeutic.items.0',
+    'mineral_water.therapeutic.items.1',
+    'mineral_water.therapeutic.items.2',
+    'mineral_water.therapeutic.items.3',
+    'mineral_water.therapeutic.items.4',
+    'mineral_water.therapeutic.items.5'
   ];
 }

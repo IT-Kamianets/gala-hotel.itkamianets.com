@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { RoomService, Room } from '../../core/services/room.service';
 import { PageHeroComponent } from '../../shared/components/page-hero/page-hero.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-rooms',
   standalone: true,
-  imports: [CommonModule, RouterLink, PageHeroComponent],
+  imports: [CommonModule, RouterLink, PageHeroComponent, TranslateModule],
   templateUrl: './rooms.component.html',
 })
 export class RoomsComponent implements OnInit {

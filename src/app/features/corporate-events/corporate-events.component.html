@@ -1,16 +1,16 @@
 <div class="pt-20">
   <app-page-hero 
-    title="Корпоративи у «Белладжіо»" 
-    description="Професійна організація свят для вашої команди у найкращому клуб-ресторані міста.">
+    [title]="'corporate_events.hero.title' | translate" 
+    [description]="'corporate_events.hero.description' | translate">
   </app-page-hero>
 
   <!-- Intro Section -->
   <section class="py-20 bg-white">
     <div class="container mx-auto px-4 lg:px-8">
       <div class="max-w-4xl mx-auto text-center space-y-8">
-        <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 italic">Відпочинок, що зміцнює команду</h2>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 italic">{{ 'corporate_events.intro.title' | translate }}</h2>
         <p class="text-lg text-secondary-600 leading-relaxed font-light">
-          Корпоратив — це не просто привід відпочити, а можливість познайомитись ближче та відчути себе частиною єдиного цілого. Будь то день народження компанії, професійне свято чи Новий рік — ми зробимо ваш захід незабутнім.
+          {{ 'corporate_events.intro.description' | translate }}
         </p>
         <div class="w-24 h-1 bg-primary-500 mx-auto rounded-full"></div>
       </div>
@@ -23,7 +23,7 @@
       <div class="flex space-x-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 lg:mx-0 lg:px-0">
         @for (image of galleryImages; track image.url) {
           <div class="flex-shrink-0 w-[300px] md:w-[450px] aspect-[4/3] rounded-3xl overflow-hidden snap-start shadow-md hover:shadow-xl transition-shadow duration-500">
-            <img [src]="image.url" [alt]="image.alt" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+            <img [src]="image.url" [alt]="image.alt | translate" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
           </div>
         }
       </div>
@@ -31,57 +31,36 @@
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
         </svg>
-        <span>Прокрутіть, щоб переглянути фото</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features Grid -->
-  <section class="py-20 bg-gray-50">
-    <div class="container mx-auto px-4 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        @for (feature of features; track feature.title) {
-          <div class="p-8 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-            <div class="w-10 h-10 bg-primary-100 rounded-xl flex items-center justify-center text-primary-600 mb-6">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-serif font-bold text-secondary-900 mb-3">{{ feature.title }}</h3>
-            <p class="text-sm text-secondary-500 font-light leading-relaxed">{{ feature.desc }}</p>
-          </div>
-        }
+        <span>{{ 'corporate_events.gallery_hint' | translate }}</span>
       </div>
     </div>
   </section>
 
   <!-- Details Section -->
-  <section class="py-20 bg-white">
+  <section class="py-20 bg-gray-50">
     <div class="container mx-auto px-4 lg:px-8">
       <div class="flex flex-col lg:flex-row items-center gap-16">
         <div class="lg:w-1/2 space-y-8">
-          <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 leading-tight">Що ми пропонуємо?</h2>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 leading-tight">{{ 'corporate_events.details.title' | translate }}</h2>
           <p class="text-lg text-secondary-600 leading-relaxed font-light">
-            Ми пропонуємо організацію та проведення вашого свята у великому залі клубу-ресторану «Bellagio». На вас чекає чудова кухня, драйвова атмосфера та професійний сервіс за розумними цінами.
+            {{ 'corporate_events.details.description' | translate }}
           </p>
-          <div class="space-y-4">
-            <div class="flex items-center gap-3 text-secondary-700">
-              <div class="w-2 h-2 bg-primary-500 rounded-full"></div>
-              <span>Музичне оформлення та лазерне шоу</span>
-            </div>
-            <div class="flex items-center gap-3 text-secondary-700">
-              <div class="w-2 h-2 bg-primary-500 rounded-full"></div>
-              <span class="font-bold text-primary-600">Фотозона у подарунок!</span>
-            </div>
-            <div class="flex items-center gap-3 text-secondary-700">
-              <div class="w-2 h-2 bg-primary-500 rounded-full"></div>
-              <span>Активний колективний відпочинок (боулінг, теніс)</span>
-            </div>
-          </div>
+          <ul class="space-y-4">
+            @for (item of details; track item) {
+              <li class="flex items-center gap-4 text-secondary-700">
+                <div class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-primary-600 flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <span class="text-sm font-medium">{{ item | translate }}</span>
+              </li>
+            }
+          </ul>
         </div>
         <div class="lg:w-1/2">
-          <div class="rounded-[3rem] overflow-hidden shadow-2xl relative">
-            <img src="belagio/services_corp.png" alt="Corporate Event" class="w-full">
+          <div class="rounded-[3rem] overflow-hidden shadow-2xl relative group">
+            <img src="belagio/services_corp.png" [alt]="'corporate_events.hero.title' | translate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
             <div class="absolute inset-0 bg-primary-900/10"></div>
           </div>
         </div>
@@ -90,32 +69,33 @@
   </section>
 
   <!-- CTA Section -->
-  <section class="py-24 bg-gray-50">
+  <section class="py-24 bg-white">
     <div class="container mx-auto px-4 lg:px-8">
-      <div class="max-w-4xl mx-auto rounded-[4rem] bg-white p-12 md:p-20 text-center space-y-10 border border-primary-50 shadow-xl relative overflow-hidden">
+      <div class="max-w-4xl mx-auto rounded-[4rem] bg-secondary-900 p-12 md:p-20 text-center space-y-10 shadow-2xl relative overflow-hidden text-white">
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 30px 30px;"></div>
         <div class="relative z-10 space-y-6">
-          <h2 class="text-3xl md:text-4xl font-serif font-bold text-secondary-900 italic">Сплануйте корпоратив мрії</h2>
-          <p class="text-lg text-secondary-600 font-light max-w-xl mx-auto">
-            Зв'яжіться з нашим адміністратором для розрахунку вартості та бронювання залу.
+          <h2 class="text-3xl md:text-4xl font-serif font-bold italic">{{ 'corporate_events.cta.title' | translate }}</h2>
+          <p class="text-lg text-primary-100 font-light max-w-xl mx-auto">
+            {{ 'corporate_events.cta.description' | translate }}
           </p>
           
           <div class="flex flex-col items-center gap-6">
-            <a href="tel:+380673804355" class="inline-flex items-center gap-4 group bg-primary-50 px-8 py-4 rounded-2xl border border-primary-100">
-              <div class="w-12 h-12 bg-secondary-900 rounded-full flex items-center justify-center text-white shadow-lg group-hover:bg-primary-600 transition-colors">
+            <a href="tel:+380673804355" class="inline-flex items-center gap-4 group bg-white/10 backdrop-blur-md px-8 py-4 rounded-2xl border border-white/20 hover:bg-white/20 transition-all">
+              <div class="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center text-white shadow-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
               </div>
-              <span class="text-2xl font-serif font-bold text-secondary-900">+38 (067) 380 43 55</span>
+              <span class="text-2xl font-serif font-bold text-white tracking-tight">+38 (067) 380 43 55</span>
             </a>
             
-            <div class="text-sm text-secondary-500 font-light">
-              <p>вул. Лесі Українки, 84</p>
-              <p>ресторан «Пуаро» / «Bellagio», комплекс «Гала-готель»</p>
+            <div class="text-sm text-primary-300 font-light">
+              <p>{{ 'corporate_events.cta.address' | translate }}</p>
+              <p>{{ 'corporate_events.cta.location' | translate }}</p>
             </div>
 
-            <button routerLink="/contacts" class="bg-secondary-900 text-white px-12 py-4 rounded-xl font-bold text-lg hover:bg-primary-600 transition-all shadow-xl active:scale-95">
-              Залишити заявку
+            <button routerLink="/contacts" class="bg-primary-600 text-white px-12 py-4 rounded-xl font-bold text-lg hover:bg-primary-500 transition-all shadow-xl active:scale-95">
+              {{ 'corporate_events.cta.request_btn' | translate }}
             </button>
           </div>
         </div>

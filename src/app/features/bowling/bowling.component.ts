@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageHeroComponent } from '../../shared/components/page-hero/page-hero.component';
 import { RouterLink } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-bowling',
   standalone: true,
-  imports: [CommonModule, PageHeroComponent, RouterLink],
+  imports: [CommonModule, PageHeroComponent, RouterLink, TranslateModule],
   templateUrl: './bowling.component.html',
 })
 export class BowlingComponent {
@@ -40,11 +41,11 @@ export class BowlingComponent {
   };
 
   rules = [
-    'Гра проходить у спеціальному взутті (видається на рецепції)',
-    'Безкоштовні послуги інструктора впродовж усієї гри',
-    'Індивідуальний підбір кулі для кожного гравця',
-    'Від 1 до 8 осіб на одній ігровій доріжці',
-    'Спеціальна дитяча програма для гравців від 5 років',
-    'Шкарпетки є обов’язковими для допуску до гри'
+    'bowling_page.service.rules.0',
+    'bowling_page.service.rules.1',
+    'bowling_page.service.rules.2',
+    'bowling_page.service.rules.3',
+    'bowling_page.features.kids.description',
+    'bowling_page.pricing.note'
   ];
 }

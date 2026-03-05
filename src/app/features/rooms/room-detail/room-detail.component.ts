@@ -1,16 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RoomService, Room, RoomPriceOption } from '../../../core/services/room.service';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-room-detail',
   standalone: true,
-  imports: [CommonModule, RouterLink, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, RouterLink, FormsModule, ReactiveFormsModule, TranslateModule],
   templateUrl: './room-detail.component.html',
 })
 export class RoomDetailComponent implements OnInit {
+  private translate = inject(TranslateService);
   room: Room | undefined;
   bookingForm: FormGroup;
   submitted = false;
@@ -66,8 +68,13 @@ export class RoomDetailComponent implements OnInit {
   onBook() {
     this.submitted = true;
     if (this.bookingForm.valid) {
-      const guestsLabel = this.selectedPriceOption ? this.selectedPriceOption.label : `${this.bookingForm.value.guests} осіб`;
-      alert(`Дякуємо! Запит на бронювання номера "${this.room?.title}" (${guestsLabel}) надіслано. Ми зателефонуємо вам для підтвердження.`);
+      const guestsLabel = this.selectedPriceOption 
+        ? this.translate.instant(this.selectedPriceOption.label) 
+        : `${this.bookingForm.value.guests} ${this.translate.instant('rooms.capacity.1_3')}`;
+      
+      const successMsg = this.translate.instant('contacts.form.success_alert');
+      alert(`${successMsg} (${this.translate.instant(this.room?.title || '')} - ${guestsLabel})`);
+      
       this.bookingForm.reset();
       this.submitted = false;
     }

@@ -1,32 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageHeroComponent } from '../../shared/components/page-hero/page-hero.component';
-import { RouterLink } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-bellagio-conference',
   standalone: true,
-  imports: [CommonModule, PageHeroComponent, RouterLink],
+  imports: [CommonModule, PageHeroComponent, TranslateModule],
   templateUrl: './bellagio-conference.component.html',
 })
 export class BellagioConferenceComponent {
+  private translate = inject(TranslateService);
+
   pricing = [
-    { period: '1-3 год', price: '2000 грн./год.' },
-    { period: '3-6 год', price: '1500 грн./год.' },
-    { period: '6 і більше год.', price: '1000 грн./год.' }
+    { period: 'bellagio_conference.pricing.period_1_3', price: '2000 грн./год.' },
+    { period: 'bellagio_conference.pricing.period_3_6', price: '1500 грн./год.' },
+    { period: 'bellagio_conference.pricing.period_6_plus', price: '1000 грн./год.' }
   ];
 
   galleryImages = [
-    { url: 'belagio/conf1.png', alt: 'Конференц-зал Bellagio 1' },
-    { url: 'belagio/conf2.png', alt: 'Конференц-зал Bellagio 2' },
-    { url: 'belagio/conf3.png', alt: 'Конференц-зал Bellagio 3' },
-    { url: 'belagio/conf4.png', alt: 'Конференц-зал Bellagio 4' }
+    { url: 'belagio/conf1.png', alt: 'bellagio_conference.gallery.img1' },
+    { url: 'belagio/conf2.png', alt: 'bellagio_conference.gallery.img2' },
+    { url: 'belagio/conf3.png', alt: 'bellagio_conference.gallery.img3' },
+    { url: 'belagio/conf4.png', alt: 'bellagio_conference.gallery.img4' }
   ];
 
   features = [
-    { title: 'Сучасна техніка', desc: 'Зал оснащений проектором, екранами та потужною акустичною системою.' },
-    { title: 'Розміщення гостей', desc: 'Учасники можуть комфортно оселитися в номерах «Гала готелю».' },
-    { title: 'Харчування', desc: 'Смачні та корисні страви від ресторану «Bellagio» для кава-брейків та обідів.' },
-    { title: 'Відпочинок', desc: 'Велика територія для прогулянок на природі після робочого дня.' }
+    { title: 'bellagio_conference.features.equipment.title', desc: 'bellagio_conference.features.equipment.desc' },
+    { title: 'bellagio_conference.features.accommodation.title', desc: 'bellagio_conference.features.accommodation.desc' },
+    { title: 'bellagio_conference.features.catering.title', desc: 'bellagio_conference.features.catering.desc' },
+    { title: 'bellagio_conference.features.leisure.title', desc: 'bellagio_conference.features.leisure.desc' }
   ];
 }

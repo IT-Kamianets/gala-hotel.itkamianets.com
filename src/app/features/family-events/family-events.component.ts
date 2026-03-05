@@ -1,27 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageHeroComponent } from '../../shared/components/page-hero/page-hero.component';
 import { RouterLink } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-family-events',
   standalone: true,
-  imports: [CommonModule, PageHeroComponent, RouterLink],
+  imports: [CommonModule, PageHeroComponent, RouterLink, TranslateModule],
   templateUrl: './family-events.component.html',
 })
 export class FamilyEventsComponent {
+  private translate = inject(TranslateService);
+
   galleryImages = [
-    { url: 'belagio/family1.png', alt: 'Родинне свято 1' },
-    { url: 'belagio/family2.png', alt: 'Родинне свято 2' },
-    { url: 'belagio/family3.png', alt: 'Родинне свято 3' },
-    { url: 'belagio/family4.png', alt: 'Родинне свято 4' },
-    { url: 'belagio/services_family.png', alt: 'Святкова атмосфера' }
+    { url: 'belagio/family1.png', alt: 'Family Event 1' },
+    { url: 'belagio/family2.png', alt: 'Family Event 2' },
+    { url: 'belagio/family3.png', alt: 'Family Event 3' },
+    { url: 'belagio/family4.png', alt: 'Family Event 4' }
   ];
 
   features = [
-    { title: 'Просторий зал', desc: 'Затишне приміщення для великих та малих родинних компаній.' },
-    { title: 'Доступні ціни', desc: 'Смачні страви української та європейської кухонь за розумною вартістю.' },
-    { title: 'Оформлення', desc: 'Вишукане оформлення фуршетного столу та Candy bar для вашого свята.' },
-    { title: 'Зона для малят', desc: 'Спеціально облаштована зона для годування та догляду за немовлятами.' }
+    { title: 'family_events.intro.title', desc: 'family_events.intro.description' },
+    { title: 'restaurant_bellagio.cards.family', desc: 'restaurant_bellagio.atmosphere.p1' }
   ];
 }

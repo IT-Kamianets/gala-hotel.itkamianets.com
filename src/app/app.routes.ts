@@ -1,53 +1,101 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './features/home/home.component';
-import { ContactsComponent } from './features/contacts/contacts.component';
-import { ServicesComponent } from './features/services/services.component';
-import { RoomsComponent } from './features/rooms/rooms.component';
-import { GalleryComponent } from './features/gallery/gallery.component';
-import { RoomDetailComponent } from './features/rooms/room-detail/room-detail.component';
-import { RestaurantComponent } from './features/restaurant/restaurant.component';
-import { RestaurantBellagioComponent } from './features/restaurant-bellagio/restaurant-bellagio.component';
-import { BellagioWeddingComponent } from './features/bellagio-wedding/bellagio-wedding.component';
-import { BellagioConferenceComponent } from './features/bellagio-conference/bellagio-conference.component';
-import { FamilyEventsComponent } from './features/family-events/family-events.component';
-import { CorporateEventsComponent } from './features/corporate-events/corporate-events.component';
-import { ConcertsComponent } from './features/concerts/concerts.component';
-import { ConferenceServiceComponent } from './features/conference-service/conference-service.component';
-import { BowlingEntertainmentComponent } from './features/bowling-entertainment/bowling-entertainment.component';
-import { BowlingComponent } from './features/bowling/bowling.component';
-import { TennisCourtComponent } from './features/tennis-court/tennis-court.component';
-import { ChildrenAttractionsComponent } from './features/children-attractions/children-attractions.component';
-import { CampingComponent } from './features/camping/camping.component';
-import { SaunaComponent } from './features/sauna/sauna.component';
-import { MineralWaterComponent } from './features/mineral-water/mineral-water.component';
-import { SportExtremeComponent } from './features/sport-extreme/sport-extreme.component';
-import { AboutComponent } from './features/about/about.component';
-import { RulesComponent } from './features/rules/rules.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'rules', component: RulesComponent },
-  { path: 'rooms', component: RoomsComponent },
-  { path: 'rooms/:id', component: RoomDetailComponent },
-  { path: 'restaurant', component: RestaurantComponent },
-  { path: 'restaurant-bellagio', component: RestaurantBellagioComponent },
-  { path: 'bellagio-wedding', component: BellagioWeddingComponent },
-  { path: 'bellagio-conference', component: BellagioConferenceComponent },
-  { path: 'family-events', component: FamilyEventsComponent },
-  { path: 'corporate-events', component: CorporateEventsComponent },
-  { path: 'concerts', component: ConcertsComponent },
-  { path: 'conference-service', component: ConferenceServiceComponent },
-  { path: 'bowling-entertainment', component: BowlingEntertainmentComponent },
-  { path: 'bowling', component: BowlingComponent },
-  { path: 'tennis-court', component: TennisCourtComponent },
-  { path: 'children-attractions', component: ChildrenAttractionsComponent },
-  { path: 'camping', component: CampingComponent },
-  { path: 'sauna', component: SaunaComponent },
-  { path: 'mineral-water', component: MineralWaterComponent },
-  { path: 'sport-extreme', component: SportExtremeComponent },
-  { path: 'services', component: ServicesComponent },
-  { path: 'gallery', component: GalleryComponent },
-  { path: 'contacts', component: ContactsComponent },
+  { 
+    path: '', 
+    loadComponent: () => import('./features/home/home.component').then(m => m.HomeComponent) 
+  },
+  { 
+    path: 'about', 
+    loadComponent: () => import('./features/about/about.component').then(m => m.AboutComponent) 
+  },
+  { 
+    path: 'rules', 
+    loadComponent: () => import('./features/rules/rules.component').then(m => m.RulesComponent) 
+  },
+  { 
+    path: 'rooms', 
+    loadComponent: () => import('./features/rooms/rooms.component').then(m => m.RoomsComponent) 
+  },
+  { 
+    path: 'rooms/:id', 
+    loadComponent: () => import('./features/rooms/room-detail/room-detail.component').then(m => m.RoomDetailComponent) 
+  },
+  { 
+    path: 'restaurant', 
+    loadComponent: () => import('./features/restaurant/restaurant.component').then(m => m.RestaurantComponent) 
+  },
+  { 
+    path: 'restaurant-bellagio', 
+    loadComponent: () => import('./features/restaurant-bellagio/restaurant-bellagio.component').then(m => m.RestaurantBellagioComponent) 
+  },
+  { 
+    path: 'bellagio-wedding', 
+    loadComponent: () => import('./features/bellagio-wedding/bellagio-wedding.component').then(m => m.BellagioWeddingComponent) 
+  },
+  { 
+    path: 'bellagio-conference', 
+    loadComponent: () => import('./features/bellagio-conference/bellagio-conference.component').then(m => m.BellagioConferenceComponent) 
+  },
+  { 
+    path: 'family-events', 
+    loadComponent: () => import('./features/family-events/family-events.component').then(m => m.FamilyEventsComponent) 
+  },
+  { 
+    path: 'corporate-events', 
+    loadComponent: () => import('./features/corporate-events/corporate-events.component').then(m => m.CorporateEventsComponent) 
+  },
+  { 
+    path: 'concerts', 
+    loadComponent: () => import('./features/concerts/concerts.component').then(m => m.ConcertsComponent) 
+  },
+  { 
+    path: 'conference-service', 
+    loadComponent: () => import('./features/conference-service/conference-service.component').then(m => m.ConferenceServiceComponent) 
+  },
+  { 
+    path: 'bowling-entertainment', 
+    loadComponent: () => import('./features/bowling-entertainment/bowling-entertainment.component').then(m => m.BowlingEntertainmentComponent) 
+  },
+  { 
+    path: 'bowling', 
+    loadComponent: () => import('./features/bowling/bowling.component').then(m => m.BowlingComponent) 
+  },
+  { 
+    path: 'tennis-court', 
+    loadComponent: () => import('./features/tennis-court/tennis-court.component').then(m => m.TennisCourtComponent) 
+  },
+  { 
+    path: 'children-attractions', 
+    loadComponent: () => import('./features/children-attractions/children-attractions.component').then(m => m.ChildrenAttractionsComponent) 
+  },
+  { 
+    path: 'camping', 
+    loadComponent: () => import('./features/camping/camping.component').then(m => m.CampingComponent) 
+  },
+  { 
+    path: 'sauna', 
+    loadComponent: () => import('./features/sauna/sauna.component').then(m => m.SaunaComponent) 
+  },
+  { 
+    path: 'mineral-water', 
+    loadComponent: () => import('./features/mineral-water/mineral-water.component').then(m => m.MineralWaterComponent) 
+  },
+  { 
+    path: 'sport-extreme', 
+    loadComponent: () => import('./features/sport-extreme/sport-extreme.component').then(m => m.SportExtremeComponent) 
+  },
+  { 
+    path: 'services', 
+    loadComponent: () => import('./features/services/services.component').then(m => m.ServicesComponent) 
+  },
+  { 
+    path: 'gallery', 
+    loadComponent: () => import('./features/gallery/gallery.component').then(m => m.GalleryComponent) 
+  },
+  { 
+    path: 'contacts', 
+    loadComponent: () => import('./features/contacts/contacts.component').then(m => m.ContactsComponent) 
+  },
   { path: '**', redirectTo: '' }
 ];

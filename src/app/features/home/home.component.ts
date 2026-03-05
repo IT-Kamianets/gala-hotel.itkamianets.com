@@ -5,11 +5,12 @@ import { GalleryPreviewComponent } from './components/gallery-preview/gallery-pr
 import { RoomsPreviewComponent } from './components/rooms-preview/rooms-preview.component';
 import { ServicesPreviewComponent } from './components/services-preview/services-preview.component';
 import { RouterLink } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HeroComponent, GalleryPreviewComponent, RoomsPreviewComponent, ServicesPreviewComponent, RouterLink],
+  imports: [CommonModule, HeroComponent, GalleryPreviewComponent, RoomsPreviewComponent, ServicesPreviewComponent, RouterLink, TranslateModule],
   template: `
     <app-hero></app-hero>
     
@@ -19,24 +20,24 @@ import { RouterLink } from '@angular/router';
         <div class="flex flex-col lg:flex-row items-center gap-16">
           <div class="lg:w-1/2 space-y-8">
             <h2 class="text-3xl md:text-5xl font-serif font-bold text-secondary-900 leading-tight italic">
-              Про «Гала Готель»
+              {{ 'home.about_title' | translate }}
             </h2>
             <p class="text-lg text-secondary-600 leading-relaxed font-light">
-              Готельно-туристичний комплекс «Гала-Готель» розпочав свою роботу в 2002 році. За цей час ми пройшли шлях від відкриття основного корпусу до створення масштабної інфраструктури з ресторанами, боулінг-клубом та професійними кортами.
+              {{ 'home.about_p1' | translate }}
             </p>
             <p class="text-lg text-secondary-600 leading-relaxed font-light">
-              У 2011 році наш готель увійшов до списку 100 кращих готелів України, що підтверджує високий рівень обслуговування та вагомий внесок у розвиток міста.
+              {{ 'home.about_p2' | translate }}
             </p>
             
             <div class="pt-4 flex flex-col sm:flex-row items-start gap-6">
               <button routerLink="/about" class="bg-secondary-900 text-white px-10 py-4 rounded-xl font-bold hover:bg-primary-600 transition-all shadow-xl active:scale-95">
-                Дізнатися більше
+                {{ 'home.about_more' | translate }}
               </button>
               <div class="flex items-center gap-4 py-2">
                 <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center text-primary-600">
                   <span class="font-serif font-bold text-xl">3*</span>
                 </div>
-                <span class="text-xs font-bold text-secondary-500 uppercase tracking-widest">Сертифікований тризірковий готель</span>
+                <span class="text-xs font-bold text-secondary-500 uppercase tracking-widest">{{ 'home.about_certified' | translate }}</span>
               </div>
             </div>
           </div>

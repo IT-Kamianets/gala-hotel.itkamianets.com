@@ -1,7 +1,7 @@
 <div class="pt-20">
   <app-page-hero 
-    title="Відпочинок та розваги" 
-    description="Різноманіття можливостей для активного дозвілля, релаксу та незабутніх емоцій на території ГТК «Гала Готель».">
+    [title]="'leisure_page.hero.title' | translate" 
+    [description]="'leisure_page.hero.description' | translate">
   </app-page-hero>
 
   <!-- Highlight Cards Grid -->
@@ -10,29 +10,29 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         @for (card of highlightCards; track card.title) {
           <div 
-            [routerLink]="card.title === 'БОУЛІНГ' ? '/bowling' : 
-                         card.title === 'ТЕНІСНИЙ КОРТ' ? '/tennis-court' : 
-                         card.title === 'ДИЯЧИЙ МАЙДАНЧИК' ? '/children-attractions' : 
-                         card.title === 'АВТОКЕМПІНГ' ? '/camping' : 
-                         card.title === 'САУНА' ? '/sauna' : 
-                         card.title === 'БЮВЕТ' ? '/mineral-water' : 
-                         card.title === 'СПОРТ І ЕКСТРИМ' ? '/sport-extreme' : null"
-            [class.cursor-pointer]="card.title === 'БОУЛІНГ' || card.title === 'ТЕНІСНИЙ КОРТ' || card.title === 'ДИЯЧИЙ МАЙДАНЧИК' || card.title === 'АВТОКЕМПІНГ' || card.title === 'САУНА' || card.title === 'БЮВЕТ' || card.title === 'СПОРТ І ЕКСТРИМ'"
+            [routerLink]="card.title === 'footer.service_bowling' ? '/bowling' : 
+                         card.title === 'footer.service_tennis' ? '/tennis-court' : 
+                         card.title === 'gallery.categories.leisure' ? '/children-attractions' : 
+                         card.title === 'services_page.items.leisure_center.features.camping' ? '/camping' : 
+                         card.title === 'footer.service_sauna' ? '/sauna' : 
+                         card.title === 'footer.service_mineral_water' ? '/mineral-water' : 
+                         card.title === 'gallery.filters.leisure' ? '/sport-extreme' : null"
+            [class.cursor-pointer]="card.title === 'footer.service_bowling' || card.title === 'footer.service_tennis' || card.title === 'gallery.categories.leisure' || card.title === 'services_page.items.leisure_center.features.camping' || card.title === 'footer.service_sauna' || card.title === 'footer.service_mineral_water' || card.title === 'gallery.filters.leisure'"
             class="group bg-white rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 flex flex-col h-full"
           >
             <div class="relative h-64 overflow-hidden">
-              <img [src]="card.image" [alt]="card.title" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+              <img [src]="card.image" [alt]="card.title | translate" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
               <div class="absolute inset-0 bg-gradient-to-t from-secondary-900/60 to-transparent"></div>
               <h3 class="absolute bottom-6 left-8 text-2xl font-serif font-bold text-white tracking-wider uppercase">
-                {{ card.title }}
+                {{ card.title | translate }}
               </h3>
             </div>
             <div class="p-8 flex-grow flex flex-col">
               <p class="text-secondary-600 font-light leading-relaxed mb-8">
-                {{ card.description }}
+                {{ card.description | translate }}
               </p>
               <div class="mt-auto self-start text-primary-600 font-bold uppercase tracking-widest text-[10px] flex items-center group/btn">
-                <span>Дізнатися більше</span>
+                <span>{{ 'leisure_page.learn_more' | translate }}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
@@ -49,17 +49,17 @@
     <div class="container mx-auto px-4 lg:px-8">
       <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12">
         <div class="md:w-1/2 space-y-6">
-          <h2 class="text-3xl font-serif font-bold text-secondary-900 leading-tight italic">Ваше Дозвілля у «Gala Hotel»</h2>
+          <h2 class="text-3xl font-serif font-bold text-secondary-900 leading-tight italic">{{ 'leisure_page.intro.title' | translate }}</h2>
           <p class="text-secondary-600 leading-relaxed font-light">
-            Ми пропонуємо нашим гостям не просто проживання, а цілий світ розваг. Від драйву боулінг-клубу «Galactica» до спокійного оздоровлення біля бювету з мінеральною водою.
+            {{ 'leisure_page.intro.description' | translate }}
           </p>
           <p class="text-secondary-600 leading-relaxed font-light">
-            Незалежно від того, чи Ви подорожуєте з сім'єю, чи приїхали на спортивні змагання, на нашій території площею 1.2 га знайдеться ідеальне місце для Вашого відпочинку.
+            {{ 'leisure_page.intro.description_2' | translate }}
           </p>
         </div>
         <div class="md:w-1/2">
           <div class="rounded-[2rem] overflow-hidden shadow-2xl rotate-2">
-            <img src="bowling/bowl2.png" alt="Відпочинок у Gala Hotel" class="w-full">
+            <img src="bowling/bowl2.png" [alt]="'leisure_page.intro.title' | translate" class="w-full">
           </div>
         </div>
       </div>
@@ -71,7 +71,7 @@
     <div class="container mx-auto px-4 lg:px-8">
       <div class="max-w-3xl mx-auto">
         <div class="text-center mb-12">
-          <h2 class="text-3xl font-serif font-bold text-secondary-900 mb-4 italic">Ми пропонуємо для Вас:</h2>
+          <h2 class="text-3xl font-serif font-bold text-secondary-900 mb-4 italic">{{ 'leisure_page.offers.title' | translate }}</h2>
           <div class="w-20 h-1 bg-primary-500 mx-auto rounded-full"></div>
         </div>
         
@@ -83,7 +83,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <span class="text-secondary-700 font-light text-sm">{{ offer }}</span>
+              <span class="text-secondary-700 font-light text-sm">{{ offer | translate }}</span>
             </li>
           }
         </ul>
@@ -97,28 +97,28 @@
     <div class="container mx-auto px-4 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         <div class="space-y-8">
-          <h2 class="text-3xl md:text-4xl font-serif font-bold italic leading-tight">Розважальний центр «Galactica»</h2>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold italic leading-tight">{{ 'leisure_page.galactica.title' | translate }}</h2>
           <p class="text-primary-100 leading-relaxed font-light">
-            Проведіть незабутній час з друзями або родиною. Ми пропонуємо гнучкі тарифи на гру в боулінг та оренду спортивних майданчиків. Наш бар забезпечить вас напоями та закусками під час гри.
+            {{ 'leisure_page.galactica.description' | translate }}
           </p>
           <div class="space-y-4">
             <div class="flex items-baseline gap-4">
-              <span class="text-4xl font-serif font-bold text-primary-400">від 470 грн</span>
-              <span class="text-primary-200 text-sm uppercase tracking-widest font-medium">Боулінг (за 1 годину)</span>
+              <span class="text-4xl font-serif font-bold text-primary-400">{{ 'leisure_page.galactica.bowling_price' | translate }}</span>
+              <span class="text-primary-200 text-sm uppercase tracking-widest font-medium">{{ 'leisure_page.galactica.bowling_label' | translate }}</span>
             </div>
             <div class="flex items-baseline gap-4">
-              <span class="text-2xl font-serif font-bold text-primary-400">300 грн</span>
-              <span class="text-primary-200 text-sm uppercase tracking-widest font-medium">Тенісний корт (1 година)</span>
+              <span class="text-2xl font-serif font-bold text-primary-400">{{ 'leisure_page.galactica.tennis_price' | translate }}</span>
+              <span class="text-primary-200 text-sm uppercase tracking-widest font-medium">{{ 'leisure_page.galactica.tennis_label' | translate }}</span>
             </div>
           </div>
         </div>
         <div class="bg-white/10 backdrop-blur-md p-10 rounded-[3rem] border border-white/20">
-          <h3 class="text-2xl font-serif font-bold mb-6 text-primary-400 italic">Спеціальні події</h3>
+          <h3 class="text-2xl font-serif font-bold mb-6 text-primary-400 italic">{{ 'leisure_page.events.title' | translate }}</h3>
           <p class="text-primary-50 font-light leading-relaxed mb-8">
-            Бажаєте організувати командні змагання або дитяче свято? Ми допоможемо провести будь-який захід з професійним супроводом та святковою атмосферою.
+            {{ 'leisure_page.events.description' | translate }}
           </p>
           <div class="w-full h-48 rounded-2xl overflow-hidden shadow-inner">
-            <img src="bowling/bowl2.png" alt="Свята у Gala Hotel" class="w-full h-full object-cover">
+            <img src="bowling/bowl2.png" [alt]="'leisure_page.events.title' | translate" class="w-full h-full object-cover">
           </div>
         </div>
       </div>
@@ -130,8 +130,8 @@
     <div class="container mx-auto px-4 lg:px-8">
       <div class="max-w-3xl mx-auto bg-primary-50 rounded-[2.5rem] p-8 md:p-12 text-center border border-primary-100 shadow-sm relative overflow-hidden">
         <div class="relative z-10">
-          <span class="text-primary-600 font-bold uppercase tracking-[0.2em] text-[10px] block mb-3">Бронювання та довідка</span>
-          <h2 class="text-2xl md:text-3xl font-serif font-bold text-secondary-900 mb-8 italic">Адміністратор комплексу</h2>
+          <span class="text-primary-600 font-bold uppercase tracking-[0.2em] text-[10px] block mb-3">{{ 'leisure_page.contact.hint' | translate }}</span>
+          <h2 class="text-2xl md:text-3xl font-serif font-bold text-secondary-900 mb-8 italic">{{ 'leisure_page.contact.title' | translate }}</h2>
           
           <div class="flex flex-col items-center space-y-6">
             <a href="tel:+380673804355" class="flex items-center gap-4 group">
@@ -145,7 +145,7 @@
             
             <div class="flex flex-wrap justify-center gap-4 pt-2">
               <button routerLink="/contacts" class="bg-secondary-900 text-white px-8 py-3 rounded-xl font-bold text-sm hover:bg-primary-600 transition-all shadow-md active:scale-95">
-                Надіслати запит
+                {{ 'leisure_page.contact.request_btn' | translate }}
               </button>
             </div>
           </div>

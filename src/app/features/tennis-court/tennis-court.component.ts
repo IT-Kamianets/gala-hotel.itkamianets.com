@@ -1,36 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageHeroComponent } from '../../shared/components/page-hero/page-hero.component';
 import { RouterLink } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-tennis-court',
   standalone: true,
-  imports: [CommonModule, PageHeroComponent, RouterLink],
+  imports: [CommonModule, PageHeroComponent, RouterLink, TranslateModule],
   templateUrl: './tennis-court.component.html',
 })
 export class TennisCourtComponent {
-  features = [
-    { 
-      title: 'Професійне покриття', 
-      desc: 'Якісний корт, що підходить як для аматорських ігор, так і для підготовки до змагань.' 
-    },
-    { 
-      title: 'Школа тенісу', 
-      desc: 'Запрошуємо дорослих та дітей у школу великого тенісу «ГАЛА ТЕНІС».' 
-    },
-    { 
-      title: 'Оренда спорядження', 
-      desc: 'Можливість оренди професійних ракеток для комфортної гри.' 
-    },
-    { 
-      title: 'Зручний графік', 
-      desc: 'Корт доступний для гри з самого ранку до пізнього вечора (08:00-22:00).' 
-    }
+  private translate = inject(TranslateService);
+
+  pricing = [
+    { title: 'tennis_court.rules.rent_court', price: '300 грн./год.' },
+    { title: 'tennis_court.rules.rent_racket', price: '100 грн.' }
   ];
 
-  pricing = {
-    court: '300 грн/год',
-    racket: '50 грн/год'
-  };
+  galleryImages = [
+    { url: 'sport/tenis.png', alt: 'Gala Tennis Court' },
+    { url: 'tenis/tenis1.png', alt: 'Tennis training' }
+  ];
 }
