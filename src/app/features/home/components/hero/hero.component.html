@@ -25,15 +25,15 @@
 
       <!-- Buttons - More Compact -->
       <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 mb-10">
-        <button class="bg-primary-600 text-white px-7 py-3 rounded-lg font-bold text-sm hover:bg-primary-700 transition-all shadow-lg flex items-center justify-center group active:scale-95">
+        <a routerLink="/rooms" class="bg-primary-600 text-white px-7 py-3 rounded-lg font-bold text-sm hover:bg-primary-700 transition-all shadow-lg flex items-center justify-center group active:scale-95 cursor-pointer">
           {{ 'home.hero.book' | translate }}
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
-        </button>
-        <button class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-7 py-3 rounded-lg font-bold text-sm hover:bg-white hover:text-secondary-900 transition-all active:scale-95">
+        </a>
+        <a routerLink="/services" class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-7 py-3 rounded-lg font-bold text-sm hover:bg-white hover:text-secondary-900 transition-all active:scale-95 flex items-center justify-center cursor-pointer">
           {{ 'home.hero.services' | translate }}
-        </button>
+        </a>
       </div>
 
       <!-- Quick Stats - Compact Grid -->
